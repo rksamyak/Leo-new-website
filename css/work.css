@@ -1,0 +1,129 @@
+.section--work {
+  position: relative;
+  z-index: var(--z-base);
+}
+
+.work__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+/* First card spans 2 columns for visual hierarchy */
+.work-card:first-child {
+  grid-column: span 2;
+}
+
+.work-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+}
+
+.work-card:first-child {
+  aspect-ratio: 16 / 9;
+}
+
+.work-card__bg {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.work-card:hover .work-card__bg {
+  transform: scale(1.05);
+}
+
+/* Gradient placeholder backgrounds */
+.work-card:nth-child(1) .work-card__bg { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
+.work-card:nth-child(2) .work-card__bg { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); }
+.work-card:nth-child(3) .work-card__bg { background: linear-gradient(135deg, #0d0d0d 0%, #1f1f1f 100%); }
+.work-card:nth-child(4) .work-card__bg { background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%); }
+.work-card:nth-child(5) .work-card__bg { background: linear-gradient(135deg, #1a1a1a 0%, #2a1f2d 100%); }
+.work-card:nth-child(6) .work-card__bg { background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%); }
+
+/* Abstract shapes inside cards */
+.work-card__bg::before {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  top: 20%;
+  left: 20%;
+  filter: blur(40px);
+}
+
+/* Overlay */
+.work-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.20) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-6);
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+}
+
+.work-card:hover .work-card__overlay {
+  opacity: 1;
+}
+
+/* Always show partial overlay at bottom */
+.work-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.60) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.work-card__category {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-white-60);
+  margin-bottom: var(--space-2);
+  display: block;
+}
+
+.work-card__title {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--clr-white);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-3);
+}
+
+.work-card__link {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  color: var(--clr-white-80);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  transition: gap var(--transition-base), color var(--transition-base);
+}
+
+.work-card__link:hover {
+  color: var(--clr-white);
+  gap: var(--space-3);
+}
+
+/* Bottom label always visible */
+.work-card__footer {
+  position: absolute;
+  bottom: var(--space-4);
+  left: var(--space-5);
+  right: var(--space-5);
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}

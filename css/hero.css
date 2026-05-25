@@ -1,0 +1,146 @@
+/* ── Animated Background Canvas ── */
+.bg-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bg-mesh {
+  position: absolute;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 20%, rgba(255,255,255,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 80% 80%, rgba(255,255,255,0.025) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 70% at 50% 50%, rgba(20,20,20,0.9) 0%, transparent 80%);
+  background-size: 200% 200%;
+  animation: meshShift 24s ease infinite;
+}
+
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  will-change: transform;
+}
+
+.bg-orb--1 {
+  width: 700px;
+  height: 700px;
+  top: -15%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(255,255,255,0.10) 0%, transparent 70%);
+  animation: orbFloat1 20s ease-in-out infinite;
+}
+
+.bg-orb--2 {
+  width: 550px;
+  height: 550px;
+  top: 35%;
+  right: -8%;
+  background: radial-gradient(circle, rgba(180,180,180,0.08) 0%, transparent 70%);
+  animation: orbFloat2 26s ease-in-out infinite reverse;
+}
+
+.bg-orb--3 {
+  width: 450px;
+  height: 450px;
+  bottom: 5%;
+  left: 25%;
+  background: radial-gradient(circle, rgba(100,100,100,0.07) 0%, transparent 70%);
+  animation: orbFloat3 30s ease-in-out infinite;
+}
+
+/* ── Hero Section ── */
+.section--hero {
+  position: relative;
+  z-index: var(--z-base);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: var(--navbar-height);
+  padding-left: var(--section-pad-x);
+  padding-right: var(--section-pad-x);
+  padding-bottom: var(--space-24);
+}
+
+.hero__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clr-white-40);
+  margin-bottom: var(--space-6);
+}
+
+.hero__eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--clr-white-40);
+}
+
+.hero__title {
+  font-size: var(--fs-hero);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.03em;
+  color: var(--clr-white);
+  margin-bottom: var(--space-6);
+  max-width: 800px;
+}
+
+.hero__sub {
+  font-size: clamp(var(--fs-base), 1.5vw, var(--fs-lg));
+  color: var(--clr-white-60);
+  line-height: var(--lh-loose);
+  max-width: 520px;
+  margin-bottom: var(--space-10);
+  font-weight: var(--fw-light);
+}
+
+.hero__ctas {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+/* ── Scroll Indicator ── */
+.hero__scroll {
+  position: absolute;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+.scroll-label {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-white-40);
+}

@@ -1,0 +1,237 @@
+/* ── Tablet: 1024px ── */
+@media (max-width: 1024px) {
+  :root {
+    --section-pad-y: var(--space-20);
+    --section-pad-x: var(--space-6);
+  }
+
+  .expertise__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .work__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .work-card:first-child {
+    grid-column: span 2;
+  }
+
+  .about__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .insights__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .insight-card:first-child {
+    grid-column: span 2;
+  }
+
+  .footer__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+
+  .footer__brand {
+    grid-column: span 2;
+  }
+}
+
+/* ── Mobile: 768px ── */
+@media (max-width: 768px) {
+  :root {
+    --section-pad-y: var(--space-16);
+    --section-pad-x: var(--space-4);
+    --navbar-height: 64px;
+  }
+
+  /* Navbar */
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar__links {
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+    margin-left: 0;
+    transform: translateX(100%);
+    transition: transform var(--transition-slow);
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .navbar__links.nav--open {
+    transform: translateX(0);
+  }
+
+  .nav-link {
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-semi);
+  }
+
+  .btn-login {
+    display: none;
+  }
+
+  /* Hero */
+  .hero__title {
+    font-size: clamp(2.2rem, 9vw, 3.5rem);
+  }
+
+  .hero__ctas {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero__scroll {
+    display: none;
+  }
+
+  /* About */
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .about__stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2);
+  }
+
+  /* Expertise */
+  .expertise__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Work */
+  .work__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-card:first-child {
+    grid-column: span 1;
+  }
+
+  .work-card {
+    aspect-ratio: 4 / 3;
+  }
+
+  .work-card__overlay {
+    opacity: 1;
+  }
+
+  /* Insights */
+  .insights__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .insight-card:first-child {
+    grid-column: span 1;
+    grid-template-columns: 1fr;
+  }
+
+  /* News timeline */
+  .news__timeline::before {
+    left: 20px;
+  }
+
+  .news-item {
+    grid-template-columns: 40px 1fr;
+    gap: 0;
+  }
+
+  .news-item__dot {
+    grid-column: 1;
+    padding-top: var(--space-4);
+  }
+
+  .news-item__content {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    text-align: left !important;
+    margin: 0 0 0 var(--space-3);
+  }
+
+  .news-item__empty {
+    display: none;
+  }
+
+  .news-item__dot::before {
+    margin-left: 0;
+  }
+
+  .news-item:nth-child(odd) .news-item__tag {
+    margin-left: 0;
+  }
+
+  /* Contact */
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .footer__brand {
+    grid-column: auto;
+  }
+
+  .footer__legal {
+    flex-direction: column;
+    gap: var(--space-2);
+    text-align: center;
+  }
+
+  /* Section titles */
+  .section__title {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+}
+
+/* ── Small Mobile: 480px ── */
+@media (max-width: 480px) {
+  :root {
+    --section-pad-y: var(--space-12);
+    --section-pad-x: var(--space-4);
+  }
+
+  .hero__eyebrow {
+    font-size: 0.65rem;
+  }
+
+  .about__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-item {
+    padding: var(--space-5) var(--space-3);
+  }
+
+  .career-item__meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .navbar__inner {
+    padding: 0 var(--space-4);
+  }
+
+  .contact__form-wrap {
+    padding: var(--space-6) var(--space-4);
+  }
+}

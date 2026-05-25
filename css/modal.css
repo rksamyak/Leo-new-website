@@ -1,0 +1,193 @@
+/* ── Overlay ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  animation: overlayIn 200ms ease forwards;
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+/* ── Modal Box ── */
+.modal {
+  position: relative;
+  width: min(440px, 100%);
+  padding: var(--space-12) var(--space-10);
+  background: rgba(18, 18, 18, 0.92);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 32px 80px rgba(0, 0, 0, 0.8),
+    0 8px 32px rgba(0, 0, 0, 0.4);
+  animation: modalIn 280ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ── Close Button ── */
+.modal__close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  color: var(--clr-white-60);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background var(--transition-base),
+    color var(--transition-base);
+  line-height: 1;
+}
+
+.modal__close:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--clr-white);
+}
+
+/* ── Header ── */
+.modal__title {
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-bold);
+  color: var(--clr-white);
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.02em;
+}
+
+.modal__subtitle {
+  font-size: var(--fs-sm);
+  color: var(--clr-white-40);
+  margin-bottom: var(--space-8);
+}
+
+/* ── Google Button ── */
+.btn-google {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--clr-white);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  cursor: pointer;
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-fast);
+  margin-bottom: var(--space-6);
+}
+
+.btn-google:hover {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.28);
+  transform: translateY(-1px);
+}
+
+.google-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* ── Divider ── */
+.modal__divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-6);
+}
+
+.modal__divider::before,
+.modal__divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.modal__divider span {
+  padding: 0 var(--space-3);
+  font-size: var(--fs-xs);
+  color: var(--clr-white-40);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ── Magic Link ── */
+.modal__magic-link {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.modal__input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  color: var(--clr-white);
+  font-size: var(--fs-sm);
+  outline: none;
+  transition:
+    border-color var(--transition-base),
+    background var(--transition-base);
+}
+
+.modal__input:focus {
+  border-color: rgba(255, 255, 255, 0.40);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.modal__input::placeholder {
+  color: var(--clr-white-40);
+}
+
+.modal__input.input--error {
+  border-color: rgba(255, 80, 80, 0.60);
+}
+
+.btn-magic {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: var(--clr-white);
+  color: var(--clr-bg);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  cursor: pointer;
+  transition:
+    background var(--transition-base),
+    transform var(--transition-fast);
+  letter-spacing: 0.01em;
+}
+
+.btn-magic:hover:not(:disabled) {
+  background: var(--clr-white-80);
+  transform: translateY(-1px);
+}
+
+.btn-magic:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
