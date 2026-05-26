@@ -3,6 +3,7 @@
   position: relative;
   z-index: var(--z-base);
   padding: var(--section-pad-y) var(--section-pad-x);
+  background: var(--clr-bg);
 }
 
 .section--hero {
@@ -10,6 +11,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
+  background: var(--clr-bg);
 }
 
 .section__inner {
@@ -18,24 +20,40 @@
   width: 100%;
 }
 
+/* Bold overline label */
 .section__label {
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-semi);
-  letter-spacing: 0.18em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: var(--clr-white-40);
-  margin-bottom: var(--space-4);
+  color: var(--clr-white);
+  margin-bottom: var(--space-5);
 }
 
+.section__label::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--clr-white);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* Large bold heading */
 .section__title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: var(--fw-bold);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: var(--fw-black);
   line-height: var(--lh-tight);
   color: var(--clr-white);
+  letter-spacing: -0.03em;
   margin-bottom: var(--space-12);
 }
 
-/* ── Glass Card ── */
+/* ── Glassmorphism Card — white frosted ── */
 .glass-card {
   background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur));
@@ -54,7 +72,7 @@
   background: var(--glass-bg-hover);
   border: var(--glass-border-hover);
   box-shadow: var(--glass-shadow-lg);
-  transform: translateY(-4px);
+  transform: translateY(-5px);
 }
 
 /* ── Buttons ── */
@@ -63,11 +81,11 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  padding: var(--space-3) var(--space-8);
+  padding: 0.75rem 2rem;
   border-radius: var(--radius-full);
-  font-size: var(--fs-sm);
-  font-weight: var(--fw-semi);
-  letter-spacing: 0.02em;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
   cursor: pointer;
   transition:
     background var(--transition-base),
@@ -75,43 +93,48 @@
     color var(--transition-base),
     transform var(--transition-fast),
     box-shadow var(--transition-base);
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .btn:hover {
   transform: translateY(-2px);
 }
 
+/* Solid black primary */
 .btn--primary {
-  background: var(--clr-white);
-  color: var(--clr-bg);
-  border-color: var(--clr-white);
+  background: #0D0D0D;
+  color: #FFFFFF;
+  border-color: #0D0D0D;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
 }
 
 .btn--primary:hover {
-  background: var(--clr-white-80);
-  box-shadow: 0 8px 24px rgba(13, 80, 30, 0.20);
+  background: #2a2a2a;
+  border-color: #2a2a2a;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.30);
 }
 
+/* Outlined ghost */
 .btn--ghost {
   background: transparent;
   color: var(--clr-white);
-  border-color: var(--clr-white-40);
+  border-color: rgba(13, 13, 13, 0.25);
 }
 
 .btn--ghost:hover {
-  border-color: var(--clr-white);
-  background: var(--clr-white-10);
+  border-color: #0D0D0D;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .btn--full {
   width: 100%;
 }
 
-/* ── Text Gradient ── */
+/* ── Bold Text Gradient ── */
 .text-gradient {
-  background: linear-gradient(135deg, #0d5c20 0%, #2d9e50 100%);
+  background: linear-gradient(135deg, #0D0D0D 0%, #555555 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -120,14 +143,14 @@
 /* ── Tag Badge ── */
 .tag {
   display: inline-block;
-  padding: var(--space-1) var(--space-3);
-  background: rgba(13, 50, 20, 0.07);
-  border: 1px solid rgba(13, 50, 20, 0.14);
+  padding: 0.2rem 0.75rem;
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: var(--radius-full);
   font-size: var(--fs-xs);
-  font-weight: var(--fw-medium);
+  font-weight: 600;
   letter-spacing: 0.04em;
-  color: var(--clr-white-60);
+  color: var(--clr-white-80);
 }
 
 /* ── Link Arrow ── */
@@ -136,13 +159,14 @@
   align-items: center;
   gap: var(--space-2);
   font-size: var(--fs-sm);
-  font-weight: var(--fw-semi);
-  color: var(--clr-white-60);
+  font-weight: 700;
+  color: var(--clr-white);
   transition: color var(--transition-base), gap var(--transition-base);
+  text-decoration: none;
 }
 
 .link-arrow:hover {
-  color: var(--clr-white);
+  color: #555;
   gap: var(--space-3);
 }
 
@@ -155,35 +179,42 @@
 
 .form-group label {
   font-size: var(--fs-sm);
-  font-weight: var(--fw-medium);
-  color: var(--clr-white-60);
+  font-weight: 600;
+  color: var(--clr-white);
 }
 
 .form-group input,
 .form-group textarea {
   padding: var(--space-3) var(--space-4);
-  background: rgba(255, 255, 255, 0.60);
-  border: 1px solid rgba(13, 50, 20, 0.14);
+  background: rgba(255, 255, 255, 0.80);
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
   border-radius: var(--radius-md);
-  color: var(--clr-white);
+  color: #0D0D0D;
   font-size: var(--fs-base);
+  font-family: var(--font-sans);
   outline: none;
-  transition: border-color var(--transition-base), background var(--transition-base);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
   resize: vertical;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: rgba(13, 50, 20, 0.40);
-  background: rgba(255, 255, 255, 0.80);
+  border-color: #0D0D0D;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+  background: #fff;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: var(--clr-white-40);
+  color: rgba(13, 13, 13, 0.35);
 }
 
 .form-group input.field--error,
 .form-group textarea.field--error {
-  border-color: rgba(255, 80, 80, 0.60);
+  border-color: rgba(220, 50, 50, 0.70);
+}
+
+/* ── Section separator ── */
+.section + .section {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }

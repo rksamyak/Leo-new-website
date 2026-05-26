@@ -1,6 +1,7 @@
 .section--work {
   position: relative;
   z-index: var(--z-base);
+  background: #FFFFFF;
 }
 
 .work__grid {

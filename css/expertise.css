@@ -1,63 +1,81 @@
 .section--expertise {
   position: relative;
   z-index: var(--z-base);
+  background: #F7F7F7;
 }
 
 .expertise__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-4);
+  gap: var(--space-5);
 }
 
 .expertise-card {
-  padding: var(--space-8) var(--space-6);
+  padding: var(--space-8) var(--space-7);
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
   cursor: default;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.expertise-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.14);
 }
 
 .card__icon {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: var(--radius-md);
-  background: rgba(13, 50, 20, 0.07);
-  border: 1px solid rgba(13, 50, 20, 0.12);
+  background: rgba(0, 0, 0, 0.05);
+  border: 1.5px solid rgba(0, 0, 0, 0.10);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 24px;
   flex-shrink: 0;
   transition: background var(--transition-base), border-color var(--transition-base);
 }
 
 .expertise-card:hover .card__icon {
-  background: rgba(13, 50, 20, 0.13);
-  border-color: rgba(13, 50, 20, 0.25);
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.18);
 }
 
 .card__title {
   font-size: var(--fs-lg);
-  font-weight: var(--fw-semi);
-  color: var(--clr-white);
-  letter-spacing: -0.01em;
+  font-weight: 800;
+  color: #0D0D0D;
+  letter-spacing: -0.02em;
 }
 
 .card__text {
   font-size: var(--fs-sm);
-  color: var(--clr-white-60);
+  color: rgba(13, 13, 13, 0.60);
   line-height: var(--lh-loose);
   flex: 1;
 }
 
 .card__arrow {
   font-size: var(--fs-base);
-  color: var(--clr-white-40);
+  color: rgba(13, 13, 13, 0.30);
   align-self: flex-end;
   transition: color var(--transition-base), transform var(--transition-base);
+  font-weight: 700;
 }
 
 .expertise-card:hover .card__arrow {
-  color: var(--clr-white);
+  color: #0D0D0D;
   transform: translate(4px, -4px);
 }

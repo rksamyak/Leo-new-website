@@ -1,6 +1,7 @@
 .section--insights {
   position: relative;
   z-index: var(--z-base);
+  background: #F7F7F7;
 }
 
 .insights__grid {
@@ -42,7 +43,7 @@
 }
 
 .insight-card:nth-child(1) .insight-card__image-placeholder {
-  background: linear-gradient(135deg, #111 0%, #1f1f2e 100%);
+  background: linear-gradient(135deg, #E8E8E8 0%, #D0D0D0 100%);
 }
 
 .insight-card__meta {
@@ -54,13 +55,13 @@
 
 .insight-card__meta time {
   font-size: var(--fs-xs);
-  color: var(--clr-white-40);
+  color: rgba(13, 13, 13, 0.40);
 }
 
 .insight-card__title {
   font-size: var(--fs-lg);
-  font-weight: var(--fw-semi);
-  color: var(--clr-white);
+  font-weight: 800;
+  color: #0D0D0D;
   line-height: var(--lh-snug);
   letter-spacing: -0.02em;
   transition: color var(--transition-base);
@@ -71,12 +72,12 @@
 }
 
 .insight-card:hover .insight-card__title {
-  color: var(--clr-white-80);
+  color: rgba(13, 13, 13, 0.70);
 }
 
 .insight-card__excerpt {
   font-size: var(--fs-sm);
-  color: var(--clr-white-60);
+  color: rgba(13, 13, 13, 0.60);
   line-height: var(--lh-loose);
   flex: 1;
 }

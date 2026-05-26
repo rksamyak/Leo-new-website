@@ -1,10 +1,11 @@
-/* ── Animated Background Canvas ── */
+/* ── Background Canvas — white, very subtle ── */
 .bg-canvas {
   position: fixed;
   inset: 0;
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
+  background: #FFFFFF;
 }
 
 .bg-mesh {
@@ -13,45 +14,45 @@
   width: 200%;
   height: 200%;
   background:
-    radial-gradient(ellipse 60% 50% at 20% 20%, rgba(80,180,110,0.07) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 50% at 80% 80%, rgba(60,160,90,0.05) 0%, transparent 60%),
-    radial-gradient(ellipse 80% 70% at 50% 50%, rgba(240,250,243,0.6) 0%, transparent 80%);
+    radial-gradient(ellipse 60% 50% at 15% 15%, rgba(0, 0, 0, 0.03) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 85% 80%, rgba(0, 0, 0, 0.02) 0%, transparent 60%);
   background-size: 200% 200%;
-  animation: meshShift 24s ease infinite;
+  animation: meshShift 30s ease infinite;
 }
 
 .bg-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
+  filter: blur(120px);
   will-change: transform;
+  opacity: 0.5;
 }
 
 .bg-orb--1 {
-  width: 700px;
-  height: 700px;
-  top: -15%;
-  left: -10%;
-  background: radial-gradient(circle, rgba(80,200,120,0.14) 0%, transparent 70%);
-  animation: orbFloat1 20s ease-in-out infinite;
+  width: 600px;
+  height: 600px;
+  top: -10%;
+  left: -5%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.04) 0%, transparent 70%);
+  animation: orbFloat1 22s ease-in-out infinite;
 }
 
 .bg-orb--2 {
-  width: 550px;
-  height: 550px;
-  top: 35%;
-  right: -8%;
-  background: radial-gradient(circle, rgba(60,180,100,0.10) 0%, transparent 70%);
-  animation: orbFloat2 26s ease-in-out infinite reverse;
+  width: 500px;
+  height: 500px;
+  top: 40%;
+  right: -5%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.03) 0%, transparent 70%);
+  animation: orbFloat2 28s ease-in-out infinite reverse;
 }
 
 .bg-orb--3 {
-  width: 450px;
-  height: 450px;
-  bottom: 5%;
-  left: 25%;
-  background: radial-gradient(circle, rgba(100,220,140,0.09) 0%, transparent 70%);
-  animation: orbFloat3 30s ease-in-out infinite;
+  width: 400px;
+  height: 400px;
+  bottom: 10%;
+  left: 30%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.03) 0%, transparent 70%);
+  animation: orbFloat3 32s ease-in-out infinite;
 }
 
 /* ── Hero Section ── */
@@ -65,6 +66,7 @@
   padding-left: var(--section-pad-x);
   padding-right: var(--section-pad-x);
   padding-bottom: var(--space-24);
+  background: #FFFFFF;
 }
 
 .hero__inner {
@@ -76,40 +78,41 @@
 .hero__eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-3);
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-semi);
-  letter-spacing: 0.18em;
+  gap: 0.6rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: var(--clr-white-40);
+  color: rgba(13, 13, 13, 0.55);
   margin-bottom: var(--space-6);
 }
 
 .hero__eyebrow::before {
   content: '';
   display: block;
-  width: 24px;
-  height: 1px;
-  background: var(--clr-white-40);
+  width: 28px;
+  height: 2px;
+  background: rgba(13, 13, 13, 0.40);
+  border-radius: 2px;
 }
 
 .hero__title {
   font-size: var(--fs-hero);
-  font-weight: var(--fw-bold);
+  font-weight: var(--fw-black);
   line-height: var(--lh-tight);
-  letter-spacing: -0.03em;
-  color: var(--clr-white);
-  margin-bottom: var(--space-6);
-  max-width: 800px;
+  letter-spacing: -0.04em;
+  color: #0D0D0D;
+  margin-bottom: var(--space-8);
+  max-width: 900px;
 }
 
 .hero__sub {
-  font-size: clamp(var(--fs-base), 1.5vw, var(--fs-lg));
-  color: var(--clr-white-60);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  color: rgba(13, 13, 13, 0.60);
   line-height: var(--lh-loose);
-  max-width: 520px;
+  max-width: 540px;
   margin-bottom: var(--space-10);
-  font-weight: var(--fw-light);
+  font-weight: var(--fw-regular);
 }
 
 .hero__ctas {
@@ -133,14 +136,15 @@
 
 .scroll-line {
   width: 1px;
-  height: 48px;
-  background: linear-gradient(to bottom, rgba(13,80,30,0.45), transparent);
-  animation: scrollBounce 2s ease-in-out infinite;
+  height: 52px;
+  background: linear-gradient(to bottom, rgba(13, 13, 13, 0.40), transparent);
+  animation: scrollBounce 2.2s ease-in-out infinite;
 }
 
 .scroll-label {
-  font-size: var(--fs-xs);
-  letter-spacing: 0.12em;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--clr-white-40);
+  color: rgba(13, 13, 13, 0.35);
+  font-weight: 600;
 }

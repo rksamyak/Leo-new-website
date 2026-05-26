@@ -1,53 +1,47 @@
 /* ═══════════════════════════════════════
-   FLOATING GLASS NAVBAR
+   FULL-WIDTH GLASS NAVBAR
+   No gap · no pill · white frosted glass
    ═══════════════════════════════════════ */
 
-/* ── Shell — floating centered pill ── */
 .navbar {
   position: fixed;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 48px);
-  max-width: 1280px;
-  height: 76px;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 100%;
+  height: var(--navbar-height);
   z-index: var(--z-navbar);
+  transform: none;
 
-  /* Glass base */
-  background: rgba(255, 255, 255, 0.68);
+  background: rgba(255, 255, 255, 0.80);
   backdrop-filter: blur(24px) saturate(200%);
   -webkit-backdrop-filter: blur(24px) saturate(200%);
 
-  /* Pill shape */
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
 
-  /* Layered shadow for depth */
-  box-shadow:
-    0 2px 20px rgba(0, 50, 15, 0.06),
-    0 0 0 1px rgba(13, 50, 20, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.90);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04), 0 4px 24px rgba(0, 0, 0, 0.06);
 
   transition:
-    background 350ms ease,
-    box-shadow 350ms ease,
-    border-color 350ms ease;
+    background 300ms ease,
+    box-shadow 300ms ease,
+    border-color 300ms ease;
 }
 
-/* Scrolled — slightly more opaque */
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.92);
-  border-color: rgba(210, 235, 215, 0.90);
-  box-shadow:
-    0 8px 40px rgba(0, 50, 15, 0.10),
-    0 2px 8px rgba(0, 50, 15, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 0.98);
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom-color: rgba(0, 0, 0, 0.10);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06), 0 8px 40px rgba(0, 0, 0, 0.10);
 }
 
-/* ── Inner layout ── */
+/* ── Inner — max-width centered ── */
 .navbar__inner {
   height: 100%;
-  padding: 0 1.375rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
   display: flex;
   align-items: center;
   gap: 0;
@@ -62,19 +56,21 @@
 }
 
 .navbar__logo-img {
-  height: 46px;
+  height: 40px;
   width: auto;
   display: block;
   object-fit: contain;
   flex-shrink: 0;
+  /* black logo on white navbar — no filter needed */
+  filter: none;
 }
 
-/* ── Vertical divider ── */
+/* ── Divider ── */
 .navbar__sep {
   width: 1px;
-  height: 20px;
-  background: rgba(13, 50, 20, 0.12);
-  margin: 0 1.125rem;
+  height: 18px;
+  background: rgba(0, 0, 0, 0.12);
+  margin: 0 1.5rem;
   flex-shrink: 0;
 }
 
@@ -82,7 +78,7 @@
 .navbar__links {
   display: flex;
   align-items: center;
-  gap: 1px;
+  gap: 2px;
   list-style: none;
   flex: 1;
   justify-content: center;
@@ -90,12 +86,12 @@
 
 .nav-link {
   position: relative;
-  color: rgba(13, 32, 17, 0.50);
+  color: rgba(13, 13, 13, 0.55);
   font-size: 0.8125rem;
   font-weight: 500;
-  letter-spacing: 0.005em;
+  letter-spacing: 0.01em;
   text-decoration: none;
-  padding: 0.375rem 0.625rem;
+  padding: 0.4rem 0.75rem;
   border-radius: 8px;
   transition:
     color 180ms ease,
@@ -103,51 +99,47 @@
   white-space: nowrap;
 }
 
-/* Remove old underline — replaced by pill bg */
 .nav-link::after { display: none; }
 
 .nav-link:hover {
-  color: #1a7a35;
-  background-color: rgba(26, 122, 53, 0.07);
+  color: #0D0D0D;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .nav-link--active {
-  color: #1a7a35;
-  font-weight: 600;
-  background-color: rgba(26, 122, 53, 0.10);
+  color: #0D0D0D;
+  font-weight: 700;
+  background-color: rgba(0, 0, 0, 0.07);
 }
 
-/* ── Login CTA button ── */
+/* ── Login CTA ── */
 .btn-login {
   flex-shrink: 0;
-  margin-left: 0.625rem;
-  padding: 0.4375rem 1.125rem;
+  margin-left: 0.75rem;
+  padding: 0.5rem 1.25rem;
   border: none;
   border-radius: 99px;
-  background: linear-gradient(135deg, #1a7a35 0%, #28a448 100%);
+  background: #0D0D0D;
   color: #ffffff;
   font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   cursor: pointer;
-  box-shadow:
-    0 2px 8px rgba(26, 122, 53, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
   transition:
     transform 140ms ease,
-    box-shadow 140ms ease;
+    box-shadow 140ms ease,
+    background 140ms ease;
 }
 
 .btn-login:hover {
+  background: #2a2a2a;
   transform: translateY(-1px);
-  box-shadow:
-    0 4px 16px rgba(26, 122, 53, 0.36),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.30);
 }
 
 .btn-login:active {
   transform: translateY(0);
-  box-shadow: 0 1px 4px rgba(26, 122, 53, 0.22);
 }
 
 /* ── Hamburger — mobile only ── */
@@ -157,27 +149,27 @@
   justify-content: center;
   align-items: center;
   gap: 5px;
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   padding: 0;
-  background: rgba(26, 122, 53, 0.07);
-  border: 1px solid rgba(26, 122, 53, 0.12);
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.10);
   border-radius: 9px;
   cursor: pointer;
-  margin-left: 0.625rem;
+  margin-left: 0.75rem;
   flex-shrink: 0;
   transition: background 180ms ease;
 }
 
 .hamburger:hover {
-  background: rgba(26, 122, 53, 0.12);
+  background: rgba(0, 0, 0, 0.08);
 }
 
 .hamburger__bar {
   display: block;
   width: 16px;
   height: 1.5px;
-  background: #1a7a35;
+  background: #0D0D0D;
   border-radius: 2px;
   transition:
     transform var(--transition-base),
@@ -199,14 +191,11 @@
 /* ── Mobile drawer ── */
 @media (max-width: 900px) {
   .navbar {
-    top: 10px;
-    width: calc(100% - 24px);
-    height: 68px;
-    border-radius: 14px;
+    height: 64px;
   }
 
   .navbar__inner {
-    padding: 0 1rem;
+    padding: 0 1.25rem;
   }
 
   .navbar__sep {
@@ -214,30 +203,26 @@
   }
 
   .navbar__links {
-    /* Off-canvas drawer */
     position: fixed;
-    top: calc(68px + 18px);
-    left: 12px;
-    right: 12px;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(24px) saturate(180%);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid rgba(210, 235, 215, 0.85);
-    border-radius: 14px;
-    box-shadow:
-      0 12px 48px rgba(0, 50, 15, 0.12),
-      inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 0;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.10);
     flex-direction: column;
     gap: 2px;
-    padding: 0.625rem;
+    padding: 0.75rem 1rem;
     margin: 0;
     justify-content: flex-start;
     align-items: stretch;
 
-    /* Hidden state */
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-8px) scale(0.98);
+    transform: translateY(-10px);
     transition:
       opacity 220ms ease,
       transform 220ms ease;
@@ -246,18 +231,13 @@
   .navbar__links.menu--open {
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 
   .nav-link {
-    padding: 0.625rem 0.875rem;
+    padding: 0.75rem 1rem;
     border-radius: 10px;
     font-size: 0.9375rem;
-    font-weight: 500;
-  }
-
-  .navbar__links .nav-link--active {
-    background: rgba(26, 122, 53, 0.10);
   }
 
   .btn-login {
@@ -271,12 +251,14 @@
 
 @media (max-width: 480px) {
   .navbar__logo-img {
-    height: 36px;
+    height: 32px;
   }
 
   .navbar {
-    width: calc(100% - 16px);
-    top: 8px;
-    height: 64px;
+    height: 60px;
+  }
+
+  .navbar__links {
+    top: 60px;
   }
 }

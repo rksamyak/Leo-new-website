@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="css/news.css" />
   <link rel="stylesheet" href="css/careers.css" />
   <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/scene3d.css" />
   <link rel="stylesheet" href="css/banner.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
@@ -117,39 +118,38 @@
   <!-- ── Main Content ── -->
   <main id="main-content">
 
-    <!-- ══ SECTION 1: HOME ══ -->
-    <section id="home" class="section section--hero" aria-labelledby="heroTitle">
-      <div class="hero__inner">
+    <!-- ══ 3D HERO — Igloo Inc style ══ -->
+    <section class="scene3d" id="scene3d">
+      <canvas class="scene3d__canvas" id="scene3dCanvas"></canvas>
 
-        <div class="hero__eyebrow reveal-up">Premium Digital Agency</div>
-
-        <h1 class="hero__title reveal-up" id="heroTitle" style="transition-delay:80ms">
-          We Build <span class="text-gradient">Digital</span><br>Experiences That Matter
+      <!-- Overlay text -->
+      <div class="scene3d__content">
+        <span class="scene3d__eyebrow">
+          <span class="scene3d__eye-dot"></span>
+          Introducing Leo Digital
+        </span>
+        <h1 class="scene3d__title">
+          We are the parent studio to<br>
+          <span class="scene3d__grad">bold brands &amp; breakthrough</span><br>
+          digital experiences.
         </h1>
-
-        <p class="hero__sub reveal-up" style="transition-delay:160ms">
-          Strategy, design, and engineering at the intersection of ambition and craft. We partner with bold brands to create lasting digital impact.
+        <p class="scene3d__sub">
+          Our mission is to craft the world's most impactful digital products —
+          driving the next era of brand, design, and engineering excellence.
         </p>
-
-        <div class="hero__ctas reveal-up" style="transition-delay:240ms">
-          <a href="work.html" class="btn btn--primary">See Our Work</a>
-          <a href="contact.html" class="btn btn--ghost">Get in Touch</a>
+        <div class="scene3d__actions">
+          <a href="work.html"    class="btn btn--primary">See Our Work</a>
+          <a href="about.html"   class="scene3d__ghost">Learn More →</a>
         </div>
-
-        <div class="hero__scroll" aria-hidden="true">
-          <div class="scroll-line"></div>
-          <span class="scroll-label">Scroll</span>
-        </div>
-
       </div>
     </section>
 
-    <!-- ══ BANNER CAROUSEL ══ -->
+    <!-- ══ BANNER CAROUSEL — immediately after 3D hero ══ -->
     <section class="banner-carousel" aria-label="Featured banners">
       <div class="banner-track" id="bannerTrack">
 
         <!-- Banner 1 -->
-        <div class="banner-slide" style="--banner-gradient: linear-gradient(135deg, #0a3d1f 0%, #1a7a35 50%, #2db354 100%);">
+        <div class="banner-slide" style="--banner-gradient: linear-gradient(135deg, #0D0D0D 0%, #1a1a1a 60%, #2a2a2a 100%);">
           <div class="banner-slide__content">
             <span class="banner-slide__label">Agency of the Year 2026</span>
             <h2 class="banner-slide__title">Bold Strategy.<br>Beautiful Craft.</h2>
@@ -164,7 +164,7 @@
         </div>
 
         <!-- Banner 2 -->
-        <div class="banner-slide" style="--banner-gradient: linear-gradient(135deg, #1a3a0a 0%, #3a7a1a 50%, #54b32d 100%);">
+        <div class="banner-slide" style="--banner-gradient: linear-gradient(135deg, #111111 0%, #1f1f1f 50%, #333333 100%);">
           <div class="banner-slide__content">
             <span class="banner-slide__label">New Partnership</span>
             <h2 class="banner-slide__title">AI-Powered<br>Digital Solutions.</h2>
@@ -179,7 +179,7 @@
         </div>
 
         <!-- Banner 3 -->
-        <div class="banner-slide" style="--banner-gradient: linear-gradient(135deg, #0d2a3a 0%, #1a5a7a 50%, #2d9eb3 100%);">
+        <div class="banner-slide" style="--banner-gradient: linear-gradient(135deg, #0a0a0a 0%, #1c1c1c 45%, #2e2e2e 100%);">
           <div class="banner-slide__content">
             <span class="banner-slide__label">Now Open</span>
             <h2 class="banner-slide__title">Global Reach.<br>Local Precision.</h2>
@@ -204,6 +204,27 @@
           <button class="banner-dot" aria-label="Banner 3" data-index="2"></button>
         </div>
         <button class="banner-btn banner-btn--next" id="bannerNext" aria-label="Next banner">&#8594;</button>
+      </div>
+    </section>
+
+    <!-- ══ HERO — after banner ══ -->
+    <section id="home" class="section section--hero" aria-labelledby="heroTitle" style="padding-top:3rem;">
+      <div class="hero__inner">
+        <div class="hero__eyebrow reveal-up">Premium Digital Agency</div>
+        <h1 class="hero__title reveal-up" id="heroTitle" style="transition-delay:80ms">
+          We Build <span class="text-gradient">Digital</span><br>Experiences That Matter
+        </h1>
+        <p class="hero__sub reveal-up" style="transition-delay:160ms">
+          Strategy, design, and engineering at the intersection of ambition and craft. We partner with bold brands to create lasting digital impact.
+        </p>
+        <div class="hero__ctas reveal-up" style="transition-delay:240ms">
+          <a href="work.html" class="btn btn--primary">See Our Work</a>
+          <a href="contact.html" class="btn btn--ghost">Get in Touch</a>
+        </div>
+        <div class="hero__scroll" aria-hidden="true">
+          <div class="scroll-line"></div>
+          <span class="scroll-label">Scroll</span>
+        </div>
       </div>
     </section>
 
@@ -816,6 +837,217 @@
   <script src="js/careers.js"></script>
   <script src="js/banner.js"></script>
   <script src="js/main.js"></script>
+
+  <!-- ══ 3D GLOBE ANIMATION ══ -->
+  <script>
+  (function () {
+    'use strict';
+    const canvas = document.getElementById('scene3dCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    let W, H, cx, cy;
+    const FOV          = 480;
+    const SPHERE_R     = 0;   // set after first resize
+    const DOT_COUNT    = 220;
+    const CONNECT_DIST = 95;  // 3D distance threshold for lines
+
+    let sphereR = 180;        // updated on resize
+
+    /* ── Fibonacci sphere — even point distribution ── */
+    function makeSphere(count, r) {
+      const pts = [];
+      const golden = Math.PI * (3 - Math.sqrt(5));
+      for (let i = 0; i < count; i++) {
+        const y     = 1 - (i / (count - 1)) * 2;
+        const rad   = Math.sqrt(Math.max(0, 1 - y * y));
+        const theta = golden * i;
+        pts.push({ ox: rad * Math.cos(theta) * r,
+                   oy: y * r,
+                   oz: rad * Math.sin(theta) * r,
+                   x: 0, y: 0, z: 0 });
+      }
+      return pts;
+    }
+
+    /* ── Twinkling stars ── */
+    const STAR_COUNT = 160;
+    const stars = Array.from({ length: STAR_COUNT }, () => ({
+      rx: Math.random(), ry: Math.random(),
+      r:  Math.random() * 1.4 + 0.3,
+      a:  Math.random() * 0.5 + 0.15,
+      phase: Math.random() * Math.PI * 2,
+      speed: 0.008 + Math.random() * 0.025
+    }));
+
+    let pts = [];
+    let rotY = 0, rotX = 0.18;
+    let mouseX = 0, mouseY = 0;
+    let targetMX = 0, targetMY = 0;
+    let t = 0;
+
+    function resize() {
+      const rect = canvas.parentElement.getBoundingClientRect();
+      W = canvas.width  = Math.round(rect.width);
+      H = canvas.height = Math.round(rect.height);
+      cx = W / 2;
+      cy = H / 2;
+      sphereR = Math.min(W, H) * 0.30;
+      pts = makeSphere(DOT_COUNT, sphereR);
+    }
+
+    /* ── Rotate a point (mutates .x .y .z) ── */
+    function rotate(pt, rx, ry) {
+      const cy_ = Math.cos(ry), sy = Math.sin(ry);
+      const x1  = pt.ox * cy_ - pt.oz * sy;
+      const z1  = pt.ox * sy  + pt.oz * cy_;
+      const cx_ = Math.cos(rx), sx = Math.sin(rx);
+      pt.x = x1;
+      pt.y = pt.oy * cx_ - z1 * sx;
+      pt.z = pt.oy * sx  + z1 * cx_;
+    }
+
+    /* ── Perspective project ── */
+    function project(pt) {
+      const scale = FOV / (FOV + pt.z + sphereR);
+      return {
+        sx: pt.x * scale + cx,
+        sy: pt.y * scale + cy,
+        scale,
+        depth: (pt.z + sphereR) / (sphereR * 2)  // 0=back 1=front
+      };
+    }
+
+    /* ── Background glow orbs — #383c4e / #b6bac5 palette ── */
+    function drawGlows() {
+      // Left — slate blue tint  (#383c4e brightened)
+      const g1 = ctx.createRadialGradient(cx - W * 0.30, cy, 0,
+                                           cx - W * 0.30, cy, W * 0.50);
+      g1.addColorStop(0, 'rgba(80,88,120,0.30)');
+      g1.addColorStop(1, 'rgba(56,60,78,0)');
+      ctx.fillStyle = g1; ctx.fillRect(0, 0, W, H);
+
+      // Right — lavender silver tint  (#b6bac5 softened)
+      const g2 = ctx.createRadialGradient(cx + W * 0.30, cy, 0,
+                                           cx + W * 0.30, cy, W * 0.42);
+      g2.addColorStop(0, 'rgba(182,186,197,0.14)');
+      g2.addColorStop(1, 'rgba(182,186,197,0)');
+      ctx.fillStyle = g2; ctx.fillRect(0, 0, W, H);
+
+      // Centre sphere ambient
+      const g3 = ctx.createRadialGradient(cx, cy, 0, cx, cy, sphereR * 1.8);
+      g3.addColorStop(0,   'rgba(182,186,197,0.10)');
+      g3.addColorStop(0.5, 'rgba(100,108,140,0.06)');
+      g3.addColorStop(1,   'transparent');
+      ctx.fillStyle = g3; ctx.fillRect(0, 0, W, H);
+    }
+
+    /* ── Star field ── */
+    function drawStars() {
+      stars.forEach(s => {
+        const a = s.a * (0.4 + 0.6 * Math.sin(t * s.speed + s.phase));
+        ctx.beginPath();
+        ctx.arc(s.rx * W, s.ry * H, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255,255,255,${a})`;
+        ctx.fill();
+      });
+    }
+
+    /* ── Main render ── */
+    function draw() {
+      t++;
+
+      // Smooth mouse lerp
+      mouseX += (targetMX - mouseX) * 0.04;
+      mouseY += (targetMY - mouseY) * 0.04;
+
+      ctx.clearRect(0, 0, W, H);
+
+      drawGlows();
+      drawStars();
+
+      const ry = rotY + mouseX * 0.5;
+      const rx = rotX + mouseY * 0.25;
+
+      pts.forEach(pt => rotate(pt, rx, ry));
+      const proj = pts.map((pt, i) => ({ ...project(pt), i }));
+
+      /* Sort back-to-front for painter's algorithm */
+      proj.sort((a, b) => pts[a.i].z - pts[b.i].z);
+
+      /* ── Connecting lines — #b6bac5 silver with depth alpha ── */
+      for (let a = 0; a < proj.length; a++) {
+        const pa  = proj[a];
+        const pta = pts[pa.i];
+        for (let b = a + 1; b < proj.length; b++) {
+          const pb  = proj[b];
+          const ptb = pts[pb.i];
+          const dx  = pta.x - ptb.x, dy = pta.y - ptb.y, dz = pta.z - ptb.z;
+          const d   = Math.sqrt(dx*dx + dy*dy + dz*dz);
+          if (d >= CONNECT_DIST) continue;
+
+          const fade  = 1 - d / CONNECT_DIST;
+          const alpha = fade * 0.45 * Math.min(pa.depth, pb.depth + 0.2);
+          const depth = (pa.depth + pb.depth) * 0.5;
+
+          /* Blend: dark slate (#383c4e) at back → silver (#b6bac5) at front */
+          const r = Math.round(56  + depth * 126);   // 56→182
+          const g = Math.round(60  + depth * 126);   // 60→186
+          const bv= Math.round(78  + depth * 119);   // 78→197
+          ctx.strokeStyle = `rgba(${r},${g},${bv},${alpha})`;
+          ctx.lineWidth   = 0.65 + depth * 0.5;
+          ctx.beginPath();
+          ctx.moveTo(pa.sx, pa.sy);
+          ctx.lineTo(pb.sx, pb.sy);
+          ctx.stroke();
+        }
+      }
+
+      /* ── Dots — silver #b6bac5 tones ── */
+      proj.forEach(({ sx, sy, depth, scale }) => {
+        const r  = Math.max(0.9, scale * 4.8);
+        const a  = 0.20 + depth * 0.80;
+
+        /* Colour: dark slate at back, bright silver at front */
+        const rv = Math.round(80  + depth * 140);
+        const gv = Math.round(84  + depth * 138);
+        const bv = Math.round(100 + depth * 130);
+
+        // Glow halo on front dots
+        if (depth > 0.5) {
+          ctx.beginPath();
+          ctx.arc(sx, sy, r * 3.2, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${rv},${gv},${bv},${a * 0.15})`;
+          ctx.fill();
+        }
+
+        // Core dot
+        ctx.beginPath();
+        ctx.arc(sx, sy, r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${rv},${gv},${bv},${a})`;
+        ctx.fill();
+      });
+
+      rotY += 0.0025;
+
+      requestAnimationFrame(draw);
+    }
+
+    /* ── Mouse parallax ── */
+    document.addEventListener('mousemove', e => {
+      targetMX = (e.clientX / window.innerWidth  - 0.5) * 0.6;
+      targetMY = (e.clientY / window.innerHeight - 0.5) * 0.3;
+    });
+
+    window.addEventListener('resize', () => {
+      resize();
+      pts = makeSphere(DOT_COUNT, sphereR);
+    });
+
+    resize();
+    draw();
+  })();
+  </script>
 
 </body>
 </html>
