@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expertise — Leo Digital</title>
+  <meta name="description" content="Explore Leo Digital's full range of services — from brand strategy and UX design to engineering, AI, and data analytics." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/expertise.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <div class="bg-canvas" aria-hidden="true">
+    <div class="bg-mesh"></div>
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
+  </div>
+
+  <header class="navbar" id="navbar" role="banner">
+    <nav class="navbar__inner" aria-label="Main navigation">
+      <a href="index.html" class="navbar__logo" aria-label="Leo Digital — Home">
+        <img src="images/logo_dark.png" alt="Leo Digital" class="navbar__logo-img" />
+      </a>
+      <div class="navbar__sep" aria-hidden="true"></div>
+      <ul class="navbar__links" id="navLinks" role="list">
+        <li><a href="index.html"     class="nav-link">Home</a></li>
+        <li><a href="about.html"     class="nav-link">About</a></li>
+        <li><a href="expertise.html" class="nav-link">Expertise</a></li>
+        <li><a href="work.html"      class="nav-link">Our Work</a></li>
+        <li><a href="insights.html"  class="nav-link">Insights</a></li>
+        <li><a href="news.html"      class="nav-link">News &amp; Updates</a></li>
+        <li><a href="careers.html"   class="nav-link">Careers</a></li>
+        <li><a href="contact.html"   class="nav-link">Contact</a></li>
+      </ul>
+      <button class="btn-login" id="loginBtn" aria-haspopup="dialog" aria-controls="modalOverlay">Login</button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </button>
+    </nav>
+  </header>
+
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal" id="loginModal">
+      <button class="modal__close" id="modalClose" aria-label="Close login modal">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <h2 class="modal__title" id="modalTitle">Welcome Back</h2>
+      <p class="modal__subtitle">Sign in to your account</p>
+      <button class="btn-google" id="googleLoginBtn">
+        <svg class="google-icon" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4"/>
+          <path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="#34A853"/>
+          <path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/>
+          <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335"/>
+        </svg>
+        Continue with Google
+      </button>
+      <div class="modal__divider"><span>or</span></div>
+      <div class="modal__magic-link">
+        <label for="magicEmail" class="sr-only">Email address</label>
+        <input type="email" id="magicEmail" name="email" class="modal__input" placeholder="Enter your email address" autocomplete="email" />
+        <button class="btn-magic" id="sendMagicLink">Send Magic Link</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ── Page Header ── -->
+    <section class="section section--expertise" style="padding-top:calc(var(--navbar-height) + 3rem);padding-bottom:2rem;">
+      <div class="section__inner">
+        <div class="section__label reveal-up">What We Do</div>
+        <h1 class="section__title reveal-up" style="transition-delay:80ms;font-size:clamp(2.5rem,5vw,4rem);">
+          Our <span class="text-gradient">Expertise</span>
+        </h1>
+        <p class="reveal-up" style="color:var(--clr-white-60);font-size:1.125rem;max-width:620px;line-height:1.8;transition-delay:160ms;">
+          We combine deep strategy, world-class design, and precision engineering to create digital products that perform. Six core disciplines. One seamless team.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Services Grid ── -->
+    <section class="section section--expertise" style="padding-top:0;">
+      <div class="section__inner">
+        <div class="expertise__grid">
+
+          <article class="expertise-card glass-card reveal-up" data-delay="0">
+            <div class="card__icon">◐</div>
+            <h3 class="card__title">Brand Strategy</h3>
+            <p class="card__text">We help brands find their voice, define their position, and build identities that resonate deeply with the audiences that matter most.</p>
+            <ul style="color:var(--clr-white-60);font-size:.8125rem;line-height:2;list-style:none;margin-top:.5rem;">
+              <li>→ Brand audits &amp; positioning</li>
+              <li>→ Visual identity systems</li>
+              <li>→ Messaging &amp; tone of voice</li>
+              <li>→ Brand guidelines</li>
+            </ul>
+            <span class="card__arrow">↗</span>
+          </article>
+
+          <article class="expertise-card glass-card reveal-up" data-delay="80">
+            <div class="card__icon">◫</div>
+            <h3 class="card__title">UX &amp; Product Design</h3>
+            <p class="card__text">Human-centred design that turns complexity into clarity. We craft interfaces that are intuitive, elegant, and built for real people.</p>
+            <ul style="color:var(--clr-white-60);font-size:.8125rem;line-height:2;list-style:none;margin-top:.5rem;">
+              <li>→ User research &amp; testing</li>
+              <li>→ Information architecture</li>
+              <li>→ Wireframing &amp; prototyping</li>
+              <li>→ Design systems</li>
+            </ul>
+            <span class="card__arrow">↗</span>
+          </article>
+
+          <article class="expertise-card glass-card reveal-up" data-delay="160">
+            <div class="card__icon">⬚</div>
+            <h3 class="card__title">Engineering</h3>
+            <p class="card__text">From scalable architectures to pixel-perfect frontends, we build with precision, performance, and long-term maintainability in mind.</p>
+            <ul style="color:var(--clr-white-60);font-size:.8125rem;line-height:2;list-style:none;margin-top:.5rem;">
+              <li>→ Web &amp; mobile development</li>
+              <li>→ API design &amp; integrations</li>
+              <li>→ Performance optimisation</li>
+              <li>→ DevOps &amp; CI/CD</li>
+            </ul>
+            <span class="card__arrow">↗</span>
+          </article>
+
+          <article class="expertise-card glass-card reveal-up" data-delay="240">
+            <div class="card__icon">◉</div>
+            <h3 class="card__title">Digital Marketing</h3>
+            <p class="card__text">Data-driven campaigns that attract, engage, and convert. From SEO and content to paid media and analytics — growth with purpose.</p>
+            <ul style="color:var(--clr-white-60);font-size:.8125rem;line-height:2;list-style:none;margin-top:.5rem;">
+              <li>→ SEO &amp; content strategy</li>
+              <li>→ Paid media (PPC, social)</li>
+              <li>→ Conversion rate optimisation</li>
+              <li>→ Email &amp; lifecycle marketing</li>
+            </ul>
+            <span class="card__arrow">↗</span>
+          </article>
+
+          <article class="expertise-card glass-card reveal-up" data-delay="320">
+            <div class="card__icon">◈</div>
+            <h3 class="card__title">Data &amp; Analytics</h3>
+            <p class="card__text">Turn raw data into decisive action. We build measurement frameworks and dashboards that make complex information instantly intelligible.</p>
+            <ul style="color:var(--clr-white-60);font-size:.8125rem;line-height:2;list-style:none;margin-top:.5rem;">
+              <li>→ Analytics implementation</li>
+              <li>→ Dashboard &amp; reporting</li>
+              <li>→ A/B testing frameworks</li>
+              <li>→ Customer data platforms</li>
+            </ul>
+            <span class="card__arrow">↗</span>
+          </article>
+
+          <article class="expertise-card glass-card reveal-up" data-delay="400">
+            <div class="card__icon">⬡</div>
+            <h3 class="card__title">AI Integration</h3>
+            <p class="card__text">We identify where intelligence creates value and implement AI solutions that augment capabilities without adding unnecessary complexity.</p>
+            <ul style="color:var(--clr-white-60);font-size:.8125rem;line-height:2;list-style:none;margin-top:.5rem;">
+              <li>→ AI product strategy</li>
+              <li>→ LLM integration &amp; fine-tuning</li>
+              <li>→ Automation &amp; workflows</li>
+              <li>→ Responsible AI auditing</li>
+            </ul>
+            <span class="card__arrow">↗</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Our Process ── -->
+    <section class="section" style="padding-top:var(--space-24);">
+      <div class="section__inner">
+        <div class="section__label reveal-up">How We Work</div>
+        <h2 class="section__title reveal-up" style="transition-delay:80ms;">Our Process</h2>
+        <p class="reveal-up" style="color:var(--clr-white-60);max-width:560px;line-height:1.8;margin-bottom:var(--space-12);transition-delay:160ms;">
+          Every project is different — but our approach is consistent. We follow a six-stage process that keeps things focused, collaborative, and on track.
+        </p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.5rem;">
+
+          <div class="glass-card reveal-up" style="padding:2rem;" data-delay="0">
+            <div style="width:48px;height:48px;border-radius:50%;background:#1a7a35;color:#f0faf3;display:flex;align-items:center;justify-content:center;font-size:1.125rem;font-weight:700;margin-bottom:1rem;">1</div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.5rem;">Discover</h4>
+            <p style="color:var(--clr-white-60);font-size:.875rem;line-height:1.7;">Deep-dive workshops to understand your business, users, goals, and competitive landscape.</p>
+          </div>
+
+          <div class="glass-card reveal-up" style="padding:2rem;" data-delay="80">
+            <div style="width:48px;height:48px;border-radius:50%;background:#1a7a35;color:#f0faf3;display:flex;align-items:center;justify-content:center;font-size:1.125rem;font-weight:700;margin-bottom:1rem;">2</div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.5rem;">Define</h4>
+            <p style="color:var(--clr-white-60);font-size:.875rem;line-height:1.7;">Align on scope, success metrics, constraints, and the core problem we're solving together.</p>
+          </div>
+
+          <div class="glass-card reveal-up" style="padding:2rem;" data-delay="160">
+            <div style="width:48px;height:48px;border-radius:50%;background:#1a7a35;color:#f0faf3;display:flex;align-items:center;justify-content:center;font-size:1.125rem;font-weight:700;margin-bottom:1rem;">3</div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.5rem;">Design</h4>
+            <p style="color:var(--clr-white-60);font-size:.875rem;line-height:1.7;">Creative exploration, rapid iteration, and high-fidelity design — built for feedback and refinement.</p>
+          </div>
+
+          <div class="glass-card reveal-up" style="padding:2rem;" data-delay="240">
+            <div style="width:48px;height:48px;border-radius:50%;background:#1a7a35;color:#f0faf3;display:flex;align-items:center;justify-content:center;font-size:1.125rem;font-weight:700;margin-bottom:1rem;">4</div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.5rem;">Build</h4>
+            <p style="color:var(--clr-white-60);font-size:.875rem;line-height:1.7;">Precision engineering with regular demos, QA, and collaborative handoffs between design and dev.</p>
+          </div>
+
+          <div class="glass-card reveal-up" style="padding:2rem;" data-delay="320">
+            <div style="width:48px;height:48px;border-radius:50%;background:#1a7a35;color:#f0faf3;display:flex;align-items:center;justify-content:center;font-size:1.125rem;font-weight:700;margin-bottom:1rem;">5</div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.5rem;">Launch</h4>
+            <p style="color:var(--clr-white-60);font-size:.875rem;line-height:1.7;">Managed deployment, performance monitoring, and go-live support to ensure a seamless release.</p>
+          </div>
+
+          <div class="glass-card reveal-up" style="padding:2rem;" data-delay="400">
+            <div style="width:48px;height:48px;border-radius:50%;background:#1a7a35;color:#f0faf3;display:flex;align-items:center;justify-content:center;font-size:1.125rem;font-weight:700;margin-bottom:1rem;">6</div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.5rem;">Grow</h4>
+            <p style="color:var(--clr-white-60);font-size:.875rem;line-height:1.7;">Ongoing optimisation, A/B testing, and iterative improvements driven by real user data.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Technologies ── -->
+    <section class="section" style="padding-top:var(--space-24);">
+      <div class="section__inner">
+        <div class="section__label reveal-up">Tech Stack</div>
+        <h2 class="section__title reveal-up" style="transition-delay:80ms;">Technologies We Use</h2>
+        <div class="reveal-up" style="display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem;transition-delay:160ms;">
+          <span class="tag" style="font-size:.875rem;padding:.4rem 1rem;">React</span>
+          <span class="tag" style="font-size:.875rem;padding:.4rem 1rem;">Next.js</span>
+          <span class="tag" style="font-size:.875rem;padding:.4rem 1rem;">TypeScript</span>
+          <span class="tag" style="font-size:.875rem;padding:.4rem 1rem;">Node.js</span>
+          <span class="tag" style="font-size:.875rem;padding:.4rem 1rem;">GraphQL</span>
+          <span class="tag" style="font-size:.875rem;padding:.4rem 1rem;">PostgreSQL</span>
+          <span class="tag" style="font-size:.875rem;padding:.4rem 1rem;">Figma</span>
+          <span class="tag" style="font-size:.875rem;padding:.4rem 1rem;">Storybook</span>
+          <span class="tag" style="font-size:.875rem;padding:.4rem 1rem;">AWS</span>
+          <span class="tag" style="font-size:.875rem;padding:.4rem 1rem;">Vercel</span>
+          <span class="tag" style="font-size:.875rem;padding:.4rem 1rem;">Webflow</span>
+          <span class="tag" style="font-size:.875rem;padding:.4rem 1rem;">Framer</span>
+          <span class="tag" style="font-size:.875rem;padding:.4rem 1rem;">Python</span>
+          <span class="tag" style="font-size:.875rem;padding:.4rem 1rem;">OpenAI API</span>
+          <span class="tag" style="font-size:.875rem;padding:.4rem 1rem;">Google Analytics</span>
+          <span class="tag" style="font-size:.875rem;padding:.4rem 1rem;">Segment</span>
+          <span class="tag" style="font-size:.875rem;padding:.4rem 1rem;">Mixpanel</span>
+          <span class="tag" style="font-size:.875rem;padding:.4rem 1rem;">Stripe</span>
+          <span class="tag" style="font-size:.875rem;padding:.4rem 1rem;">Sanity CMS</span>
+          <span class="tag" style="font-size:.875rem;padding:.4rem 1rem;">Contentful</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Industries ── -->
+    <section class="section" style="padding-top:var(--space-24);padding-bottom:var(--space-24);">
+      <div class="section__inner">
+        <div class="section__label reveal-up">Sectors</div>
+        <h2 class="section__title reveal-up" style="transition-delay:80ms;">Industries We Serve</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-top:2rem;">
+          <div class="glass-card reveal-up" style="padding:1.5rem;text-align:center;" data-delay="0">
+            <div style="font-size:1.75rem;margin-bottom:.5rem;">🏦</div>
+            <h4 style="color:var(--clr-white);font-size:.9375rem;font-weight:600;">Finance &amp; Fintech</h4>
+          </div>
+          <div class="glass-card reveal-up" style="padding:1.5rem;text-align:center;" data-delay="60">
+            <div style="font-size:1.75rem;margin-bottom:.5rem;">🏥</div>
+            <h4 style="color:var(--clr-white);font-size:.9375rem;font-weight:600;">Healthcare</h4>
+          </div>
+          <div class="glass-card reveal-up" style="padding:1.5rem;text-align:center;" data-delay="120">
+            <div style="font-size:1.75rem;margin-bottom:.5rem;">🛒</div>
+            <h4 style="color:var(--clr-white);font-size:.9375rem;font-weight:600;">Retail &amp; E-Commerce</h4>
+          </div>
+          <div class="glass-card reveal-up" style="padding:1.5rem;text-align:center;" data-delay="180">
+            <div style="font-size:1.75rem;margin-bottom:.5rem;">💻</div>
+            <h4 style="color:var(--clr-white);font-size:.9375rem;font-weight:600;">Technology &amp; SaaS</h4>
+          </div>
+          <div class="glass-card reveal-up" style="padding:1.5rem;text-align:center;" data-delay="240">
+            <div style="font-size:1.75rem;margin-bottom:.5rem;">📺</div>
+            <h4 style="color:var(--clr-white);font-size:.9375rem;font-weight:600;">Media &amp; Publishing</h4>
+          </div>
+          <div class="glass-card reveal-up" style="padding:1.5rem;text-align:center;" data-delay="300">
+            <div style="font-size:1.75rem;margin-bottom:.5rem;">✈️</div>
+            <h4 style="color:var(--clr-white);font-size:.9375rem;font-weight:600;">Travel &amp; Hospitality</h4>
+          </div>
+          <div class="glass-card reveal-up" style="padding:1.5rem;text-align:center;" data-delay="360">
+            <div style="font-size:1.75rem;margin-bottom:.5rem;">🎓</div>
+            <h4 style="color:var(--clr-white);font-size:.9375rem;font-weight:600;">Education &amp; EdTech</h4>
+          </div>
+          <div class="glass-card reveal-up" style="padding:1.5rem;text-align:center;" data-delay="420">
+            <div style="font-size:1.75rem;margin-bottom:.5rem;">🏠</div>
+            <h4 style="color:var(--clr-white);font-size:.9375rem;font-weight:600;">Real Estate &amp; PropTech</h4>
+          </div>
+        </div>
+        <div style="margin-top:3rem;text-align:center;">
+          <a href="contact.html" class="btn btn--primary reveal-up">Start a Project</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <img src="images/logo_dark.png" alt="Leo Digital" class="footer__logo-img" />
+        <p class="footer__tagline">Strategy, design, and engineering at the intersection of ambition and craft.</p>
+        <div class="footer__social" style="margin-top:1.5rem">
+          <a href="#" class="social-link" aria-label="Twitter / X">𝕏</a>
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-link" aria-label="Instagram">◻</a>
+          <a href="#" class="social-link" aria-label="Dribbble">◌</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Navigation</div>
+        <ul class="footer__links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="expertise.html">Expertise</a></li>
+          <li><a href="work.html">Our Work</a></li>
+          <li><a href="insights.html">Insights</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Company</div>
+        <ul class="footer__links-list">
+          <li><a href="news.html">News &amp; Updates</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Privacy Policy</a></li>
+          <li><a href="contact.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <span>© 2026 Leo Digital Ltd. All rights reserved.</span>
+      <span>Crafted with precision in London</span>
+    </div>
+  </footer>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/observer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -23,8 +23,8 @@
   background: linear-gradient(
     to bottom,
     transparent,
-    rgba(255, 255, 255, 0.15) 10%,
-    rgba(255, 255, 255, 0.15) 90%,
+    rgba(13, 100, 40, 0.25) 10%,
+    rgba(13, 100, 40, 0.25) 90%,
     transparent
   );
   transform: translateX(-50%);
@@ -65,10 +65,18 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--clr-white-40);
+  background: rgba(13, 100, 40, 0.35);
   border: 2px solid var(--clr-bg);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.10);
+  box-shadow: 0 0 0 3px rgba(13, 100, 40, 0.12);
   flex-shrink: 0;
+  transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+/* Active dot when scrolled into view */
+.news-item__dot--active::before {
+  background: #1a7a35;
+  box-shadow: 0 0 0 5px rgba(26, 122, 53, 0.20), 0 0 16px rgba(26, 122, 53, 0.35);
+  transform: scale(1.5);
 }
 
 /* Content card */

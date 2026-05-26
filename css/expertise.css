@@ -21,8 +21,8 @@
   width: 48px;
   height: 48px;
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(13, 50, 20, 0.07);
+  border: 1px solid rgba(13, 50, 20, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,8 +32,8 @@
 }
 
 .expertise-card:hover .card__icon {
-  background: rgba(255, 255, 255, 0.10);
-  border-color: rgba(255, 255, 255, 0.20);
+  background: rgba(13, 50, 20, 0.13);
+  border-color: rgba(13, 50, 20, 0.25);
 }
 
 .card__title {

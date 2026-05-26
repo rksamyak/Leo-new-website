@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="css/news.css" />
   <link rel="stylesheet" href="css/careers.css" />
   <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/banner.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
@@ -43,19 +44,19 @@
     <nav class="navbar__inner" aria-label="Main navigation">
 
       <a href="#home" class="navbar__logo" aria-label="Leo Digital — Home">
-        <span class="logo-mark" aria-hidden="true">LD</span>
-        <span class="logo-text">Leo Digital</span>
+        <img src="images/logo_dark.png" alt="Leo Digital" class="navbar__logo-img" />
       </a>
 
+      <div class="navbar__sep" aria-hidden="true"></div>
       <ul class="navbar__links" id="navLinks" role="list">
-        <li><a href="#home"      class="nav-link nav-link--active">Home</a></li>
-        <li><a href="#about"     class="nav-link">About</a></li>
-        <li><a href="#expertise" class="nav-link">Expertise</a></li>
-        <li><a href="#work"      class="nav-link">Our Work</a></li>
-        <li><a href="#insights"  class="nav-link">Insights</a></li>
-        <li><a href="#news"      class="nav-link">News &amp; Updates</a></li>
-        <li><a href="#careers"   class="nav-link">Careers</a></li>
-        <li><a href="#contact"   class="nav-link">Contact</a></li>
+        <li><a href="index.html"      class="nav-link">Home</a></li>
+        <li><a href="about.html"      class="nav-link">About</a></li>
+        <li><a href="expertise.html"  class="nav-link">Expertise</a></li>
+        <li><a href="work.html"       class="nav-link">Our Work</a></li>
+        <li><a href="insights.html"   class="nav-link">Insights</a></li>
+        <li><a href="news.html"       class="nav-link">News &amp; Updates</a></li>
+        <li><a href="careers.html"    class="nav-link">Careers</a></li>
+        <li><a href="contact.html"    class="nav-link">Contact</a></li>
       </ul>
 
       <button class="btn-login" id="loginBtn" aria-haspopup="dialog" aria-controls="modalOverlay">
@@ -131,8 +132,8 @@
         </p>
 
         <div class="hero__ctas reveal-up" style="transition-delay:240ms">
-          <a href="#work" class="btn btn--primary">See Our Work</a>
-          <a href="#contact" class="btn btn--ghost">Get in Touch</a>
+          <a href="work.html" class="btn btn--primary">See Our Work</a>
+          <a href="contact.html" class="btn btn--ghost">Get in Touch</a>
         </div>
 
         <div class="hero__scroll" aria-hidden="true">
@@ -140,6 +141,69 @@
           <span class="scroll-label">Scroll</span>
         </div>
 
+      </div>
+    </section>
+
+    <!-- ══ BANNER CAROUSEL ══ -->
+    <section class="banner-carousel" aria-label="Featured banners">
+      <div class="banner-track" id="bannerTrack">
+
+        <!-- Banner 1 -->
+        <div class="banner-slide" style="--banner-gradient: linear-gradient(135deg, #0a3d1f 0%, #1a7a35 50%, #2db354 100%);">
+          <div class="banner-slide__content">
+            <span class="banner-slide__label">Agency of the Year 2026</span>
+            <h2 class="banner-slide__title">Bold Strategy.<br>Beautiful Craft.</h2>
+            <p class="banner-slide__body">We partner with ambitious brands to create digital experiences that drive real growth.</p>
+            <a href="work.html" class="btn btn--primary banner-slide__cta">See Our Work</a>
+          </div>
+          <div class="banner-slide__visual" aria-hidden="true">
+            <div class="banner-orb banner-orb--a"></div>
+            <div class="banner-orb banner-orb--b"></div>
+            <div class="banner-grid"></div>
+          </div>
+        </div>
+
+        <!-- Banner 2 -->
+        <div class="banner-slide" style="--banner-gradient: linear-gradient(135deg, #1a3a0a 0%, #3a7a1a 50%, #54b32d 100%);">
+          <div class="banner-slide__content">
+            <span class="banner-slide__label">New Partnership</span>
+            <h2 class="banner-slide__title">AI-Powered<br>Digital Solutions.</h2>
+            <p class="banner-slide__body">Our new collaboration with Vertex Labs brings deep AI expertise to every project we deliver.</p>
+            <a href="expertise.html" class="btn btn--primary banner-slide__cta">Explore Expertise</a>
+          </div>
+          <div class="banner-slide__visual" aria-hidden="true">
+            <div class="banner-orb banner-orb--a"></div>
+            <div class="banner-orb banner-orb--b"></div>
+            <div class="banner-grid"></div>
+          </div>
+        </div>
+
+        <!-- Banner 3 -->
+        <div class="banner-slide" style="--banner-gradient: linear-gradient(135deg, #0d2a3a 0%, #1a5a7a 50%, #2d9eb3 100%);">
+          <div class="banner-slide__content">
+            <span class="banner-slide__label">Now Open</span>
+            <h2 class="banner-slide__title">Global Reach.<br>Local Precision.</h2>
+            <p class="banner-slide__body">Five studios worldwide — London, New York, Dubai, Tokyo, and Singapore — serving clients at scale.</p>
+            <a href="about.html" class="btn btn--primary banner-slide__cta">About Us</a>
+          </div>
+          <div class="banner-slide__visual" aria-hidden="true">
+            <div class="banner-orb banner-orb--a"></div>
+            <div class="banner-orb banner-orb--b"></div>
+            <div class="banner-grid"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <div class="banner-controls" aria-label="Banner navigation">
+        <button class="banner-btn banner-btn--prev" id="bannerPrev" aria-label="Previous banner">&#8592;</button>
+        <div class="banner-dots" id="bannerDots">
+          <button class="banner-dot banner-dot--active" aria-label="Banner 1" data-index="0"></button>
+          <button class="banner-dot" aria-label="Banner 2" data-index="1"></button>
+          <button class="banner-dot" aria-label="Banner 3" data-index="2"></button>
+        </div>
+        <button class="banner-btn banner-btn--next" id="bannerNext" aria-label="Next banner">&#8594;</button>
       </div>
     </section>
 
@@ -293,7 +357,7 @@
             <div class="work-card__overlay">
               <span class="work-card__category">Brand Identity</span>
               <h3 class="work-card__title">Meridian Finance</h3>
-              <a href="#contact" class="work-card__link">View Case Study →</a>
+              <a href="contact.html" class="work-card__link">View Case Study →</a>
             </div>
             <div class="work-card__footer">
               <span class="work-card__category">Brand Identity</span>
@@ -306,7 +370,7 @@
             <div class="work-card__overlay">
               <span class="work-card__category">Product Design</span>
               <h3 class="work-card__title">Vela Platform</h3>
-              <a href="#contact" class="work-card__link">View Case Study →</a>
+              <a href="contact.html" class="work-card__link">View Case Study →</a>
             </div>
             <div class="work-card__footer">
               <span class="work-card__category">Product Design</span>
@@ -319,7 +383,7 @@
             <div class="work-card__overlay">
               <span class="work-card__category">Web Experience</span>
               <h3 class="work-card__title">Arca Studios</h3>
-              <a href="#contact" class="work-card__link">View Case Study →</a>
+              <a href="contact.html" class="work-card__link">View Case Study →</a>
             </div>
             <div class="work-card__footer">
               <span class="work-card__category">Web Experience</span>
@@ -332,7 +396,7 @@
             <div class="work-card__overlay">
               <span class="work-card__category">Campaign</span>
               <h3 class="work-card__title">Kova Health</h3>
-              <a href="#contact" class="work-card__link">View Case Study →</a>
+              <a href="contact.html" class="work-card__link">View Case Study →</a>
             </div>
             <div class="work-card__footer">
               <span class="work-card__category">Campaign</span>
@@ -345,7 +409,7 @@
             <div class="work-card__overlay">
               <span class="work-card__category">Engineering</span>
               <h3 class="work-card__title">Lumen AI</h3>
-              <a href="#contact" class="work-card__link">View Case Study →</a>
+              <a href="contact.html" class="work-card__link">View Case Study →</a>
             </div>
             <div class="work-card__footer">
               <span class="work-card__category">Engineering</span>
@@ -378,7 +442,7 @@
               </div>
               <h3 class="insight-card__title">The Future of Design Systems: Tokens, AI, and the Living Style Guide</h3>
               <p class="insight-card__excerpt">Design systems are evolving from static documentation into adaptive, AI-augmented foundations. Here is what that means for modern product teams building at scale.</p>
-              <a href="#contact" class="link-arrow">Read Article →</a>
+              <a href="insights.html" class="link-arrow">Read Article →</a>
             </div>
           </article>
 
@@ -390,7 +454,7 @@
             </div>
             <h3 class="insight-card__title">Why We Moved Away from Micro-Frontends (And What We Use Instead)</h3>
             <p class="insight-card__excerpt">A candid look at the promises and pitfalls of micro-frontends, and the simpler architecture that solved our scale problems.</p>
-            <a href="#contact" class="link-arrow">Read Article →</a>
+            <a href="insights.html" class="link-arrow">Read Article →</a>
           </article>
 
           <article class="insight-card glass-card reveal-up" data-delay="160">
@@ -400,7 +464,7 @@
             </div>
             <h3 class="insight-card__title">Positioning in a Crowded Market: How Differentiation Actually Works</h3>
             <p class="insight-card__excerpt">Most brands think they are differentiated. Their customers disagree. We explore what genuine positioning looks like in practice.</p>
-            <a href="#contact" class="link-arrow">Read Article →</a>
+            <a href="insights.html" class="link-arrow">Read Article →</a>
           </article>
 
           <article class="insight-card glass-card reveal-up" data-delay="240">
@@ -410,7 +474,7 @@
             </div>
             <h3 class="insight-card__title">Integrating AI Without Losing the Human Touch in Your Product</h3>
             <p class="insight-card__excerpt">The best AI integrations are invisible. We share our framework for identifying where intelligence adds value and where it erodes trust.</p>
-            <a href="#contact" class="link-arrow">Read Article →</a>
+            <a href="insights.html" class="link-arrow">Read Article →</a>
           </article>
 
           <article class="insight-card glass-card reveal-up" data-delay="320">
@@ -420,7 +484,7 @@
             </div>
             <h3 class="insight-card__title">Five Research Methods That Actually Change Product Decisions</h3>
             <p class="insight-card__excerpt">Most UX research ends up in a slide deck nobody reads. Here are the methods we use that reliably influence what gets built and why.</p>
-            <a href="#contact" class="link-arrow">Read Article →</a>
+            <a href="insights.html" class="link-arrow">Read Article →</a>
           </article>
 
         </div>
@@ -702,10 +766,7 @@
     <div class="footer__inner">
 
       <div class="footer__brand">
-        <div style="display:flex;align-items:center;gap:12px">
-          <div class="logo-mark" aria-hidden="true">LD</div>
-          <span class="logo-text">Leo Digital</span>
-        </div>
+        <img src="images/logo_dark.png" alt="Leo Digital" class="footer__logo-img" />
         <p class="footer__tagline">
           Strategy, design, and engineering at the intersection of ambition and craft.
         </p>
@@ -720,22 +781,22 @@
       <div>
         <div class="footer__col-title">Navigation</div>
         <ul class="footer__links-list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#expertise">Expertise</a></li>
-          <li><a href="#work">Our Work</a></li>
-          <li><a href="#insights">Insights</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="expertise.html">Expertise</a></li>
+          <li><a href="work.html">Our Work</a></li>
+          <li><a href="insights.html">Insights</a></li>
         </ul>
       </div>
 
       <div>
         <div class="footer__col-title">Company</div>
         <ul class="footer__links-list">
-          <li><a href="#news">News &amp; Updates</a></li>
-          <li><a href="#careers">Careers</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#contact">Privacy Policy</a></li>
-          <li><a href="#contact">Terms of Service</a></li>
+          <li><a href="news.html">News &amp; Updates</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Privacy Policy</a></li>
+          <li><a href="contact.html">Terms of Service</a></li>
         </ul>
       </div>
 
@@ -753,6 +814,7 @@
   <script src="js/observer.js"></script>
   <script src="js/counter.js"></script>
   <script src="js/careers.js"></script>
+  <script src="js/banner.js"></script>
   <script src="js/main.js"></script>
 
 </body>

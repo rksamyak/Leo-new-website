@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Leo Digital</title>
+  <meta name="description" content="Learn about Leo Digital — our story, team, and the values that drive everything we build." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <div class="bg-canvas" aria-hidden="true">
+    <div class="bg-mesh"></div>
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
+  </div>
+
+  <header class="navbar" id="navbar" role="banner">
+    <nav class="navbar__inner" aria-label="Main navigation">
+      <a href="index.html" class="navbar__logo" aria-label="Leo Digital — Home">
+        <img src="images/logo_dark.png" alt="Leo Digital" class="navbar__logo-img" />
+      </a>
+      <div class="navbar__sep" aria-hidden="true"></div>
+      <ul class="navbar__links" id="navLinks" role="list">
+        <li><a href="index.html"     class="nav-link">Home</a></li>
+        <li><a href="about.html"     class="nav-link">About</a></li>
+        <li><a href="expertise.html" class="nav-link">Expertise</a></li>
+        <li><a href="work.html"      class="nav-link">Our Work</a></li>
+        <li><a href="insights.html"  class="nav-link">Insights</a></li>
+        <li><a href="news.html"      class="nav-link">News &amp; Updates</a></li>
+        <li><a href="careers.html"   class="nav-link">Careers</a></li>
+        <li><a href="contact.html"   class="nav-link">Contact</a></li>
+      </ul>
+      <button class="btn-login" id="loginBtn" aria-haspopup="dialog" aria-controls="modalOverlay">Login</button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </button>
+    </nav>
+  </header>
+
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal" id="loginModal">
+      <button class="modal__close" id="modalClose" aria-label="Close login modal">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <h2 class="modal__title" id="modalTitle">Welcome Back</h2>
+      <p class="modal__subtitle">Sign in to your account</p>
+      <button class="btn-google" id="googleLoginBtn">
+        <svg class="google-icon" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4"/>
+          <path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="#34A853"/>
+          <path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/>
+          <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335"/>
+        </svg>
+        Continue with Google
+      </button>
+      <div class="modal__divider"><span>or</span></div>
+      <div class="modal__magic-link">
+        <label for="magicEmail" class="sr-only">Email address</label>
+        <input type="email" id="magicEmail" name="email" class="modal__input" placeholder="Enter your email address" autocomplete="email" />
+        <button class="btn-magic" id="sendMagicLink">Send Magic Link</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ── Page Header ── -->
+    <section class="section section--about" style="padding-top:calc(var(--navbar-height) + 3rem);padding-bottom:2rem;">
+      <div class="section__inner">
+        <div class="section__label reveal-up">Who We Are</div>
+        <h1 class="section__title reveal-up" style="transition-delay:80ms;font-size:clamp(2.5rem,5vw,4rem);">
+          Built on Bold Ideas,<br>Driven by <span class="text-gradient">Results</span>
+        </h1>
+        <p class="reveal-up" style="color:var(--clr-white-60);font-size:1.125rem;max-width:620px;line-height:1.8;transition-delay:160ms;">
+          Leo Digital is a full-service digital agency founded in London in 2014. We partner with brands that want to lead — not follow — and we bring the craft, strategy, and engineering to make that happen.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Story & Values ── -->
+    <section class="section section--about" style="padding-top:0;">
+      <div class="section__inner">
+        <div class="about__grid">
+          <div class="about__story reveal-left">
+            <h3>A decade of digital mastery</h3>
+            <p>Leo Digital was founded with a singular vision: to create digital experiences that don't just look beautiful, but fundamentally transform how businesses connect with their audiences. We are a full-service agency built on craft, strategy, and relentless execution.</p>
+            <p>From ambitious startups to global enterprises, we bring the same level of dedication to every project — a deep commitment to understanding your business, your users, and the intersection where great design meets meaningful technology.</p>
+            <p>Our multidisciplinary team of strategists, designers, and engineers work in close collaboration, challenging conventional thinking to deliver work that sets new standards in every industry we touch.</p>
+            <p>We believe the best digital work is invisible — it just works, delights, and converts. That belief drives every decision we make, from the first discovery session to final deployment and beyond.</p>
+          </div>
+          <div class="about__values reveal-right">
+            <div class="value-card glass-card">
+              <div class="value-card__icon">◈</div>
+              <div class="value-card__body">
+                <h4>Craft First</h4>
+                <p>Every pixel, every line of code, every word is deliberate. We don't cut corners — we set standards.</p>
+              </div>
+            </div>
+            <div class="value-card glass-card">
+              <div class="value-card__icon">⬡</div>
+              <div class="value-card__body">
+                <h4>Strategy-Led</h4>
+                <p>Beautiful work without purpose is decoration. We lead with insight and build with intention.</p>
+              </div>
+            </div>
+            <div class="value-card glass-card">
+              <div class="value-card__icon">◎</div>
+              <div class="value-card__body">
+                <h4>True Partnership</h4>
+                <p>We don't take briefs — we take ownership. Your success is our benchmark for everything we build.</p>
+              </div>
+            </div>
+            <div class="value-card glass-card">
+              <div class="value-card__icon">◐</div>
+              <div class="value-card__body">
+                <h4>Honest Feedback</h4>
+                <p>We tell you what we think, even when it's hard. That's how the best work gets made.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Stats ── -->
+    <section class="section section--about" style="padding-top:0;">
+      <div class="section__inner">
+        <div class="about__stats">
+          <div class="stat-item reveal-up" data-delay="0">
+            <div class="stat-number-wrap">
+              <span class="stat__number" data-target="150">0</span>
+              <span class="stat__suffix">+</span>
+            </div>
+            <span class="stat__label">Projects Delivered</span>
+          </div>
+          <div class="stat-item reveal-up" data-delay="100">
+            <div class="stat-number-wrap">
+              <span class="stat__number" data-target="12">0</span>
+            </div>
+            <span class="stat__label">Years in Business</span>
+          </div>
+          <div class="stat-item reveal-up" data-delay="200">
+            <div class="stat-number-wrap">
+              <span class="stat__number" data-target="98">0</span>
+              <span class="stat__suffix">%</span>
+            </div>
+            <span class="stat__label">Client Satisfaction</span>
+          </div>
+          <div class="stat-item reveal-up" data-delay="300">
+            <div class="stat-number-wrap">
+              <span class="stat__number" data-target="40">0</span>
+              <span class="stat__suffix">+</span>
+            </div>
+            <span class="stat__label">Team Members</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Meet the Team ── -->
+    <section class="section section--about" style="padding-top:var(--space-16);">
+      <div class="section__inner">
+        <div class="section__label reveal-up">Our People</div>
+        <h2 class="section__title reveal-up" style="transition-delay:80ms;">Meet the Team</h2>
+        <p class="reveal-up" style="color:var(--clr-white-60);max-width:560px;line-height:1.8;margin-bottom:var(--space-12);transition-delay:160ms;">
+          A collective of strategists, designers, engineers, and storytellers who care deeply about the work they make.
+        </p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.5rem;">
+
+          <article class="glass-card reveal-up" style="padding:2rem;text-align:center;" data-delay="0">
+            <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#1a7a35,#2d9e50);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;color:#f0faf3;font-size:1.25rem;font-weight:700;">JC</div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.25rem;">James Chen</h4>
+            <p style="color:#1a7a35;font-size:.8125rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.04em;">CEO &amp; Co-Founder</p>
+            <p style="color:var(--clr-white-60);font-size:.8125rem;line-height:1.6;">15 years in digital strategy and brand building across Europe and APAC.</p>
+          </article>
+
+          <article class="glass-card reveal-up" style="padding:2rem;text-align:center;" data-delay="80">
+            <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#1a7a35,#2d9e50);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;color:#f0faf3;font-size:1.25rem;font-weight:700;">SM</div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.25rem;">Sarah Mitchell</h4>
+            <p style="color:#1a7a35;font-size:.8125rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.04em;">Chief Design Officer</p>
+            <p style="color:var(--clr-white-60);font-size:.8125rem;line-height:1.6;">Former Design Lead at Spotify and Google with a passion for product craft.</p>
+          </article>
+
+          <article class="glass-card reveal-up" style="padding:2rem;text-align:center;" data-delay="160">
+            <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#1a7a35,#2d9e50);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;color:#f0faf3;font-size:1.25rem;font-weight:700;">MR</div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.25rem;">Marcus Rivera</h4>
+            <p style="color:#1a7a35;font-size:.8125rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.04em;">CTO</p>
+            <p style="color:var(--clr-white-60);font-size:.8125rem;line-height:1.6;">Full-stack architect with 12+ years building scalable platforms at Stripe and Shopify.</p>
+          </article>
+
+          <article class="glass-card reveal-up" style="padding:2rem;text-align:center;" data-delay="240">
+            <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#1a7a35,#2d9e50);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;color:#f0faf3;font-size:1.25rem;font-weight:700;">PK</div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.25rem;">Priya Kapoor</h4>
+            <p style="color:#1a7a35;font-size:.8125rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.04em;">Head of Strategy</p>
+            <p style="color:var(--clr-white-60);font-size:.8125rem;line-height:1.6;">Consults on brand positioning for FTSE 100 companies and high-growth startups alike.</p>
+          </article>
+
+          <article class="glass-card reveal-up" style="padding:2rem;text-align:center;" data-delay="320">
+            <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#1a7a35,#2d9e50);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;color:#f0faf3;font-size:1.25rem;font-weight:700;">TW</div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.25rem;">Tom Wilson</h4>
+            <p style="color:#1a7a35;font-size:.8125rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.04em;">Creative Director</p>
+            <p style="color:var(--clr-white-60);font-size:.8125rem;line-height:1.6;">Award-winning creative with campaigns for Nike, HSBC, and the BBC.</p>
+          </article>
+
+          <article class="glass-card reveal-up" style="padding:2rem;text-align:center;" data-delay="400">
+            <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#1a7a35,#2d9e50);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;color:#f0faf3;font-size:1.25rem;font-weight:700;">AO</div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.25rem;">Aisha Okonkwo</h4>
+            <p style="color:#1a7a35;font-size:.8125rem;font-weight:600;margin-bottom:.5rem;letter-spacing:.04em;">Head of Data &amp; Analytics</p>
+            <p style="color:var(--clr-white-60);font-size:.8125rem;line-height:1.6;">Data scientist turned agency leader, making measurement the backbone of every campaign.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Company Timeline ── -->
+    <section class="section section--about" style="padding-top:var(--space-16);">
+      <div class="section__inner">
+        <div class="section__label reveal-up">Our Journey</div>
+        <h2 class="section__title reveal-up" style="transition-delay:80ms;">From Idea to Industry Leader</h2>
+        <div style="position:relative;margin-top:3rem;padding-left:2rem;border-left:2px solid rgba(26,122,53,0.25);">
+
+          <div class="reveal-up" style="position:relative;margin-bottom:2.5rem;" data-delay="0">
+            <div style="position:absolute;left:-2.6rem;top:.25rem;width:10px;height:10px;border-radius:50%;background:#1a7a35;box-shadow:0 0 0 4px rgba(26,122,53,0.2);"></div>
+            <span style="display:inline-block;padding:.2rem .75rem;background:rgba(26,122,53,0.10);border:1px solid rgba(26,122,53,0.2);border-radius:99px;font-size:.75rem;font-weight:600;color:#1a7a35;margin-bottom:.5rem;">2014</span>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.25rem;">Founded in London</h4>
+            <p style="color:var(--clr-white-60);font-size:.9375rem;line-height:1.7;">James Chen and Sarah Mitchell co-found Leo Digital from a Shoreditch studio with a team of four.</p>
+          </div>
+
+          <div class="reveal-up" style="position:relative;margin-bottom:2.5rem;" data-delay="80">
+            <div style="position:absolute;left:-2.6rem;top:.25rem;width:10px;height:10px;border-radius:50%;background:#1a7a35;box-shadow:0 0 0 4px rgba(26,122,53,0.2);"></div>
+            <span style="display:inline-block;padding:.2rem .75rem;background:rgba(26,122,53,0.10);border:1px solid rgba(26,122,53,0.2);border-radius:99px;font-size:.75rem;font-weight:600;color:#1a7a35;margin-bottom:.5rem;">2016</span>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.25rem;">First International Client</h4>
+            <p style="color:var(--clr-white-60);font-size:.9375rem;line-height:1.7;">Signed our first APAC client and began building a global reputation for precision and craft.</p>
+          </div>
+
+          <div class="reveal-up" style="position:relative;margin-bottom:2.5rem;" data-delay="160">
+            <div style="position:absolute;left:-2.6rem;top:.25rem;width:10px;height:10px;border-radius:50%;background:#1a7a35;box-shadow:0 0 0 4px rgba(26,122,53,0.2);"></div>
+            <span style="display:inline-block;padding:.2rem .75rem;background:rgba(26,122,53,0.10);border:1px solid rgba(26,122,53,0.2);border-radius:99px;font-size:.75rem;font-weight:600;color:#1a7a35;margin-bottom:.5rem;">2018</span>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.25rem;">Singapore Office Opens</h4>
+            <p style="color:var(--clr-white-60);font-size:.9375rem;line-height:1.7;">Expanded into Asia-Pacific with our Singapore studio, doubling headcount in 18 months.</p>
+          </div>
+
+          <div class="reveal-up" style="position:relative;margin-bottom:2.5rem;" data-delay="240">
+            <div style="position:absolute;left:-2.6rem;top:.25rem;width:10px;height:10px;border-radius:50%;background:#1a7a35;box-shadow:0 0 0 4px rgba(26,122,53,0.2);"></div>
+            <span style="display:inline-block;padding:.2rem .75rem;background:rgba(26,122,53,0.10);border:1px solid rgba(26,122,53,0.2);border-radius:99px;font-size:.75rem;font-weight:600;color:#1a7a35;margin-bottom:.5rem;">2020</span>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.25rem;">LeoOS Framework Launched</h4>
+            <p style="color:var(--clr-white-60);font-size:.9375rem;line-height:1.7;">Released our internal design system framework to the open-source community — now used by 3,000+ developers.</p>
+          </div>
+
+          <div class="reveal-up" style="position:relative;margin-bottom:2.5rem;" data-delay="320">
+            <div style="position:absolute;left:-2.6rem;top:.25rem;width:10px;height:10px;border-radius:50%;background:#1a7a35;box-shadow:0 0 0 4px rgba(26,122,53,0.2);"></div>
+            <span style="display:inline-block;padding:.2rem .75rem;background:rgba(26,122,53,0.10);border:1px solid rgba(26,122,53,0.2);border-radius:99px;font-size:.75rem;font-weight:600;color:#1a7a35;margin-bottom:.5rem;">2022</span>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.25rem;">Agency of the Year — First Time</h4>
+            <p style="color:var(--clr-white-60);font-size:.9375rem;line-height:1.7;">Recognised by Design Week as Agency of the Year for outstanding client outcomes and creative excellence.</p>
+          </div>
+
+          <div class="reveal-up" style="position:relative;" data-delay="400">
+            <div style="position:absolute;left:-2.6rem;top:.25rem;width:10px;height:10px;border-radius:50%;background:#1a7a35;box-shadow:0 0 0 4px rgba(26,122,53,0.2);"></div>
+            <span style="display:inline-block;padding:.2rem .75rem;background:rgba(26,122,53,0.10);border:1px solid rgba(26,122,53,0.2);border-radius:99px;font-size:.75rem;font-weight:600;color:#1a7a35;margin-bottom:.5rem;">2026</span>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.25rem;">Agency of the Year — Second Consecutive</h4>
+            <p style="color:var(--clr-white-60);font-size:.9375rem;line-height:1.7;">40+ team members, 5 global offices, 150+ projects delivered. The best is still ahead of us.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Awards ── -->
+    <section class="section section--about" style="padding-top:var(--space-16);">
+      <div class="section__inner">
+        <div class="section__label reveal-up">Recognition</div>
+        <h2 class="section__title reveal-up" style="transition-delay:80ms;">Awards &amp; Accolades</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.25rem;margin-top:3rem;">
+
+          <div class="glass-card reveal-up" style="padding:1.75rem;" data-delay="0">
+            <div style="font-size:1.5rem;margin-bottom:.75rem;">🏆</div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.25rem;">Design Week</h4>
+            <p style="color:#1a7a35;font-size:.875rem;font-weight:600;margin-bottom:.5rem;">Agency of the Year 2025 &amp; 2026</p>
+            <p style="color:var(--clr-white-60);font-size:.8125rem;line-height:1.6;">Two consecutive years recognised for outstanding creative excellence and client impact.</p>
+          </div>
+
+          <div class="glass-card reveal-up" style="padding:1.75rem;" data-delay="80">
+            <div style="font-size:1.5rem;margin-bottom:.75rem;">⭐</div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.25rem;">Awwwards</h4>
+            <p style="color:#1a7a35;font-size:.875rem;font-weight:600;margin-bottom:.5rem;">Site of the Day — 3× Winner</p>
+            <p style="color:var(--clr-white-60);font-size:.8125rem;line-height:1.6;">Recognised globally for digital craftsmanship and interaction design excellence.</p>
+          </div>
+
+          <div class="glass-card reveal-up" style="padding:1.75rem;" data-delay="160">
+            <div style="font-size:1.5rem;margin-bottom:.75rem;">🌐</div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.25rem;">The Webby Awards</h4>
+            <p style="color:#1a7a35;font-size:.875rem;font-weight:600;margin-bottom:.5rem;">Best Digital Agency Website 2024</p>
+            <p style="color:var(--clr-white-60);font-size:.8125rem;line-height:1.6;">Honoured by the leading authority for the internet's best websites and digital experiences.</p>
+          </div>
+
+          <div class="glass-card reveal-up" style="padding:1.75rem;" data-delay="240">
+            <div style="font-size:1.5rem;margin-bottom:.75rem;">📊</div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.25rem;">Clutch.co</h4>
+            <p style="color:#1a7a35;font-size:.875rem;font-weight:600;margin-bottom:.5rem;">Top Digital Agency 2023, 2024 &amp; 2025</p>
+            <p style="color:var(--clr-white-60);font-size:.8125rem;line-height:1.6;">Consistently rated 5 stars by clients across strategy, design, and engineering verticals.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="section" style="padding-top:var(--space-16);padding-bottom:var(--space-24);text-align:center;">
+      <div class="section__inner">
+        <h2 class="reveal-up" style="color:var(--clr-white);font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:700;letter-spacing:-.02em;margin-bottom:1rem;">Ready to work together?</h2>
+        <p class="reveal-up" style="color:var(--clr-white-60);font-size:1rem;margin-bottom:2rem;transition-delay:80ms;">Let's talk about your project and how we can help.</p>
+        <div class="reveal-up" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;transition-delay:160ms;">
+          <a href="contact.html" class="btn btn--primary">Get in Touch</a>
+          <a href="work.html" class="btn btn--ghost">See Our Work</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <img src="images/logo_dark.png" alt="Leo Digital" class="footer__logo-img" />
+        <p class="footer__tagline">Strategy, design, and engineering at the intersection of ambition and craft.</p>
+        <div class="footer__social" style="margin-top:1.5rem">
+          <a href="#" class="social-link" aria-label="Twitter / X">𝕏</a>
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-link" aria-label="Instagram">◻</a>
+          <a href="#" class="social-link" aria-label="Dribbble">◌</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Navigation</div>
+        <ul class="footer__links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="expertise.html">Expertise</a></li>
+          <li><a href="work.html">Our Work</a></li>
+          <li><a href="insights.html">Insights</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Company</div>
+        <ul class="footer__links-list">
+          <li><a href="news.html">News &amp; Updates</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Privacy Policy</a></li>
+          <li><a href="contact.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <span>© 2026 Leo Digital Ltd. All rights reserved.</span>
+      <span>Crafted with precision in London</span>
+    </div>
+  </footer>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/observer.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

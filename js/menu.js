@@ -5,15 +5,13 @@ function initMobileMenu() {
   function openMenu() {
     hamburger.setAttribute('aria-expanded', 'true');
     hamburger.classList.add('hamburger--open');
-    navLinks.classList.add('nav--open');
-    document.body.style.overflow = 'hidden';
+    navLinks.classList.add('menu--open');
   }
 
   function closeMenu() {
     hamburger.setAttribute('aria-expanded', 'false');
     hamburger.classList.remove('hamburger--open');
-    navLinks.classList.remove('nav--open');
-    document.body.style.overflow = '';
+    navLinks.classList.remove('menu--open');
   }
 
   hamburger.addEventListener('click', () => {
@@ -21,13 +19,17 @@ function initMobileMenu() {
     isOpen ? closeMenu() : openMenu();
   });
 
-  // Close on nav link click
   navLinks.addEventListener('click', e => {
     if (e.target.classList.contains('nav-link')) closeMenu();
   });
 
-  // Close on resize to desktop
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) closeMenu();
+    if (window.innerWidth > 900) closeMenu();
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', e => {
+    const navbar = document.getElementById('navbar');
+    if (navbar && !navbar.contains(e.target)) closeMenu();
   });
 }

@@ -44,44 +44,7 @@
   :root {
     --section-pad-y: var(--space-16);
     --section-pad-x: var(--space-4);
-    --navbar-height: 64px;
-  }
-
-  /* Navbar */
-  .hamburger {
-    display: flex;
-  }
-
-  .navbar__links {
-    position: fixed;
-    top: var(--navbar-height);
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(10, 10, 10, 0.98);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-8);
-    margin-left: 0;
-    transform: translateX(100%);
-    transition: transform var(--transition-slow);
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
-
-  .navbar__links.nav--open {
-    transform: translateX(0);
-  }
-
-  .nav-link {
-    font-size: var(--fs-xl);
-    font-weight: var(--fw-semi);
-  }
-
-  .btn-login {
-    display: none;
+    --navbar-height: 72px;
   }
 
   /* Hero */
@@ -225,10 +188,6 @@
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-2);
-  }
-
-  .navbar__inner {
-    padding: 0 var(--space-4);
   }
 
   .contact__form-wrap {

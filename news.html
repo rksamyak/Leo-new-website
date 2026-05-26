@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News &amp; Updates — Leo Digital</title>
+  <meta name="description" content="The latest announcements, awards, partnerships, and company news from Leo Digital." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/news.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <div class="bg-canvas" aria-hidden="true">
+    <div class="bg-mesh"></div>
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
+  </div>
+
+  <header class="navbar" id="navbar" role="banner">
+    <nav class="navbar__inner" aria-label="Main navigation">
+      <a href="index.html" class="navbar__logo" aria-label="Leo Digital — Home">
+        <img src="images/logo_dark.png" alt="Leo Digital" class="navbar__logo-img" />
+      </a>
+      <div class="navbar__sep" aria-hidden="true"></div>
+      <ul class="navbar__links" id="navLinks" role="list">
+        <li><a href="index.html"     class="nav-link">Home</a></li>
+        <li><a href="about.html"     class="nav-link">About</a></li>
+        <li><a href="expertise.html" class="nav-link">Expertise</a></li>
+        <li><a href="work.html"      class="nav-link">Our Work</a></li>
+        <li><a href="insights.html"  class="nav-link">Insights</a></li>
+        <li><a href="news.html"      class="nav-link">News &amp; Updates</a></li>
+        <li><a href="careers.html"   class="nav-link">Careers</a></li>
+        <li><a href="contact.html"   class="nav-link">Contact</a></li>
+      </ul>
+      <button class="btn-login" id="loginBtn" aria-haspopup="dialog" aria-controls="modalOverlay">Login</button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </button>
+    </nav>
+  </header>
+
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal" id="loginModal">
+      <button class="modal__close" id="modalClose" aria-label="Close login modal">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <h2 class="modal__title" id="modalTitle">Welcome Back</h2>
+      <p class="modal__subtitle">Sign in to your account</p>
+      <button class="btn-google" id="googleLoginBtn">
+        <svg class="google-icon" viewBox="0 0 18 18"><path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4"/><path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="#34A853"/><path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/><path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335"/></svg>
+        Continue with Google
+      </button>
+      <div class="modal__divider"><span>or</span></div>
+      <div class="modal__magic-link">
+        <label for="magicEmail" class="sr-only">Email address</label>
+        <input type="email" id="magicEmail" name="email" class="modal__input" placeholder="Enter your email address" autocomplete="email" />
+        <button class="btn-magic" id="sendMagicLink">Send Magic Link</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ── Page Header ── -->
+    <section class="section section--news" style="padding-top:calc(var(--navbar-height) + 3rem);padding-bottom:2rem;">
+      <div class="section__inner">
+        <div class="section__label reveal-up">Latest</div>
+        <h1 class="section__title reveal-up" style="transition-delay:80ms;font-size:clamp(2.5rem,5vw,4rem);">
+          News &amp; <span class="text-gradient">Updates</span>
+        </h1>
+        <p class="reveal-up" style="color:var(--clr-white-60);font-size:1.125rem;max-width:620px;line-height:1.8;transition-delay:160ms;">
+          Awards, partnerships, new offices, and everything else happening at Leo Digital. Stay in the loop.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Timeline ── -->
+    <section class="section section--news" style="padding-top:0;">
+      <div class="section__inner">
+        <div class="news__timeline">
+
+          <div class="news-item">
+            <div class="news-item__content glass-card reveal-left" data-delay="0">
+              <span class="tag news-item__tag">Award</span>
+              <time class="news-item__date" datetime="2026-05">May 2026</time>
+              <h3 class="news-item__title">Leo Digital Named Agency of the Year by Digital Week</h3>
+              <p class="news-item__body">We are honoured to be recognised for our work across brand, product, and engineering for the second consecutive year. The award reflects the exceptional talent and dedication of our entire team.</p>
+            </div>
+            <div class="news-item__dot" aria-hidden="true"></div>
+            <div class="news-item__empty"></div>
+          </div>
+
+          <div class="news-item">
+            <div class="news-item__empty"></div>
+            <div class="news-item__dot" aria-hidden="true"></div>
+            <div class="news-item__content glass-card reveal-right" data-delay="80">
+              <span class="tag news-item__tag">Partnership</span>
+              <time class="news-item__date" datetime="2026-04">April 2026</time>
+              <h3 class="news-item__title">Strategic Partnership Announced with Vertex Labs</h3>
+              <p class="news-item__body">Our new partnership with Vertex Labs expands our AI and data capabilities to serve enterprise clients at global scale. The collaboration brings together Leo's design and engineering excellence with Vertex's deep AI research expertise.</p>
+            </div>
+          </div>
+
+          <div class="news-item">
+            <div class="news-item__content glass-card reveal-left" data-delay="160">
+              <span class="tag news-item__tag">Growth</span>
+              <time class="news-item__date" datetime="2026-03">March 2026</time>
+              <h3 class="news-item__title">New Singapore Office Opens, Expanding Asia-Pacific Presence</h3>
+              <p class="news-item__body">Our Singapore studio marks our fifth global location and third in the Asia-Pacific region, bringing us closer to our growing client base across Southeast Asia and Australia.</p>
+            </div>
+            <div class="news-item__dot" aria-hidden="true"></div>
+            <div class="news-item__empty"></div>
+          </div>
+
+          <div class="news-item">
+            <div class="news-item__empty"></div>
+            <div class="news-item__dot" aria-hidden="true"></div>
+            <div class="news-item__content glass-card reveal-right" data-delay="240">
+              <span class="tag news-item__tag">Launch</span>
+              <time class="news-item__date" datetime="2026-02">February 2026</time>
+              <h3 class="news-item__title">Launching LeoOS: Our Open-Source Design System Framework</h3>
+              <p class="news-item__body">After three years of internal development, we are releasing LeoOS — our component framework and token system — to the open-source community. Already adopted by over 3,000 developers globally.</p>
+            </div>
+          </div>
+
+          <div class="news-item">
+            <div class="news-item__content glass-card reveal-left" data-delay="320">
+              <span class="tag news-item__tag">Team</span>
+              <time class="news-item__date" datetime="2026-01">January 2026</time>
+              <h3 class="news-item__title">Welcome: Five New Team Members Join Leo Digital</h3>
+              <p class="news-item__body">We welcome senior talent across engineering, brand strategy, and UX research as we continue to grow our capabilities and client roster into 2026.</p>
+            </div>
+            <div class="news-item__dot" aria-hidden="true"></div>
+            <div class="news-item__empty"></div>
+          </div>
+
+          <div class="news-item">
+            <div class="news-item__empty"></div>
+            <div class="news-item__dot" aria-hidden="true"></div>
+            <div class="news-item__content glass-card reveal-right" data-delay="400">
+              <span class="tag news-item__tag">Leadership</span>
+              <time class="news-item__date" datetime="2025-11">November 2025</time>
+              <h3 class="news-item__title">Dr. Yuki Tanaka Appointed Head of AI Practice</h3>
+              <p class="news-item__body">We are delighted to welcome Dr. Yuki Tanaka to lead our growing AI integration practice. Yuki brings a decade of applied AI research from DeepMind and Microsoft Research to help clients navigate the intelligence revolution responsibly.</p>
+            </div>
+          </div>
+
+          <div class="news-item">
+            <div class="news-item__content glass-card reveal-left" data-delay="480">
+              <span class="tag news-item__tag">Community</span>
+              <time class="news-item__date" datetime="2025-10">October 2025</time>
+              <h3 class="news-item__title">Leo Digital Commits to 10% Pro Bono Work for Social Impact Organisations</h3>
+              <p class="news-item__body">Starting in Q4 2025, we are dedicating 10% of our annual capacity to pro bono digital work for charities, NGOs, and social enterprises. Applications open now for eligible organisations.</p>
+            </div>
+            <div class="news-item__dot" aria-hidden="true"></div>
+            <div class="news-item__empty"></div>
+          </div>
+
+          <div class="news-item">
+            <div class="news-item__empty"></div>
+            <div class="news-item__dot" aria-hidden="true"></div>
+            <div class="news-item__content glass-card reveal-right" data-delay="560">
+              <span class="tag news-item__tag">Funding</span>
+              <time class="news-item__date" datetime="2025-09">September 2025</time>
+              <h3 class="news-item__title">Leo Digital Closes £8M Series A to Accelerate Global Growth</h3>
+              <p class="news-item__body">We have raised £8 million in Series A funding led by Latitude Capital. The investment will fund expansion into North America, product R&amp;D, and the continued growth of our AI and data practices.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Press Contact ── -->
+    <section class="section" style="padding-top:var(--space-24);padding-bottom:var(--space-24);">
+      <div class="section__inner">
+        <div class="glass-card reveal-up" style="padding:2.5rem;max-width:640px;display:flex;gap:2rem;align-items:flex-start;flex-wrap:wrap;">
+          <div style="font-size:2rem;">📰</div>
+          <div>
+            <h3 style="color:var(--clr-white);font-weight:600;font-size:1.25rem;margin-bottom:.5rem;">Press &amp; Media Enquiries</h3>
+            <p style="color:var(--clr-white-60);font-size:.9375rem;line-height:1.7;margin-bottom:1rem;">For interview requests, press releases, or media assets, please reach out to our communications team.</p>
+            <a href="contact.html" class="btn btn--primary" style="display:inline-flex;">Contact Press Team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <img src="images/logo_dark.png" alt="Leo Digital" class="footer__logo-img" />
+        <p class="footer__tagline">Strategy, design, and engineering at the intersection of ambition and craft.</p>
+        <div class="footer__social" style="margin-top:1.5rem">
+          <a href="#" class="social-link" aria-label="Twitter / X">𝕏</a>
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-link" aria-label="Instagram">◻</a>
+          <a href="#" class="social-link" aria-label="Dribbble">◌</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Navigation</div>
+        <ul class="footer__links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="expertise.html">Expertise</a></li>
+          <li><a href="work.html">Our Work</a></li>
+          <li><a href="insights.html">Insights</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Company</div>
+        <ul class="footer__links-list">
+          <li><a href="news.html">News &amp; Updates</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Privacy Policy</a></li>
+          <li><a href="contact.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <span>© 2026 Leo Digital Ltd. All rights reserved.</span>
+      <span>Crafted with precision in London</span>
+    </div>
+  </footer>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/observer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

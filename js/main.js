@@ -6,7 +6,22 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounters();
   initCareers();
   initContactForm();
+  initNewsDots();
 });
+
+function initNewsDots() {
+  const items = document.querySelectorAll('.news-item');
+  if (!items.length) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const dot = entry.target.querySelector('.news-item__dot');
+      if (dot) dot.classList.toggle('news-item__dot--active', entry.isIntersecting);
+    });
+  }, { threshold: 0.4 });
+
+  items.forEach(item => observer.observe(item));
+}
 
 function initContactForm() {
   const form = document.getElementById('contactForm');

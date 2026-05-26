@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers — Leo Digital</title>
+  <meta name="description" content="Join Leo Digital — open roles in design, engineering, strategy, and more. Build the future of digital with us." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/careers.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <div class="bg-canvas" aria-hidden="true">
+    <div class="bg-mesh"></div>
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
+  </div>
+
+  <header class="navbar" id="navbar" role="banner">
+    <nav class="navbar__inner" aria-label="Main navigation">
+      <a href="index.html" class="navbar__logo" aria-label="Leo Digital — Home">
+        <img src="images/logo_dark.png" alt="Leo Digital" class="navbar__logo-img" />
+      </a>
+      <div class="navbar__sep" aria-hidden="true"></div>
+      <ul class="navbar__links" id="navLinks" role="list">
+        <li><a href="index.html"     class="nav-link">Home</a></li>
+        <li><a href="about.html"     class="nav-link">About</a></li>
+        <li><a href="expertise.html" class="nav-link">Expertise</a></li>
+        <li><a href="work.html"      class="nav-link">Our Work</a></li>
+        <li><a href="insights.html"  class="nav-link">Insights</a></li>
+        <li><a href="news.html"      class="nav-link">News &amp; Updates</a></li>
+        <li><a href="careers.html"   class="nav-link">Careers</a></li>
+        <li><a href="contact.html"   class="nav-link">Contact</a></li>
+      </ul>
+      <button class="btn-login" id="loginBtn" aria-haspopup="dialog" aria-controls="modalOverlay">Login</button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </button>
+    </nav>
+  </header>
+
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal" id="loginModal">
+      <button class="modal__close" id="modalClose" aria-label="Close login modal">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <h2 class="modal__title" id="modalTitle">Welcome Back</h2>
+      <p class="modal__subtitle">Sign in to your account</p>
+      <button class="btn-google" id="googleLoginBtn">
+        <svg class="google-icon" viewBox="0 0 18 18"><path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4"/><path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="#34A853"/><path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/><path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335"/></svg>
+        Continue with Google
+      </button>
+      <div class="modal__divider"><span>or</span></div>
+      <div class="modal__magic-link">
+        <label for="magicEmail" class="sr-only">Email address</label>
+        <input type="email" id="magicEmail" name="email" class="modal__input" placeholder="Enter your email address" autocomplete="email" />
+        <button class="btn-magic" id="sendMagicLink">Send Magic Link</button>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ── Page Header ── -->
+    <section class="section section--careers" style="padding-top:calc(var(--navbar-height) + 3rem);padding-bottom:2rem;">
+      <div class="section__inner">
+        <div class="section__label reveal-up">Join Us</div>
+        <h1 class="section__title reveal-up" style="transition-delay:80ms;font-size:clamp(2.5rem,5vw,4rem);">
+          Build Something<br><span class="text-gradient">Remarkable</span>
+        </h1>
+        <p class="reveal-up" style="color:var(--clr-white-60);font-size:1.125rem;max-width:620px;line-height:1.8;transition-delay:160ms;">
+          We are always looking for exceptional talent who care deeply about craft, collaboration, and impact. If that sounds like you, read on.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Benefits ── -->
+    <section class="section" style="padding-top:0;">
+      <div class="section__inner">
+        <div class="section__label reveal-up">Why Leo</div>
+        <h2 class="section__title reveal-up" style="transition-delay:80ms;">Benefits &amp; Perks</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;margin-top:2rem;">
+
+          <div class="glass-card reveal-up" style="padding:1.75rem;" data-delay="0">
+            <div style="font-size:1.5rem;margin-bottom:.75rem;">🌍</div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.4rem;">Remote-First</h4>
+            <p style="color:var(--clr-white-60);font-size:.875rem;line-height:1.6;">Work from anywhere. We have hubs in London, New York, and Singapore for those who want an office.</p>
+          </div>
+
+          <div class="glass-card reveal-up" style="padding:1.75rem;" data-delay="60">
+            <div style="font-size:1.5rem;margin-bottom:.75rem;">💰</div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.4rem;">Competitive Package</h4>
+            <p style="color:var(--clr-white-60);font-size:.875rem;line-height:1.6;">Top-quartile salaries plus equity participation in a fast-growing, profitable company.</p>
+          </div>
+
+          <div class="glass-card reveal-up" style="padding:1.75rem;" data-delay="120">
+            <div style="font-size:1.5rem;margin-bottom:.75rem;">🏖️</div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.4rem;">30 Days Holiday</h4>
+            <p style="color:var(--clr-white-60);font-size:.875rem;line-height:1.6;">30 days paid holiday plus bank holidays — and we mean it. No guilt, no badge-of-honour overwork culture.</p>
+          </div>
+
+          <div class="glass-card reveal-up" style="padding:1.75rem;" data-delay="180">
+            <div style="font-size:1.5rem;margin-bottom:.75rem;">📚</div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.4rem;">Learning Budget</h4>
+            <p style="color:var(--clr-white-60);font-size:.875rem;line-height:1.6;">£2,000 per year for courses, conferences, books, or anything that sharpens your craft.</p>
+          </div>
+
+          <div class="glass-card reveal-up" style="padding:1.75rem;" data-delay="240">
+            <div style="font-size:1.5rem;margin-bottom:.75rem;">💻</div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.4rem;">Best-in-Class Kit</h4>
+            <p style="color:var(--clr-white-60);font-size:.875rem;line-height:1.6;">Latest MacBook Pro, premium peripherals, and a £500 home office allowance when you join.</p>
+          </div>
+
+          <div class="glass-card reveal-up" style="padding:1.75rem;" data-delay="300">
+            <div style="font-size:1.5rem;margin-bottom:.75rem;">🏥</div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.4rem;">Private Healthcare</h4>
+            <p style="color:var(--clr-white-60);font-size:.875rem;line-height:1.6;">Comprehensive private health and dental coverage for you and your dependants from day one.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Culture ── -->
+    <section class="section" style="padding-top:var(--space-16);">
+      <div class="section__inner">
+        <div class="section__label reveal-up">Our Culture</div>
+        <h2 class="section__title reveal-up" style="transition-delay:80ms;">How We Work</h2>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-16);align-items:start;margin-top:2rem;">
+          <div class="reveal-left">
+            <p style="color:var(--clr-white-60);line-height:1.8;margin-bottom:1rem;">We are a remote-first team that spans 8 countries. We hire for excellence, not geography. What unites us is a shared obsession with making great work and a belief that the best ideas win — regardless of who has them.</p>
+            <p style="color:var(--clr-white-60);line-height:1.8;margin-bottom:1rem;">We do not have a rigid 9-to-5. We trust people to manage their time, meet their commitments, and do their best work. We have async-first communication and intentional meeting culture — we protect deep work time.</p>
+            <p style="color:var(--clr-white-60);line-height:1.8;">Twice a year, the whole company comes together in person — usually somewhere interesting — for a few days of collaboration, strategy, and genuine connection.</p>
+          </div>
+          <div class="reveal-right" style="display:flex;flex-direction:column;gap:1rem;">
+            <div class="glass-card" style="padding:1.5rem;display:flex;align-items:center;gap:1rem;">
+              <span style="font-size:1.5rem;">◈</span>
+              <div>
+                <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.2rem;">Craft First</h4>
+                <p style="color:var(--clr-white-60);font-size:.875rem;">We take pride in the quality of everything we make.</p>
+              </div>
+            </div>
+            <div class="glass-card" style="padding:1.5rem;display:flex;align-items:center;gap:1rem;">
+              <span style="font-size:1.5rem;">◎</span>
+              <div>
+                <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.2rem;">Honest Feedback</h4>
+                <p style="color:var(--clr-white-60);font-size:.875rem;">We give and receive feedback with directness and respect.</p>
+              </div>
+            </div>
+            <div class="glass-card" style="padding:1.5rem;display:flex;align-items:center;gap:1rem;">
+              <span style="font-size:1.5rem;">⬡</span>
+              <div>
+                <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.2rem;">Deep Work</h4>
+                <p style="color:var(--clr-white-60);font-size:.875rem;">We protect focused time and respect each other's attention.</p>
+              </div>
+            </div>
+            <div class="glass-card" style="padding:1.5rem;display:flex;align-items:center;gap:1rem;">
+              <span style="font-size:1.5rem;">◐</span>
+              <div>
+                <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.2rem;">Always Learning</h4>
+                <p style="color:var(--clr-white-60);font-size:.875rem;">We are curious, humble, and always growing our craft.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Open Roles ── -->
+    <section class="section section--careers" style="padding-top:var(--space-16);">
+      <div class="section__inner">
+        <div class="section__label reveal-up">Open Roles</div>
+        <h2 class="section__title reveal-up" style="transition-delay:80ms;">Current Openings</h2>
+        <div class="careers__intro reveal-up" style="transition-delay:160ms;">
+          <p>We are growing across all disciplines. Here is where you can make a difference right now.</p>
+        </div>
+        <div class="careers__list">
+
+          <article class="career-item glass-card reveal-up" data-delay="0">
+            <button class="career-item__header" aria-expanded="false" aria-controls="job-1">
+              <div class="career-item__meta">
+                <h3 class="career-item__title">Senior UX Designer</h3>
+                <div class="career-item__tags">
+                  <span class="tag">Full-time</span>
+                  <span class="tag">Remote</span>
+                  <span class="tag">Design</span>
+                </div>
+              </div>
+              <span class="career-item__chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="career-item__body" id="job-1">
+              <div class="career-item__body-inner">
+                <p class="career-item__desc">We are looking for a Senior UX Designer to lead end-to-end product design across complex digital products — from discovery and research to delivery and iteration. You will work closely with engineering, strategy, and client teams to shape experiences that are both meaningful and measurable.</p>
+                <ul class="career-item__list">
+                  <li>Lead user research, synthesis, and design exploration for enterprise-scale products</li>
+                  <li>Produce high-fidelity prototypes and component specifications using Figma</li>
+                  <li>Present and defend design decisions to senior stakeholders with clarity and confidence</li>
+                  <li>Mentor junior designers and contribute to our internal design practice</li>
+                </ul>
+                <a href="contact.html" class="btn btn--primary">Apply Now</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="career-item glass-card reveal-up" data-delay="80">
+            <button class="career-item__header" aria-expanded="false" aria-controls="job-2">
+              <div class="career-item__meta">
+                <h3 class="career-item__title">Lead Frontend Engineer</h3>
+                <div class="career-item__tags">
+                  <span class="tag">Full-time</span>
+                  <span class="tag">Hybrid</span>
+                  <span class="tag">Engineering</span>
+                </div>
+              </div>
+              <span class="career-item__chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="career-item__body" id="job-2">
+              <div class="career-item__body-inner">
+                <p class="career-item__desc">As Lead Frontend Engineer, you will own the technical delivery of our most ambitious client projects — setting standards for performance, accessibility, and code quality while mentoring a team of talented engineers.</p>
+                <ul class="career-item__list">
+                  <li>Architect and implement scalable frontend solutions using React, Next.js, and TypeScript</li>
+                  <li>Champion performance, accessibility, and web standards across all deliverables</li>
+                  <li>Collaborate closely with design teams to bring complex interactions to life</li>
+                  <li>Lead technical discovery, estimations, and architectural reviews for new projects</li>
+                </ul>
+                <a href="contact.html" class="btn btn--primary">Apply Now</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="career-item glass-card reveal-up" data-delay="160">
+            <button class="career-item__header" aria-expanded="false" aria-controls="job-3">
+              <div class="career-item__meta">
+                <h3 class="career-item__title">Brand Strategist</h3>
+                <div class="career-item__tags">
+                  <span class="tag">Full-time</span>
+                  <span class="tag">London</span>
+                  <span class="tag">Strategy</span>
+                </div>
+              </div>
+              <span class="career-item__chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="career-item__body" id="job-3">
+              <div class="career-item__body-inner">
+                <p class="career-item__desc">We need a Brand Strategist with the rare ability to translate business ambition into compelling brand platforms. You will work at the intersection of insight, language, and visual thinking — shaping how brands present themselves to the world.</p>
+                <ul class="career-item__list">
+                  <li>Lead brand audits, competitive analysis, and positioning workshops with clients</li>
+                  <li>Develop brand platforms including positioning statements, narrative, and messaging hierarchies</li>
+                  <li>Work alongside creative directors to ensure strategy is expressed through design</li>
+                  <li>Build and manage client relationships across multiple simultaneous engagements</li>
+                </ul>
+                <a href="contact.html" class="btn btn--primary">Apply Now</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="career-item glass-card reveal-up" data-delay="240">
+            <button class="career-item__header" aria-expanded="false" aria-controls="job-4">
+              <div class="career-item__meta">
+                <h3 class="career-item__title">Data Analyst</h3>
+                <div class="career-item__tags">
+                  <span class="tag">Full-time</span>
+                  <span class="tag">Remote</span>
+                  <span class="tag">Data</span>
+                </div>
+              </div>
+              <span class="career-item__chevron" aria-hidden="true">+</span>
+            </button>
+            <div class="career-item__body" id="job-4">
+              <div class="career-item__body-inner">
+                <p class="career-item__desc">We are seeking a Data Analyst who can find the signal in the noise — transforming raw data into clear, actionable recommendations that drive product and marketing decisions for our clients.</p>
+                <ul class="career-item__list">
+                  <li>Build and maintain analytics dashboards, tracking frameworks, and reporting systems</li>
+                  <li>Conduct deep analysis on user behaviour, campaign performance, and conversion funnels</li>
+                  <li>Collaborate with client teams to define KPIs and measurement strategies from the start</li>
+                  <li>Communicate complex findings to non-technical stakeholders with clarity</li>
+                </ul>
+                <a href="contact.html" class="btn btn--primary">Apply Now</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- No perfect fit note -->
+        <div class="glass-card reveal-up" style="padding:2rem;margin-top:2rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;transition-delay:320ms;">
+          <span style="font-size:1.75rem;flex-shrink:0;">💌</span>
+          <div>
+            <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.25rem;">Don't see the right role?</h4>
+            <p style="color:var(--clr-white-60);font-size:.9375rem;line-height:1.6;">We are always interested in exceptional people. Send us a note about yourself and what you could bring to Leo Digital.</p>
+          </div>
+          <a href="contact.html" class="btn btn--ghost" style="flex-shrink:0;">Get in Touch</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <img src="images/logo_dark.png" alt="Leo Digital" class="footer__logo-img" />
+        <p class="footer__tagline">Strategy, design, and engineering at the intersection of ambition and craft.</p>
+        <div class="footer__social" style="margin-top:1.5rem">
+          <a href="#" class="social-link" aria-label="Twitter / X">𝕏</a>
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-link" aria-label="Instagram">◻</a>
+          <a href="#" class="social-link" aria-label="Dribbble">◌</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-title">Navigation</div>
+        <ul class="footer__links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="expertise.html">Expertise</a></li>
+          <li><a href="work.html">Our Work</a></li>
+          <li><a href="insights.html">Insights</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-title">Company</div>
+        <ul class="footer__links-list">
+          <li><a href="news.html">News &amp; Updates</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Privacy Policy</a></li>
+          <li><a href="contact.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <span>© 2026 Leo Digital Ltd. All rights reserved.</span>
+      <span>Crafted with precision in London</span>
+    </div>
+  </footer>
+
+  <script src="js/navbar.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/observer.js"></script>
+  <script src="js/careers.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

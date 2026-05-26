@@ -1,26 +1,26 @@
 :root {
   /* ── Colour Palette ── */
-  --clr-bg:            #0a0a0a;
-  --clr-bg-2:          #111111;
-  --clr-bg-3:          #1a1a1a;
-  --clr-surface:       rgba(255, 255, 255, 0.04);
-  --clr-surface-hover: rgba(255, 255, 255, 0.07);
-  --clr-border:        rgba(255, 255, 255, 0.08);
-  --clr-border-hover:  rgba(255, 255, 255, 0.18);
+  --clr-bg:            #f0faf3;
+  --clr-bg-2:          #e0f5e6;
+  --clr-bg-3:          #ccead4;
+  --clr-surface:       rgba(13, 50, 20, 0.04);
+  --clr-surface-hover: rgba(13, 50, 20, 0.07);
+  --clr-border:        rgba(13, 50, 20, 0.10);
+  --clr-border-hover:  rgba(13, 50, 20, 0.22);
 
-  --clr-white:    #ffffff;
-  --clr-white-80: rgba(255, 255, 255, 0.80);
-  --clr-white-60: rgba(255, 255, 255, 0.60);
-  --clr-white-40: rgba(255, 255, 255, 0.40);
-  --clr-white-20: rgba(255, 255, 255, 0.20);
-  --clr-white-10: rgba(255, 255, 255, 0.10);
+  --clr-white:    #0d2011;
+  --clr-white-80: rgba(13, 32, 17, 0.80);
+  --clr-white-60: rgba(13, 32, 17, 0.60);
+  --clr-white-40: rgba(13, 32, 17, 0.40);
+  --clr-white-20: rgba(13, 32, 17, 0.20);
+  --clr-white-10: rgba(13, 32, 17, 0.10);
 
-  --clr-grey-1: #888888;
-  --clr-grey-2: #555555;
-  --clr-grey-3: #333333;
+  --clr-grey-1: #4a7a50;
+  --clr-grey-2: #7aaa80;
+  --clr-grey-3: #aad4b0;
 
-  --clr-accent: rgba(255, 255, 255, 0.9);
-  --clr-glow:   rgba(255, 255, 255, 0.06);
+  --clr-accent: rgba(13, 32, 17, 0.9);
+  --clr-glow:   rgba(30, 120, 60, 0.08);
 
   /* ── Typography ── */
   --font-sans:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -66,20 +66,20 @@
   --max-width:     1280px;
   --section-pad-y: var(--space-32);
   --section-pad-x: var(--space-8);
-  --navbar-height: 72px;
+  --navbar-height: 100px;
 
   /* ── Glassmorphism ── */
-  --glass-bg:           rgba(255, 255, 255, 0.04);
-  --glass-bg-hover:     rgba(255, 255, 255, 0.07);
+  --glass-bg:           rgba(255, 255, 255, 0.55);
+  --glass-bg-hover:     rgba(255, 255, 255, 0.72);
   --glass-blur:         12px;
-  --glass-border:       1px solid rgba(255, 255, 255, 0.08);
-  --glass-border-hover: 1px solid rgba(255, 255, 255, 0.20);
-  --glass-shadow:       0 8px 32px rgba(0, 0, 0, 0.4);
-  --glass-shadow-lg:    0 24px 64px rgba(0, 0, 0, 0.6);
+  --glass-border:       1px solid rgba(13, 50, 20, 0.10);
+  --glass-border-hover: 1px solid rgba(13, 50, 20, 0.22);
+  --glass-shadow:       0 8px 32px rgba(0, 60, 20, 0.10);
+  --glass-shadow-lg:    0 24px 64px rgba(0, 60, 20, 0.18);
 
   /* ── Navbar ── */
-  --navbar-bg:               rgba(10, 10, 10, 0.01);
-  --navbar-bg-scroll:        rgba(10, 10, 10, 0.80);
+  --navbar-bg:               rgba(240, 250, 243, 0.01);
+  --navbar-bg-scroll:        rgba(240, 250, 243, 0.92);
   --navbar-blur:             20px;
 
   /* ── Transitions ── */
