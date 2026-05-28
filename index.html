@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="css/timebox.css" />
   <link rel="stylesheet" href="css/stack-cards.css" />
   <link rel="stylesheet" href="css/services-grid.css" />
+  <link rel="stylesheet" href="css/testimonials.css" />
   <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
@@ -221,135 +222,68 @@
 
     </section>
 
-    <!-- ══ STACK CARDS ══ -->
-    <section class="stk-section" id="stkSection">
-      <div class="stk-sticky">
+    <!-- ══ SINGLE CARD ══ -->
+    <section class="one-card-section">
+      <div class="one-card">
 
-        <!-- ── Card 1 — Creative Strategy ── -->
-        <div class="stk-card stk-card--1" id="stkCard1">
-          <span class="stk-card__bg-num" aria-hidden="true">01</span>
-          <div class="stk-card__inner">
-            <div class="stk-card__content">
-              <span class="stk-eyebrow">Creative Strategy</span>
-              <h2 class="stk-title">Ideas that change markets</h2>
-              <p class="stk-desc">We build brand identities from the ground up — from positioning and visual language to the campaigns that make them impossible to ignore.</p>
-              <div class="stk-stats">
-                <div class="stk-stat">
-                  <span class="stk-stat__num">300+</span>
-                  <span class="stk-stat__label">Brands built</span>
-                </div>
-                <div class="stk-stat">
-                  <span class="stk-stat__num">8 yr</span>
-                  <span class="stk-stat__label">Avg. partnership</span>
-                </div>
-                <div class="stk-stat">
-                  <span class="stk-stat__num">97%</span>
-                  <span class="stk-stat__label">Retention rate</span>
-                </div>
-              </div>
-              <a href="#" class="stk-cta">
-                Explore strategy
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
+        <!-- ── Text content ── -->
+        <div class="one-card__inner">
+          <span class="one-card__eyebrow">Who We Are</span>
+          <h2 class="one-card__title">Built for brands<br>that want more</h2>
+          <p class="one-card__desc">Leo Digital is a full-service digital agency combining strategy, creativity, and technology to help ambitious brands grow faster and reach further.</p>
+          <div class="one-card__stats">
+            <div class="one-card__stat">
+              <span class="one-card__stat-num">400+</span>
+              <span class="one-card__stat-label">Brands Served</span>
             </div>
-            <div class="stk-card__visual" aria-hidden="true">
-              <svg class="stk-card__icon" viewBox="0 0 180 180" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
-                <polygon points="90,16 158,55 158,125 90,164 22,125 22,55"/>
-                <polygon points="90,46 126,67 126,113 90,134 54,113 54,67" stroke-opacity="0.35"/>
-                <circle cx="90" cy="90" r="16"/>
-                <line x1="90" y1="74" x2="90" y2="16"/>
-                <line x1="103.9" y1="82" x2="158" y2="55"/>
-                <line x1="103.9" y1="98" x2="158" y2="125"/>
-                <line x1="90" y1="106" x2="90" y2="164"/>
-                <line x1="76.1" y1="98" x2="22" y2="125"/>
-                <line x1="76.1" y1="82" x2="22" y2="55"/>
-              </svg>
+            <div class="one-card__stat">
+              <span class="one-card__stat-num">12 yr</span>
+              <span class="one-card__stat-label">In Business</span>
+            </div>
+            <div class="one-card__stat">
+              <span class="one-card__stat-num">98%</span>
+              <span class="one-card__stat-label">Client Retention</span>
             </div>
           </div>
+          <a href="#" class="one-card__cta">
+            Start a project
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
 
-        <!-- ── Card 2 — Growth Marketing ── -->
-        <div class="stk-card stk-card--2" id="stkCard2">
-          <span class="stk-card__bg-num" aria-hidden="true">02</span>
-          <div class="stk-card__inner">
-            <div class="stk-card__content">
-              <span class="stk-eyebrow">Growth Marketing</span>
-              <h2 class="stk-title">Campaigns that convert</h2>
-              <p class="stk-desc">Performance marketing engineered around real data — paid search, social ads, and SEO working together to drive qualified traffic and measurable ROI.</p>
-              <div class="stk-stats">
-                <div class="stk-stat">
-                  <span class="stk-stat__num">4.8×</span>
-                  <span class="stk-stat__label">Avg. ROAS</span>
-                </div>
-                <div class="stk-stat">
-                  <span class="stk-stat__num">120%</span>
-                  <span class="stk-stat__label">YoY growth</span>
-                </div>
-                <div class="stk-stat">
-                  <span class="stk-stat__num">$2B+</span>
-                  <span class="stk-stat__label">Ad spend managed</span>
+        <!-- ── 3D Phone ── -->
+        <div class="one-card__phone-wrap" aria-hidden="true">
+          <div class="phone-device">
+            <div class="phone-notch"></div>
+            <div class="phone-button"></div>
+            <div class="phone-screen">
+              <div class="ps-statusbar">
+                <span class="ps-time">9:41</span>
+                <div class="ps-icons">
+                  <div class="ps-icon ps-icon--signal"></div>
+                  <div class="ps-icon ps-icon--battery"></div>
                 </div>
               </div>
-              <a href="#" class="stk-cta">
-                View results
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-            </div>
-            <div class="stk-card__visual" aria-hidden="true">
-              <svg class="stk-card__icon" viewBox="0 0 180 180" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
-                <rect x="18" y="112" width="34" height="50" rx="6"/>
-                <rect x="73" y="78" width="34" height="84" rx="6"/>
-                <rect x="128" y="44" width="34" height="118" rx="6"/>
-                <path d="M35 102 L90 68 L145 38" stroke-width="2.5"/>
-                <path d="M133 30 L153 38 L144 55" fill="currentColor" stroke-width="0"/>
-                <line x1="10" y1="162" x2="170" y2="162" stroke-opacity="0.3"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        <!-- ── Card 3 — Digital Experience ── -->
-        <div class="stk-card stk-card--3" id="stkCard3">
-          <span class="stk-card__bg-num" aria-hidden="true">03</span>
-          <div class="stk-card__inner">
-            <div class="stk-card__content">
-              <span class="stk-eyebrow">Digital Experience</span>
-              <h2 class="stk-title">Websites built to win</h2>
-              <p class="stk-desc">From fast-loading landing pages to complex web apps — we design and build digital experiences that feel effortless and convert at every step of the funnel.</p>
-              <div class="stk-stats">
-                <div class="stk-stat">
-                  <span class="stk-stat__num">99</span>
-                  <span class="stk-stat__label">PageSpeed score</span>
-                </div>
-                <div class="stk-stat">
-                  <span class="stk-stat__num">3.2×</span>
-                  <span class="stk-stat__label">Conversion lift</span>
-                </div>
-                <div class="stk-stat">
-                  <span class="stk-stat__num">500+</span>
-                  <span class="stk-stat__label">Sites launched</span>
+              <div class="ps-orb">
+                <div class="ps-ring ps-ring--outer"></div>
+                <div class="ps-ring ps-ring--inner"></div>
+                <div class="ps-orb__core">
+                  <span class="ps-orb__num">97</span>
+                  <span class="ps-orb__unit">%</span>
+                  <span class="ps-orb__label">Growth</span>
                 </div>
               </div>
-              <a href="#" class="stk-cta">
-                See our work
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-            </div>
-            <div class="stk-card__visual" aria-hidden="true">
-              <svg class="stk-card__icon" viewBox="0 0 180 180" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
-                <rect x="12" y="28" width="156" height="110" rx="12"/>
-                <line x1="12" y1="56" x2="168" y2="56"/>
-                <circle cx="30" cy="42" r="5" fill="currentColor" stroke-width="0"/>
-                <circle cx="48" cy="42" r="5" fill="currentColor" stroke-width="0"/>
-                <circle cx="66" cy="42" r="5" fill="currentColor" stroke-width="0"/>
-                <line x1="28" y1="82" x2="72" y2="82" stroke-opacity="0.6"/>
-                <line x1="28" y1="97" x2="110" y2="97"/>
-                <line x1="28" y1="112" x2="88" y2="112" stroke-opacity="0.6"/>
-                <line x1="98" y1="112" x2="140" y2="112"/>
-                <line x1="28" y1="127" x2="92" y2="127" stroke-opacity="0.6"/>
-                <rect x="34" y="148" width="112" height="12" rx="6" stroke-opacity="0.2"/>
-                <rect x="62" y="148" width="56" height="12" rx="6"/>
+              <div class="ps-bars">
+                <div class="ps-bar ps-bar--1"></div>
+                <div class="ps-bar ps-bar--2"></div>
+                <div class="ps-bar ps-bar--3"></div>
+                <div class="ps-bar ps-bar--4"></div>
+                <div class="ps-bar ps-bar--5"></div>
+              </div>
+              <svg class="ps-wave" viewBox="0 0 180 28" xmlns="http://www.w3.org/2000/svg">
+                <path class="ps-wave__path" d="M0 14 Q22 4 45 14 Q68 24 90 14 Q112 4 135 14 Q158 24 180 14"/>
               </svg>
+              <div class="ps-scan"></div>
             </div>
           </div>
         </div>
@@ -505,6 +439,333 @@
         </div>
 
       </div>
+    </section>
+
+    <!-- ══ SECTION 1 — Scrolling Testimonials ══ -->
+    <section class="tm-section" aria-label="Client love letters">
+
+      <div class="tm-heading">
+        <h2>Love letters to<br>Leo Digital</h2>
+      </div>
+
+      <div class="tm-scroll-wrap" aria-label="Testimonial cards">
+        <div class="tm-track" aria-hidden="true">
+
+          <!-- ── Set 1 ── -->
+          <article class="tm-card">
+            <div class="tm-avatar" style="background:#6366f1; width:56px; height:56px; font-size:1.25rem;">PS</div>
+            <div class="tm-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="tm-quote">"Leo Digital completely transformed our social media presence. We went from 2K to 50K followers in just 6 months. Absolutely incredible."</p>
+            <span class="tm-name">Priya Sharma</span>
+            <span class="tm-role">CMO · TechVibe</span>
+          </article>
+
+          <article class="tm-card">
+            <div class="tm-avatar" style="background:#0ea5e9; width:56px; height:56px; font-size:1.25rem;">RM</div>
+            <div class="tm-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="tm-quote">"The ROI on our paid campaigns has been phenomenal — 3x more leads at half the cost per acquisition. Best investment we've ever made."</p>
+            <span class="tm-name">Rahul Mehta</span>
+            <span class="tm-role">Founder · GrowthBridge</span>
+          </article>
+
+          <article class="tm-card">
+            <div class="tm-avatar" style="background:#10b981; width:56px; height:56px; font-size:1.25rem;">AS</div>
+            <div class="tm-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="tm-quote">"Their content strategy is second to none. Our blog traffic increased by 280% in the first quarter alone. The team is phenomenally talented."</p>
+            <span class="tm-name">Ananya Singh</span>
+            <span class="tm-role">Marketing Director · NovaBrands</span>
+          </article>
+
+          <article class="tm-card">
+            <div class="tm-avatar" style="background:#f59e0b; width:56px; height:56px; font-size:1.25rem;">VP</div>
+            <div class="tm-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="tm-quote">"The team's creativity and data-driven approach helped us launch three successful product campaigns. Every single one exceeded targets."</p>
+            <span class="tm-name">Vikram Patel</span>
+            <span class="tm-role">CEO · LaunchPad Co</span>
+          </article>
+
+          <article class="tm-card">
+            <div class="tm-avatar" style="background:#ec4899; width:56px; height:56px; font-size:1.25rem;">MK</div>
+            <div class="tm-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="tm-quote">"Exceptional! Our e-commerce conversion rate jumped from 1.2% to 4.8% within 90 days. Leo Digital's strategies simply work."</p>
+            <span class="tm-name">Meera Krishnan</span>
+            <span class="tm-role">Head of Growth · ShopSprint</span>
+          </article>
+
+          <article class="tm-card">
+            <div class="tm-avatar" style="background:#8b5cf6; width:56px; height:56px; font-size:1.25rem;">AN</div>
+            <div class="tm-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="tm-quote">"Leo Digital is our growth engine. Every campaign they run exceeds our expectations. Partnership has been a total game-changer for us."</p>
+            <span class="tm-name">Arjun Nair</span>
+            <span class="tm-role">Co-Founder · ScaleUp</span>
+          </article>
+
+          <!-- ── Set 2 (duplicate for seamless loop) ── -->
+          <article class="tm-card" aria-hidden="true">
+            <div class="tm-avatar" style="background:#6366f1; width:56px; height:56px; font-size:1.25rem;">PS</div>
+            <div class="tm-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="tm-quote">"Leo Digital completely transformed our social media presence. We went from 2K to 50K followers in just 6 months. Absolutely incredible."</p>
+            <span class="tm-name">Priya Sharma</span>
+            <span class="tm-role">CMO · TechVibe</span>
+          </article>
+
+          <article class="tm-card" aria-hidden="true">
+            <div class="tm-avatar" style="background:#0ea5e9; width:56px; height:56px; font-size:1.25rem;">RM</div>
+            <div class="tm-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="tm-quote">"The ROI on our paid campaigns has been phenomenal — 3x more leads at half the cost per acquisition. Best investment we've ever made."</p>
+            <span class="tm-name">Rahul Mehta</span>
+            <span class="tm-role">Founder · GrowthBridge</span>
+          </article>
+
+          <article class="tm-card" aria-hidden="true">
+            <div class="tm-avatar" style="background:#10b981; width:56px; height:56px; font-size:1.25rem;">AS</div>
+            <div class="tm-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="tm-quote">"Their content strategy is second to none. Our blog traffic increased by 280% in the first quarter alone. The team is phenomenally talented."</p>
+            <span class="tm-name">Ananya Singh</span>
+            <span class="tm-role">Marketing Director · NovaBrands</span>
+          </article>
+
+          <article class="tm-card" aria-hidden="true">
+            <div class="tm-avatar" style="background:#f59e0b; width:56px; height:56px; font-size:1.25rem;">VP</div>
+            <div class="tm-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="tm-quote">"The team's creativity and data-driven approach helped us launch three successful product campaigns. Every single one exceeded targets."</p>
+            <span class="tm-name">Vikram Patel</span>
+            <span class="tm-role">CEO · LaunchPad Co</span>
+          </article>
+
+          <article class="tm-card" aria-hidden="true">
+            <div class="tm-avatar" style="background:#ec4899; width:56px; height:56px; font-size:1.25rem;">MK</div>
+            <div class="tm-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="tm-quote">"Exceptional! Our e-commerce conversion rate jumped from 1.2% to 4.8% within 90 days. Leo Digital's strategies simply work."</p>
+            <span class="tm-name">Meera Krishnan</span>
+            <span class="tm-role">Head of Growth · ShopSprint</span>
+          </article>
+
+          <article class="tm-card" aria-hidden="true">
+            <div class="tm-avatar" style="background:#8b5cf6; width:56px; height:56px; font-size:1.25rem;">AN</div>
+            <div class="tm-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="tm-quote">"Leo Digital is our growth engine. Every campaign they run exceeds our expectations. Partnership has been a total game-changer for us."</p>
+            <span class="tm-name">Arjun Nair</span>
+            <span class="tm-role">Co-Founder · ScaleUp</span>
+          </article>
+
+        </div><!-- /.tm-track -->
+      </div><!-- /.tm-scroll-wrap -->
+
+    </section>
+
+    <!-- ══ SECTION 2 — Stats 2×2 Grid ══ -->
+    <section class="tm-stats-section" aria-label="Client results and impact">
+
+      <div class="tm-stats-inner">
+
+        <div class="tm-stats-header">
+          <span class="tm-stats-eyebrow">Real Results</span>
+          <h2 class="tm-stats-title">Numbers that<br>speak for themselves</h2>
+        </div>
+
+        <div class="tm-stats-grid">
+
+          <!-- Card 1 -->
+          <div class="tm-stat-card">
+            <div class="tm-stat-arrow">
+              <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+            <p class="tm-stat-value">3x faster<br>results</p>
+            <p class="tm-stat-quote">"Digital marketing transformed our growth velocity overnight. We hit our annual target in just four months."</p>
+            <div class="tm-stat-author">
+              <div class="tm-avatar" style="background:#4f46e5; width:34px; height:34px; font-size:0.78125rem;">PS</div>
+              <div>
+                <div class="tm-stat-info-name">Priya Sharma</div>
+                <div class="tm-stat-info-title">CMO · TechVibe</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="tm-stat-card">
+            <div class="tm-stat-arrow">
+              <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+            <p class="tm-stat-value">90% more<br>qualified leads</p>
+            <p class="tm-stat-quote">"We never imagined digital marketing could deliver this kind of pipeline growth at such low acquisition cost."</p>
+            <div class="tm-stat-author">
+              <div class="tm-avatar" style="background:#0284c7; width:34px; height:34px; font-size:0.78125rem;">RM</div>
+              <div>
+                <div class="tm-stat-info-name">Rahul Mehta</div>
+                <div class="tm-stat-info-title">Founder · GrowthBridge</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="tm-stat-card">
+            <div class="tm-stat-arrow">
+              <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+            <p class="tm-stat-value">20% faster<br>campaign execution</p>
+            <p class="tm-stat-quote">"From brief to live campaign in record time. The AI-powered workflows are remarkably efficient and consistently on-brand."</p>
+            <div class="tm-stat-author">
+              <div class="tm-avatar" style="background:#059669; width:34px; height:34px; font-size:0.78125rem;">AS</div>
+              <div>
+                <div class="tm-stat-info-name">Ananya Singh</div>
+                <div class="tm-stat-info-title">Marketing Director · NovaBrands</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="tm-stat-card">
+            <div class="tm-stat-arrow">
+              <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </div>
+            <p class="tm-stat-value">4x faster<br>customer responses</p>
+            <p class="tm-stat-quote">"Customer engagement across all channels improved overnight. The omnichannel strategy is truly transformative."</p>
+            <div class="tm-stat-author">
+              <div class="tm-avatar" style="background:#d97706; width:34px; height:34px; font-size:0.78125rem;">MK</div>
+              <div>
+                <div class="tm-stat-info-name">Meera Krishnan</div>
+                <div class="tm-stat-info-title">Head of Growth · ShopSprint</div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.tm-stats-grid -->
+
+      </div><!-- /.tm-stats-inner -->
+
+    </section>
+
+    <!-- ══ SECTION 3 — Growth Hero CTA ══ -->
+    <section class="tm-growth-section" aria-label="Get started with Leo Digital">
+
+      <div class="tm-growth-photo" aria-hidden="true"></div>
+
+      <!-- Animated dotted rings (right side) -->
+      <div class="tm-ring-wrap" aria-hidden="true">
+
+        <!-- Ring 1 — outer, 12 dots -->
+        <div class="tm-ring tm-ring--1">
+          <span class="tm-dot" style="transform:rotate(0deg)   translateX(140px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(30deg)  translateX(140px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(60deg)  translateX(140px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(90deg)  translateX(140px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(120deg) translateX(140px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(150deg) translateX(140px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(180deg) translateX(140px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(210deg) translateX(140px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(240deg) translateX(140px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(270deg) translateX(140px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(300deg) translateX(140px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(330deg) translateX(140px) translateY(-50%)"></span>
+        </div>
+
+        <!-- Ring 2 — middle, 9 dots -->
+        <div class="tm-ring tm-ring--2">
+          <span class="tm-dot" style="transform:rotate(0deg)   translateX(106px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(40deg)  translateX(106px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(80deg)  translateX(106px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(120deg) translateX(106px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(160deg) translateX(106px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(200deg) translateX(106px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(240deg) translateX(106px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(280deg) translateX(106px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(320deg) translateX(106px) translateY(-50%)"></span>
+        </div>
+
+        <!-- Ring 3 — inner, 6 dots -->
+        <div class="tm-ring tm-ring--3">
+          <span class="tm-dot" style="transform:rotate(0deg)   translateX(72px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(60deg)  translateX(72px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(120deg) translateX(72px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(180deg) translateX(72px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(240deg) translateX(72px) translateY(-50%)"></span>
+          <span class="tm-dot" style="transform:rotate(300deg) translateX(72px) translateY(-50%)"></span>
+        </div>
+
+      </div>
+
+      <div class="tm-growth-content">
+        <h2 class="tm-growth-title">Start growing</h2>
+        <p class="tm-growth-sub">Effortless digital marketing in every channel: 4x faster execution, AI-powered campaigns and auto-optimisation across every touchpoint.</p>
+        <div class="tm-growth-ctas">
+          <a href="#" class="tm-btn-dark">Get Started</a>
+          <a href="#" class="tm-btn-outline">Try Demo</a>
+        </div>
+      </div>
+
     </section>
 
   </main>

@@ -1,0 +1,472 @@
+/* ════════════════════════════════════════
+   TESTIMONIALS — 3-section block
+   1. Scrolling cards   (black bg)
+   2. Stats 2×2 grid   (dark green bg)
+   3. Growth hero CTA  (dark bg + animated ring)
+════════════════════════════════════════ */
+
+/* ── SHARED ── */
+.tm-avatar {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════
+   SECTION 1 — Scrolling Testimonials
+═══════════════════════════════════════ */
+.tm-section {
+  background: #080808;
+  padding: 6rem 0 5rem;
+  overflow: hidden;
+  border-radius: 72px;
+  margin: 1.5rem 0;
+}
+
+.tm-heading {
+  text-align: center;
+  padding: 0 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.tm-heading h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+/* Scroll wrapper — fade edges */
+.tm-scroll-wrap {
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+
+/* Track — doubled content for seamless loop */
+.tm-track {
+  display: flex;
+  gap: 1.375rem;
+  width: max-content;
+  padding: 0.75rem 0.75rem 2rem;
+  animation: tm-scroll 50s linear infinite;
+}
+
+.tm-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes tm-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Individual card */
+.tm-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 2rem 1.75rem 1.75rem;
+  width: 296px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18), 0 1px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tm-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 44px rgba(0,0,0,0.28), 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.tm-card .tm-avatar {
+  width: 56px;
+  height: 56px;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+/* Star rating */
+.tm-stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 0.875rem;
+}
+
+.tm-stars svg {
+  width: 13px;
+  height: 13px;
+  fill: #f59e0b;
+}
+
+.tm-quote {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #333333;
+  line-height: 1.68;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.tm-name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #111111;
+}
+
+.tm-role {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: #6e6e73;
+  margin-top: 0.2rem;
+}
+
+/* ═══════════════════════════════════════
+   SECTION 2 — Stats 2×2 Grid
+═══════════════════════════════════════ */
+.tm-stats-section {
+  background: #1a5c4a;
+  padding: 5rem 2rem;
+  border-radius: 72px;
+  margin: 1.5rem 0;
+}
+
+.tm-stats-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.tm-stats-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.tm-stats-eyebrow {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 0.75rem;
+}
+
+.tm-stats-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.tm-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.tm-stat-card {
+  background: rgba(255,255,255,0.07);
+  border-radius: 18px;
+  padding: 2rem 1.75rem 1.75rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.tm-stat-card:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-3px);
+}
+
+/* Arrow badge top-right */
+.tm-stat-arrow {
+  position: absolute;
+  top: 1.375rem;
+  right: 1.375rem;
+  width: 30px;
+  height: 30px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tm-stat-arrow svg {
+  width: 14px;
+  height: 14px;
+  stroke: #fff;
+  stroke-width: 2.2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.tm-stat-value {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.625rem, 3vw, 2.25rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.tm-stat-quote {
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 1.75rem;
+}
+
+.tm-stat-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.tm-stat-card .tm-avatar {
+  width: 34px;
+  height: 34px;
+  font-size: 0.78125rem;
+}
+
+.tm-stat-info-name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  color: #ffffff;
+}
+
+.tm-stat-info-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6875rem;
+  color: rgba(255,255,255,0.55);
+  margin-top: 0.125rem;
+}
+
+/* ═══════════════════════════════════════
+   SECTION 3 — Growth Hero CTA
+═══════════════════════════════════════ */
+.tm-growth-section {
+  position: relative;
+  background: #060a06;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 7rem 2rem;
+  border-radius: 72px;
+  margin: 1.5rem 0;
+}
+
+/* Gradient background glow */
+.tm-growth-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 30% 50%, rgba(26,92,74,0.45) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 75% 50%, rgba(8,16,8,0.8) 0%, transparent 100%);
+  z-index: 0;
+}
+
+/* Faux lifestyle photo layer */
+.tm-growth-photo {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, #0c1f0e 0%, #141a14 40%, #0d1810 100%);
+  z-index: 0;
+}
+
+/* Noise texture grain */
+.tm-growth-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+
+/* Main content */
+.tm-growth-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 680px;
+}
+
+.tm-growth-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(3rem, 7.5vw, 5.25rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.375rem;
+}
+
+.tm-growth-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  margin-bottom: 2.75rem;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tm-growth-ctas {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tm-btn-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  color: #0a0a0a;
+  padding: 0.875rem 2.25rem;
+  border-radius: 9999px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.tm-btn-dark:hover {
+  background: #f2f2f2;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.tm-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  color: #ffffff;
+  padding: 0.875rem 2.25rem;
+  border-radius: 9999px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.tm-btn-outline:hover {
+  border-color: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.07);
+  transform: translateY(-2px);
+}
+
+/* ── Animated dotted rings ── */
+.tm-ring-wrap {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 300px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .tm-ring-wrap { display: none; }
+}
+
+/* Each ring layer rotates at its own speed */
+.tm-ring {
+  position: absolute;
+  inset: 0;
+  animation: tm-orbit 14s linear infinite;
+}
+
+.tm-ring--2 {
+  inset: 28px;
+  animation-duration: 22s;
+  animation-direction: reverse;
+}
+
+.tm-ring--3 {
+  inset: 56px;
+  animation-duration: 36s;
+}
+
+@keyframes tm-orbit {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Dots positioned radially using CSS transforms */
+.tm-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform-origin: 0 0;
+}
+
+/* Dot sizes for each ring layer */
+.tm-ring--1 .tm-dot {
+  width: 5px;
+  height: 5px;
+  background: rgba(255,255,255,0.75);
+  margin: -2.5px 0 0 -2.5px;
+}
+
+.tm-ring--2 .tm-dot {
+  width: 4px;
+  height: 4px;
+  background: rgba(255,255,255,0.55);
+  margin: -2px 0 0 -2px;
+}
+
+.tm-ring--3 .tm-dot {
+  width: 3px;
+  height: 3px;
+  background: rgba(255,255,255,0.4);
+  margin: -1.5px 0 0 -1.5px;
+}
+
+/* ── Responsive adjustments ── */
+@media (max-width: 640px) {
+  .tm-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tm-card {
+    width: 260px;
+  }
+
+  .tm-growth-section {
+    padding: 5rem 1.5rem;
+  }
+}

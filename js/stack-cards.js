@@ -87,5 +87,34 @@
     });
   }
 
+  /* ── One-card scroll parallax: content rises as you scroll ── */
+  function initOneCardParallax() {
+    var section = document.querySelector('.one-card-section');
+    if (!section) return;
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+    var trigger = {
+      trigger : section,
+      start   : 'top bottom',
+      end     : 'bottom top',
+      scrub   : 1.5,
+    };
+
+    /* Text content rises 70px */
+    gsap.to('.one-card__inner', {
+      y    : -70,
+      ease : 'none',
+      scrollTrigger: trigger,
+    });
+
+    /* Phone rises slightly slower — cinematic depth */
+    gsap.to('.one-card__phone-wrap', {
+      y    : -38,
+      ease : 'none',
+      scrollTrigger: trigger,
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', initStackCards);
+  document.addEventListener('DOMContentLoaded', initOneCardParallax);
 })();
