@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
+  initDropdowns();
+  if (typeof initHeroAI === 'function') initHeroAI();
   initModal();
   initMobileMenu();
   initScrollReveal();

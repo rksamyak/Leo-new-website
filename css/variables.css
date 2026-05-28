@@ -1,30 +1,30 @@
 :root {
-  /* ── Colour Palette — Pure White + Deep Black ── */
-  --clr-bg:            #FFFFFF;
-  --clr-bg-2:          #F7F7F7;
-  --clr-bg-3:          #F0F0F0;
-  --clr-surface:       rgba(0, 0, 0, 0.03);
-  --clr-surface-hover: rgba(0, 0, 0, 0.06);
-  --clr-border:        rgba(0, 0, 0, 0.08);
-  --clr-border-hover:  rgba(0, 0, 0, 0.16);
+  /* ── Colour Palette — Cream + Soft Purple ── */
+  --clr-bg:            #F6F1E8;
+  --clr-bg-2:          #EDE8DC;
+  --clr-bg-3:          #E5DFD1;
+  --clr-surface:       rgba(255, 255, 255, 0.55);
+  --clr-surface-hover: rgba(255, 255, 255, 0.80);
+  --clr-border:        rgba(17, 17, 17, 0.08);
+  --clr-border-hover:  rgba(17, 17, 17, 0.16);
 
-  /* Text — near-black on white */
-  --clr-white:    #0D0D0D;
-  --clr-white-80: rgba(13, 13, 13, 0.80);
-  --clr-white-60: rgba(13, 13, 13, 0.60);
-  --clr-white-40: rgba(13, 13, 13, 0.40);
-  --clr-white-20: rgba(13, 13, 13, 0.20);
-  --clr-white-10: rgba(13, 13, 13, 0.08);
+  /* Text — near-black on cream */
+  --clr-white:    #111111;
+  --clr-white-80: rgba(17, 17, 17, 0.80);
+  --clr-white-60: rgba(17, 17, 17, 0.60);
+  --clr-white-40: rgba(17, 17, 17, 0.40);
+  --clr-white-20: rgba(17, 17, 17, 0.20);
+  --clr-white-10: rgba(17, 17, 17, 0.08);
 
-  /* Brand accent — deep black */
-  --clr-accent:   #0D0D0D;
-  --clr-accent-2: #2a2a2a;
-  --clr-glow:     rgba(0, 0, 0, 0.12);
+  /* Brand accent — soft purple */
+  --clr-accent:   #D9B8FF;
+  --clr-accent-2: #C89CFF;
+  --clr-glow:     rgba(217, 184, 255, 0.35);
 
   /* Legacy aliases kept for components */
-  --clr-grey-1: #0D0D0D;
-  --clr-grey-2: #444444;
-  --clr-grey-3: #888888;
+  --clr-grey-1: #111111;
+  --clr-grey-2: #6E6E73;
+  --clr-grey-3: #9CA3AF;
 
   /* ── Typography ── */
   --font-sans:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -71,16 +71,16 @@
   --max-width:     1280px;
   --section-pad-y: var(--space-32);
   --section-pad-x: var(--space-8);
-  --navbar-height: 72px;
+  --navbar-height: 90px;
 
-  /* ── Glassmorphism — white frosted glass ── */
-  --glass-bg:           rgba(255, 255, 255, 0.68);
+  /* ── Glassmorphism — white frosted glass on cream ── */
+  --glass-bg:           rgba(255, 255, 255, 0.65);
   --glass-bg-hover:     rgba(255, 255, 255, 0.90);
-  --glass-blur:         18px;
-  --glass-border:       1px solid rgba(0, 0, 0, 0.08);
-  --glass-border-hover: 1px solid rgba(0, 0, 0, 0.16);
-  --glass-shadow:       0 4px 24px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
-  --glass-shadow-lg:    0 20px 60px rgba(0, 0, 0, 0.14), 0 4px 12px rgba(0, 0, 0, 0.06);
+  --glass-blur:         20px;
+  --glass-border:       1px solid rgba(255, 255, 255, 0.50);
+  --glass-border-hover: 1px solid rgba(255, 255, 255, 0.80);
+  --glass-shadow:       0 8px 32px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+  --glass-shadow-lg:    0 20px 60px rgba(0, 0, 0, 0.10), 0 4px 12px rgba(0, 0, 0, 0.06);
 
   /* ── Transitions ── */
   --transition-fast:   150ms ease;

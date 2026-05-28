@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="css/modal.css" />
   <link rel="stylesheet" href="css/hero.css" />
   <link rel="stylesheet" href="css/careers.css" />
+  <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
@@ -28,28 +29,77 @@
   </div>
 
   <header class="navbar" id="navbar" role="banner">
-    <nav class="navbar__inner" aria-label="Main navigation">
-      <a href="index.html" class="navbar__logo" aria-label="Leo Digital — Home">
-        <img src="images/logo_dark.png" alt="Leo Digital" class="navbar__logo-img" />
-      </a>
-      <div class="navbar__sep" aria-hidden="true"></div>
-      <ul class="navbar__links" id="navLinks" role="list">
-        <li><a href="index.html"     class="nav-link">Home</a></li>
-        <li><a href="about.html"     class="nav-link">About</a></li>
-        <li><a href="expertise.html" class="nav-link">Expertise</a></li>
-        <li><a href="work.html"      class="nav-link">Our Work</a></li>
-        <li><a href="insights.html"  class="nav-link">Insights</a></li>
-        <li><a href="news.html"      class="nav-link">News &amp; Updates</a></li>
-        <li><a href="careers.html"   class="nav-link">Careers</a></li>
-        <li><a href="contact.html"   class="nav-link">Contact</a></li>
-      </ul>
-      <button class="btn-login" id="loginBtn" aria-haspopup="dialog" aria-controls="modalOverlay">Login</button>
-      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
-        <span class="hamburger__bar"></span>
-        <span class="hamburger__bar"></span>
-        <span class="hamburger__bar"></span>
-      </button>
-    </nav>
+    <div class="navbar__wrap">
+      <nav class="navbar__inner" aria-label="Main navigation">
+
+        <a href="index.html" class="navbar__logo" aria-label="Leo Digital — Home">
+          <img src="images/logo_dark.png" alt="Leo Digital" class="navbar__logo-img" />
+        </a>
+
+        <ul class="navbar__links" id="navLinks" role="list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Our Work</a></li>
+
+          <li class="nav-item nav-item--dropdown">
+            <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+              Resources
+              <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="dropdown" role="menu">
+              <a href="insights.html" class="dropdown__item" role="menuitem">
+                <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label">Insights</span><span class="dropdown__item-desc">Thought leadership</span></span>
+              </a>
+              <a href="news.html" class="dropdown__item" role="menuitem">
+                <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8z"/></svg></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label">News</span><span class="dropdown__item-desc">Latest updates &amp; press</span></span>
+              </a>
+            </div>
+          </li>
+
+          <li class="nav-item nav-item--dropdown">
+            <button class="nav-link nav-link--active" aria-haspopup="true" aria-expanded="false">
+              Company
+              <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="dropdown" role="menu">
+              <a href="careers.html" class="dropdown__item" role="menuitem">
+                <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label">Careers</span><span class="dropdown__item-desc">Work with us</span></span>
+              </a>
+              <a href="about.html" class="dropdown__item" role="menuitem">
+                <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label">About</span><span class="dropdown__item-desc">Our story and mission</span></span>
+              </a>
+            </div>
+          </li>
+
+          <!-- Mobile-only links -->
+          <li class="nav-item nav-item--mobile-only">
+            <button class="nav-link btn-login" aria-haspopup="dialog" aria-controls="modalOverlay">
+              Login
+            </button>
+          </li>
+        </ul>
+
+        <div class="navbar__actions">
+          <button class="btn-login" id="loginBtn" aria-haspopup="dialog" aria-controls="modalOverlay">
+            <span class="btn-login__icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            Log in
+          </button>
+          <a href="#" class="btn-cta">Contact</a>
+          <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+            <span class="hamburger__bar"></span>
+            <span class="hamburger__bar"></span>
+            <span class="hamburger__bar"></span>
+          </button>
+        </div>
+
+      </nav>
+    </div>
   </header>
 
   <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
@@ -78,7 +128,7 @@
     <section class="section section--careers" style="padding-top:calc(var(--navbar-height) + 3rem);padding-bottom:2rem;">
       <div class="section__inner">
         <div class="section__label reveal-up">Join Us</div>
-        <h1 class="section__title reveal-up" style="transition-delay:80ms;font-size:clamp(2.5rem,5vw,4rem);">
+        <h1 class="section__title reveal-up" style="transition-delay:80ms;font-size:clamp(2.2rem,4vw,3.2rem);">
           Build Something<br><span class="text-gradient">Remarkable</span>
         </h1>
         <p class="reveal-up" style="color:var(--clr-white-60);font-size:1.125rem;max-width:620px;line-height:1.8;transition-delay:160ms;">
@@ -210,7 +260,7 @@
                   <li>Present and defend design decisions to senior stakeholders with clarity and confidence</li>
                   <li>Mentor junior designers and contribute to our internal design practice</li>
                 </ul>
-                <a href="contact.html" class="btn btn--primary">Apply Now</a>
+                <a href="#" class="btn btn--primary">Apply Now</a>
               </div>
             </div>
           </article>
@@ -236,7 +286,7 @@
                   <li>Collaborate closely with design teams to bring complex interactions to life</li>
                   <li>Lead technical discovery, estimations, and architectural reviews for new projects</li>
                 </ul>
-                <a href="contact.html" class="btn btn--primary">Apply Now</a>
+                <a href="#" class="btn btn--primary">Apply Now</a>
               </div>
             </div>
           </article>
@@ -262,7 +312,7 @@
                   <li>Work alongside creative directors to ensure strategy is expressed through design</li>
                   <li>Build and manage client relationships across multiple simultaneous engagements</li>
                 </ul>
-                <a href="contact.html" class="btn btn--primary">Apply Now</a>
+                <a href="#" class="btn btn--primary">Apply Now</a>
               </div>
             </div>
           </article>
@@ -288,7 +338,7 @@
                   <li>Collaborate with client teams to define KPIs and measurement strategies from the start</li>
                   <li>Communicate complex findings to non-technical stakeholders with clarity</li>
                 </ul>
-                <a href="contact.html" class="btn btn--primary">Apply Now</a>
+                <a href="#" class="btn btn--primary">Apply Now</a>
               </div>
             </div>
           </article>
@@ -302,7 +352,7 @@
             <h4 style="color:var(--clr-white);font-weight:600;margin-bottom:.25rem;">Don't see the right role?</h4>
             <p style="color:var(--clr-white-60);font-size:.9375rem;line-height:1.6;">We are always interested in exceptional people. Send us a note about yourself and what you could bring to Leo Digital.</p>
           </div>
-          <a href="contact.html" class="btn btn--ghost" style="flex-shrink:0;">Get in Touch</a>
+          <a href="#" class="btn btn--ghost" style="flex-shrink:0;">Get in Touch</a>
         </div>
 
       </div>
@@ -311,41 +361,47 @@
   </main>
 
   <footer class="site-footer" role="contentinfo">
-    <div class="footer__inner">
-      <div class="footer__brand">
-        <img src="images/logo_dark.png" alt="Leo Digital" class="footer__logo-img" />
-        <p class="footer__tagline">Strategy, design, and engineering at the intersection of ambition and craft.</p>
-        <div class="footer__social" style="margin-top:1.5rem">
-          <a href="#" class="social-link" aria-label="Twitter / X">𝕏</a>
-          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
-          <a href="#" class="social-link" aria-label="Instagram">◻</a>
-          <a href="#" class="social-link" aria-label="Dribbble">◌</a>
-        </div>
-      </div>
-      <div>
-        <div class="footer__col-title">Navigation</div>
-        <ul class="footer__links-list">
-          <li><a href="index.html">Home</a></li>
+    <div class="ftr__top">
+      <div class="ftr__col">
+        <span class="ftr__col-head">Company</span>
+        <ul class="ftr__list">
           <li><a href="about.html">About</a></li>
-          <li><a href="expertise.html">Expertise</a></li>
-          <li><a href="work.html">Our Work</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="news.html">News &amp; Updates</a></li>
           <li><a href="insights.html">Insights</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
         </ul>
       </div>
-      <div>
-        <div class="footer__col-title">Company</div>
-        <ul class="footer__links-list">
-          <li><a href="news.html">News &amp; Updates</a></li>
-          <li><a href="careers.html">Careers</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="contact.html">Privacy Policy</a></li>
-          <li><a href="contact.html">Terms of Service</a></li>
+      <div class="ftr__col">
+        <span class="ftr__col-head">Services</span>
+        <ul class="ftr__list">
+          <li><a href="#">Websites &amp; Apps</a></li>
+          <li><a href="#">Creative &amp; Digital</a></li>
+          <li><a href="#">Brand Launches</a></li>
+          <li><a href="#">Performance Marketing</a></li>
+          <li><a href="#">Films &amp; Shoots</a></li>
+          <li><a href="#">Innovations</a></li>
+        </ul>
+      </div>
+      <div class="ftr__col">
+        <span class="ftr__col-head">Connect</span>
+        <ul class="ftr__list">
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer__legal">
+    <div class="ftr__divider"></div>
+    <div class="ftr__wordmark-wrap" aria-hidden="true">
+      <span class="ftr__wordmark">Leo Digital</span>
+    </div>
+    <div class="ftr__legal">
       <span>© 2026 Leo Digital Ltd. All rights reserved.</span>
-      <span>Crafted with precision in London</span>
+      <span>Crafted with precision in Bengaluru</span>
     </div>
   </footer>
 
@@ -355,5 +411,6 @@
   <script src="js/observer.js"></script>
   <script src="js/careers.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/footer.js"></script>
 </body>
 </html>

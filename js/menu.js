@@ -19,12 +19,19 @@ function initMobileMenu() {
     isOpen ? closeMenu() : openMenu();
   });
 
+  // Close on regular (non-dropdown) link click
   navLinks.addEventListener('click', e => {
-    if (e.target.classList.contains('nav-link')) closeMenu();
+    if (e.target.classList.contains('nav-link') && !e.target.hasAttribute('aria-haspopup')) {
+      closeMenu();
+    }
+    // Also close when clicking a dropdown leaf item
+    if (e.target.classList.contains('dropdown__item') || e.target.closest('.dropdown__item')) {
+      closeMenu();
+    }
   });
 
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 900) closeMenu();
+    if (window.innerWidth > 960) closeMenu();
   });
 
   // Close when clicking outside

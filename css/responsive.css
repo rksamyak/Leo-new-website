@@ -44,7 +44,7 @@
   :root {
     --section-pad-y: var(--space-16);
     --section-pad-x: var(--space-4);
-    --navbar-height: 72px;
+    --navbar-height: 76px;
   }
 
   /* Hero */

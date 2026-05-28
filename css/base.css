@@ -102,30 +102,30 @@
   transform: translateY(-2px);
 }
 
-/* Solid black primary */
+/* Soft purple primary */
 .btn--primary {
-  background: #0D0D0D;
-  color: #FFFFFF;
-  border-color: #0D0D0D;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+  background: #D9B8FF;
+  color: #111111;
+  border-color: #D9B8FF;
+  box-shadow: 0 4px 20px rgba(217, 184, 255, 0.40);
 }
 
 .btn--primary:hover {
-  background: #2a2a2a;
-  border-color: #2a2a2a;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.30);
+  background: #C89CFF;
+  border-color: #C89CFF;
+  box-shadow: 0 8px 32px rgba(217, 184, 255, 0.55);
 }
 
 /* Outlined ghost */
 .btn--ghost {
   background: transparent;
   color: var(--clr-white);
-  border-color: rgba(13, 13, 13, 0.25);
+  border-color: rgba(17, 17, 17, 0.20);
 }
 
 .btn--ghost:hover {
-  border-color: #0D0D0D;
-  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(17, 17, 17, 0.40);
+  background: rgba(255, 255, 255, 0.40);
 }
 
 .btn--full {
@@ -134,7 +134,7 @@
 
 /* ── Bold Text Gradient ── */
 .text-gradient {
-  background: linear-gradient(135deg, #0D0D0D 0%, #555555 100%);
+  background: linear-gradient(135deg, #111111 0%, #6E6E73 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -199,9 +199,9 @@
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: #0D0D0D;
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
-  background: #fff;
+  border-color: #D9B8FF;
+  box-shadow: 0 0 0 3px rgba(217, 184, 255, 0.20);
+  background: #ffffff;
 }
 
 .form-group input::placeholder,

@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leo Digital — Premium Digital Agency</title>
-  <meta name="description" content="Strategy, design, and engineering at the intersection of ambition and craft." />
+  <title>Runner Company — Premium Digital Marketing Agency</title>
+  <meta name="description" content="Transform your business with powerful digital marketing strategies, creative branding, social media growth, and high-converting campaigns." />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700;1,800&display=swap" rel="stylesheet" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/variables.css" />
@@ -17,17 +17,12 @@
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/animations.css" />
   <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/hero-ai.css" />
   <link rel="stylesheet" href="css/modal.css" />
-  <link rel="stylesheet" href="css/hero.css" />
-  <link rel="stylesheet" href="css/about.css" />
-  <link rel="stylesheet" href="css/expertise.css" />
-  <link rel="stylesheet" href="css/work.css" />
-  <link rel="stylesheet" href="css/insights.css" />
-  <link rel="stylesheet" href="css/news.css" />
-  <link rel="stylesheet" href="css/careers.css" />
-  <link rel="stylesheet" href="css/contact.css" />
-  <link rel="stylesheet" href="css/scene3d.css" />
-  <link rel="stylesheet" href="css/banner.css" />
+  <link rel="stylesheet" href="css/timebox.css" />
+  <link rel="stylesheet" href="css/stack-cards.css" />
+  <link rel="stylesheet" href="css/services-grid.css" />
+  <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
@@ -40,40 +35,78 @@
     <div class="bg-orb bg-orb--3"></div>
   </div>
 
-  <!-- ── Navbar ── -->
   <header class="navbar" id="navbar" role="banner">
-    <nav class="navbar__inner" aria-label="Main navigation">
+    <div class="navbar__wrap">
+      <nav class="navbar__inner" aria-label="Main navigation">
 
-      <a href="#home" class="navbar__logo" aria-label="Leo Digital — Home">
-        <img src="images/logo_dark.png" alt="Leo Digital" class="navbar__logo-img" />
-      </a>
+        <a href="index.html" class="navbar__logo" aria-label="Leo Digital — Home">
+          <img src="images/logo_dark.png" alt="Leo Digital" class="navbar__logo-img" />
+        </a>
 
-      <div class="navbar__sep" aria-hidden="true"></div>
-      <ul class="navbar__links" id="navLinks" role="list">
-        <li><a href="index.html"      class="nav-link">Home</a></li>
-        <li><a href="about.html"      class="nav-link">About</a></li>
-        <li><a href="expertise.html"  class="nav-link">Expertise</a></li>
-        <li><a href="work.html"       class="nav-link">Our Work</a></li>
-        <li><a href="insights.html"   class="nav-link">Insights</a></li>
-        <li><a href="news.html"       class="nav-link">News &amp; Updates</a></li>
-        <li><a href="careers.html"    class="nav-link">Careers</a></li>
-        <li><a href="contact.html"    class="nav-link">Contact</a></li>
-      </ul>
+        <ul class="navbar__links" id="navLinks" role="list">
+          <li class="nav-item"><a href="index.html" class="nav-link nav-link--active">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Our Work</a></li>
 
-      <button class="btn-login" id="loginBtn" aria-haspopup="dialog" aria-controls="modalOverlay">
-        Login
-      </button>
+          <li class="nav-item nav-item--dropdown">
+            <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+              Resources
+              <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="dropdown" role="menu">
+              <a href="insights.html" class="dropdown__item" role="menuitem">
+                <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label">Insights</span><span class="dropdown__item-desc">Thought leadership</span></span>
+              </a>
+              <a href="news.html" class="dropdown__item" role="menuitem">
+                <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8z"/></svg></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label">News</span><span class="dropdown__item-desc">Latest updates &amp; press</span></span>
+              </a>
+            </div>
+          </li>
 
-      <button class="hamburger" id="hamburger"
-              aria-label="Toggle navigation menu"
-              aria-expanded="false"
-              aria-controls="navLinks">
-        <span class="hamburger__bar"></span>
-        <span class="hamburger__bar"></span>
-        <span class="hamburger__bar"></span>
-      </button>
+          <li class="nav-item nav-item--dropdown">
+            <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+              Company
+              <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="dropdown" role="menu">
+              <a href="careers.html" class="dropdown__item" role="menuitem">
+                <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label">Careers</span><span class="dropdown__item-desc">Work with us</span></span>
+              </a>
+              <a href="about.html" class="dropdown__item" role="menuitem">
+                <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label">About</span><span class="dropdown__item-desc">Our story and mission</span></span>
+              </a>
+            </div>
+          </li>
 
-    </nav>
+          <!-- Mobile-only links -->
+          <li class="nav-item nav-item--mobile-only">
+            <button class="nav-link btn-login" aria-haspopup="dialog" aria-controls="modalOverlay">
+              Login
+            </button>
+          </li>
+        </ul>
+
+        <div class="navbar__actions">
+          <button class="btn-login" id="loginBtn" aria-haspopup="dialog" aria-controls="modalOverlay">
+            <span class="btn-login__icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            Log in
+          </button>
+          <a href="#" class="btn-cta">Contact</a>
+          <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+            <span class="hamburger__bar"></span>
+            <span class="hamburger__bar"></span>
+            <span class="hamburger__bar"></span>
+          </button>
+        </div>
+
+      </nav>
+    </div>
   </header>
 
   <!-- ── Login Modal ── -->
@@ -115,666 +148,360 @@
     </div>
   </div>
 
+  <!-- ── Timebox Overlay Modal ── -->
+  <div class="timebox-overlay" id="timeboxOverlay" role="dialog" aria-modal="true" aria-labelledby="timeboxTitle" hidden>
+    <div class="timebox" id="timebox">
+      <button class="timebox__close" id="timeboxClose" aria-label="Close timebox">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="timebox__orb timebox__orb--1"></div>
+      <div class="timebox__orb timebox__orb--2"></div>
+      <div class="timebox__orb timebox__orb--3"></div>
+      <div class="timebox__inner">
+        <div class="timebox__label" id="timeboxTitle">Current Time</div>
+        <div class="timebox__clock">
+          <span class="timebox__digit" id="tbHH">00</span>
+          <span class="timebox__sep">:</span>
+          <span class="timebox__digit" id="tbMM">00</span>
+          <span class="timebox__sep">:</span>
+          <span class="timebox__digit" id="tbSS">00</span>
+        </div>
+        <div class="timebox__date" id="timeboxDate">Thursday, 28 May 2026</div>
+        <div class="timebox__bar">
+          <div class="timebox__bar-fill" id="timeboxBarFill"></div>
+        </div>
+        <div class="timebox__timezone" id="timeboxTZ">Asia/Kolkata</div>
+      </div>
+    </div>
+  </div>
+
   <!-- ── Main Content ── -->
   <main id="main-content">
 
-    <!-- ══ 3D HERO — Igloo Inc style ══ -->
-    <section class="scene3d" id="scene3d">
-      <canvas class="scene3d__canvas" id="scene3dCanvas"></canvas>
+    <!-- ══ AI HERO SECTION ══ -->
+    <section class="hero-ai" id="hero-ai">
 
-      <!-- Overlay text -->
-      <div class="scene3d__content">
-        <span class="scene3d__eyebrow">
-          <span class="scene3d__eye-dot"></span>
-          Introducing Leo Digital
-        </span>
-        <h1 class="scene3d__title">
-          We are the parent studio to<br>
-          <span class="scene3d__grad">bold brands &amp; breakthrough</span><br>
-          digital experiences.
+      <!-- Ambient orbs -->
+      <div class="hero-ai__bg" aria-hidden="true">
+        <div class="hero-ai__orb hero-ai__orb--1"></div>
+        <div class="hero-ai__orb hero-ai__orb--2"></div>
+        <div class="hero-ai__orb hero-ai__orb--3"></div>
+      </div>
+      <div class="hero-ai__grid" aria-hidden="true"></div>
+
+      <!-- ── Main content ── -->
+      <div class="hero-ai__content">
+
+        <h1 class="hero-ai__title hero__title--clickable" id="heroTitle" tabindex="0">
+          Scale your<br><em>brand faster</em>
         </h1>
-        <p class="scene3d__sub">
-          Our mission is to craft the world's most impactful digital products —
-          driving the next era of brand, design, and engineering excellence.
+
+        <p class="hero-ai__sub">
+          Transform your business with powerful digital marketing strategies, creative branding, social media growth, and high-converting campaigns.
         </p>
-        <div class="scene3d__actions">
-          <a href="work.html"    class="btn btn--primary">See Our Work</a>
-          <a href="about.html"   class="scene3d__ghost">Learn More →</a>
+
+        <div class="hero-ai__ctas">
+          <button class="hero-ai__btn-primary" id="heroMicBtn">
+            <svg class="hero-ai__mic-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+              <polyline points="16 7 22 7 22 13"/>
+            </svg>
+            Start Growing
+          </button>
         </div>
+
+        <div class="hero-ai__trust">
+          <span class="hero-ai__trust-dot" aria-hidden="true"></span>
+          Trusted by 400+ brands worldwide
+        </div>
+
       </div>
+
     </section>
 
-    <!-- ══ BANNER CAROUSEL — immediately after 3D hero ══ -->
-    <section class="banner-carousel" aria-label="Featured banners">
-      <div class="banner-track" id="bannerTrack">
+    <!-- ══ STACK CARDS ══ -->
+    <section class="stk-section" id="stkSection">
+      <div class="stk-sticky">
 
-        <!-- Banner 1 -->
-        <div class="banner-slide" style="--banner-gradient: linear-gradient(135deg, #0D0D0D 0%, #1a1a1a 60%, #2a2a2a 100%);">
-          <div class="banner-slide__content">
-            <span class="banner-slide__label">Agency of the Year 2026</span>
-            <h2 class="banner-slide__title">Bold Strategy.<br>Beautiful Craft.</h2>
-            <p class="banner-slide__body">We partner with ambitious brands to create digital experiences that drive real growth.</p>
-            <a href="work.html" class="btn btn--primary banner-slide__cta">See Our Work</a>
-          </div>
-          <div class="banner-slide__visual" aria-hidden="true">
-            <div class="banner-orb banner-orb--a"></div>
-            <div class="banner-orb banner-orb--b"></div>
-            <div class="banner-grid"></div>
-          </div>
-        </div>
-
-        <!-- Banner 2 -->
-        <div class="banner-slide" style="--banner-gradient: linear-gradient(135deg, #111111 0%, #1f1f1f 50%, #333333 100%);">
-          <div class="banner-slide__content">
-            <span class="banner-slide__label">New Partnership</span>
-            <h2 class="banner-slide__title">AI-Powered<br>Digital Solutions.</h2>
-            <p class="banner-slide__body">Our new collaboration with Vertex Labs brings deep AI expertise to every project we deliver.</p>
-            <a href="expertise.html" class="btn btn--primary banner-slide__cta">Explore Expertise</a>
-          </div>
-          <div class="banner-slide__visual" aria-hidden="true">
-            <div class="banner-orb banner-orb--a"></div>
-            <div class="banner-orb banner-orb--b"></div>
-            <div class="banner-grid"></div>
-          </div>
-        </div>
-
-        <!-- Banner 3 -->
-        <div class="banner-slide" style="--banner-gradient: linear-gradient(135deg, #0a0a0a 0%, #1c1c1c 45%, #2e2e2e 100%);">
-          <div class="banner-slide__content">
-            <span class="banner-slide__label">Now Open</span>
-            <h2 class="banner-slide__title">Global Reach.<br>Local Precision.</h2>
-            <p class="banner-slide__body">Five studios worldwide — London, New York, Dubai, Tokyo, and Singapore — serving clients at scale.</p>
-            <a href="about.html" class="btn btn--primary banner-slide__cta">About Us</a>
-          </div>
-          <div class="banner-slide__visual" aria-hidden="true">
-            <div class="banner-orb banner-orb--a"></div>
-            <div class="banner-orb banner-orb--b"></div>
-            <div class="banner-grid"></div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Controls -->
-      <div class="banner-controls" aria-label="Banner navigation">
-        <button class="banner-btn banner-btn--prev" id="bannerPrev" aria-label="Previous banner">&#8592;</button>
-        <div class="banner-dots" id="bannerDots">
-          <button class="banner-dot banner-dot--active" aria-label="Banner 1" data-index="0"></button>
-          <button class="banner-dot" aria-label="Banner 2" data-index="1"></button>
-          <button class="banner-dot" aria-label="Banner 3" data-index="2"></button>
-        </div>
-        <button class="banner-btn banner-btn--next" id="bannerNext" aria-label="Next banner">&#8594;</button>
-      </div>
-    </section>
-
-    <!-- ══ HERO — after banner ══ -->
-    <section id="home" class="section section--hero" aria-labelledby="heroTitle" style="padding-top:3rem;">
-      <div class="hero__inner">
-        <div class="hero__eyebrow reveal-up">Premium Digital Agency</div>
-        <h1 class="hero__title reveal-up" id="heroTitle" style="transition-delay:80ms">
-          We Build <span class="text-gradient">Digital</span><br>Experiences That Matter
-        </h1>
-        <p class="hero__sub reveal-up" style="transition-delay:160ms">
-          Strategy, design, and engineering at the intersection of ambition and craft. We partner with bold brands to create lasting digital impact.
-        </p>
-        <div class="hero__ctas reveal-up" style="transition-delay:240ms">
-          <a href="work.html" class="btn btn--primary">See Our Work</a>
-          <a href="contact.html" class="btn btn--ghost">Get in Touch</a>
-        </div>
-        <div class="hero__scroll" aria-hidden="true">
-          <div class="scroll-line"></div>
-          <span class="scroll-label">Scroll</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ SECTION 2: ABOUT ══ -->
-    <section id="about" class="section section--about" aria-labelledby="aboutTitle">
-      <div class="section__inner">
-
-        <div class="section__label reveal-up">Who We Are</div>
-        <h2 class="section__title reveal-up" id="aboutTitle" style="transition-delay:80ms">
-          Built on Bold Ideas,<br>Driven by Results
-        </h2>
-
-        <div class="about__grid">
-          <div class="about__story reveal-left">
-            <h3>A decade of digital mastery</h3>
-            <p>
-              Leo Digital was founded with a singular vision: to create digital experiences that don't just look beautiful, but fundamentally transform how businesses connect with their audiences. We are a full-service agency built on craft, strategy, and relentless execution.
-            </p>
-            <p>
-              From ambitious startups to global enterprises, we bring the same level of dedication to every project — a deep commitment to understanding your business, your users, and the intersection where great design meets meaningful technology.
-            </p>
-            <p>
-              Our multidisciplinary team of strategists, designers, and engineers work in close collaboration, challenging conventional thinking to deliver work that sets new standards.
-            </p>
-          </div>
-
-          <div class="about__values reveal-right">
-            <div class="value-card glass-card">
-              <div class="value-card__icon">◈</div>
-              <div class="value-card__body">
-                <h4>Craft First</h4>
-                <p>Every pixel, every line of code, every word is deliberate. We don't cut corners — we set standards.</p>
-              </div>
-            </div>
-            <div class="value-card glass-card">
-              <div class="value-card__icon">⬡</div>
-              <div class="value-card__body">
-                <h4>Strategy-Led</h4>
-                <p>Beautiful work without purpose is decoration. We lead with insight and build with intention.</p>
-              </div>
-            </div>
-            <div class="value-card glass-card">
-              <div class="value-card__icon">◎</div>
-              <div class="value-card__body">
-                <h4>Partnership</h4>
-                <p>We don't take briefs — we take ownership. Your success is our benchmark for everything we build.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="about__stats">
-          <div class="stat-item reveal-up" data-delay="0">
-            <div class="stat-number-wrap">
-              <span class="stat__number" data-target="150">0</span>
-              <span class="stat__suffix">+</span>
-            </div>
-            <span class="stat__label">Projects Delivered</span>
-          </div>
-          <div class="stat-item reveal-up" data-delay="100">
-            <div class="stat-number-wrap">
-              <span class="stat__number" data-target="12">0</span>
-            </div>
-            <span class="stat__label">Years in Business</span>
-          </div>
-          <div class="stat-item reveal-up" data-delay="200">
-            <div class="stat-number-wrap">
-              <span class="stat__number" data-target="98">0</span>
-              <span class="stat__suffix">%</span>
-            </div>
-            <span class="stat__label">Client Satisfaction</span>
-          </div>
-          <div class="stat-item reveal-up" data-delay="300">
-            <div class="stat-number-wrap">
-              <span class="stat__number" data-target="40">0</span>
-              <span class="stat__suffix">+</span>
-            </div>
-            <span class="stat__label">Team Members</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ══ SECTION 3: EXPERTISE ══ -->
-    <section id="expertise" class="section section--expertise" aria-labelledby="expertiseTitle">
-      <div class="section__inner">
-
-        <div class="section__label reveal-up">What We Do</div>
-        <h2 class="section__title reveal-up" id="expertiseTitle" style="transition-delay:80ms">Our Expertise</h2>
-
-        <div class="expertise__grid">
-
-          <article class="expertise-card glass-card reveal-up" data-delay="0">
-            <div class="card__icon">◐</div>
-            <h3 class="card__title">Brand Strategy</h3>
-            <p class="card__text">We help brands find their voice, define their position, and build identities that resonate deeply with the audiences that matter most.</p>
-            <span class="card__arrow">↗</span>
-          </article>
-
-          <article class="expertise-card glass-card reveal-up" data-delay="80">
-            <div class="card__icon">◫</div>
-            <h3 class="card__title">UX &amp; Product Design</h3>
-            <p class="card__text">Human-centred design that turns complexity into clarity. We craft interfaces that are intuitive, elegant, and built for real people.</p>
-            <span class="card__arrow">↗</span>
-          </article>
-
-          <article class="expertise-card glass-card reveal-up" data-delay="160">
-            <div class="card__icon">⬚</div>
-            <h3 class="card__title">Engineering</h3>
-            <p class="card__text">From scalable architectures to pixel-perfect frontends, we build with precision, performance, and long-term maintainability in mind.</p>
-            <span class="card__arrow">↗</span>
-          </article>
-
-          <article class="expertise-card glass-card reveal-up" data-delay="240">
-            <div class="card__icon">◉</div>
-            <h3 class="card__title">Digital Marketing</h3>
-            <p class="card__text">Data-driven campaigns that attract, engage, and convert. From SEO and content to paid media and analytics — growth with purpose.</p>
-            <span class="card__arrow">↗</span>
-          </article>
-
-          <article class="expertise-card glass-card reveal-up" data-delay="320">
-            <div class="card__icon">◈</div>
-            <h3 class="card__title">Data &amp; Analytics</h3>
-            <p class="card__text">Turn raw data into decisive action. We build measurement frameworks and dashboards that make complex information instantly intelligible.</p>
-            <span class="card__arrow">↗</span>
-          </article>
-
-          <article class="expertise-card glass-card reveal-up" data-delay="400">
-            <div class="card__icon">⬡</div>
-            <h3 class="card__title">AI Integration</h3>
-            <p class="card__text">We identify where intelligence creates value and implement AI solutions that augment capabilities without adding unnecessary complexity.</p>
-            <span class="card__arrow">↗</span>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ SECTION 4: OUR WORK ══ -->
-    <section id="work" class="section section--work" aria-labelledby="workTitle">
-      <div class="section__inner">
-
-        <div class="section__label reveal-up">Portfolio</div>
-        <h2 class="section__title reveal-up" id="workTitle" style="transition-delay:80ms">Our Work</h2>
-
-        <div class="work__grid">
-
-          <article class="work-card reveal-up" data-delay="0" tabindex="0" aria-label="Meridian Finance — Brand Redesign case study">
-            <div class="work-card__bg"></div>
-            <div class="work-card__overlay">
-              <span class="work-card__category">Brand Identity</span>
-              <h3 class="work-card__title">Meridian Finance</h3>
-              <a href="contact.html" class="work-card__link">View Case Study →</a>
-            </div>
-            <div class="work-card__footer">
-              <span class="work-card__category">Brand Identity</span>
-              <span class="work-card__category">2025</span>
-            </div>
-          </article>
-
-          <article class="work-card reveal-up" data-delay="80" tabindex="0" aria-label="Vela Platform — Product Design case study">
-            <div class="work-card__bg"></div>
-            <div class="work-card__overlay">
-              <span class="work-card__category">Product Design</span>
-              <h3 class="work-card__title">Vela Platform</h3>
-              <a href="contact.html" class="work-card__link">View Case Study →</a>
-            </div>
-            <div class="work-card__footer">
-              <span class="work-card__category">Product Design</span>
-              <span class="work-card__category">2025</span>
-            </div>
-          </article>
-
-          <article class="work-card reveal-up" data-delay="160" tabindex="0" aria-label="Arca Studios — Web Experience case study">
-            <div class="work-card__bg"></div>
-            <div class="work-card__overlay">
-              <span class="work-card__category">Web Experience</span>
-              <h3 class="work-card__title">Arca Studios</h3>
-              <a href="contact.html" class="work-card__link">View Case Study →</a>
-            </div>
-            <div class="work-card__footer">
-              <span class="work-card__category">Web Experience</span>
-              <span class="work-card__category">2024</span>
-            </div>
-          </article>
-
-          <article class="work-card reveal-up" data-delay="240" tabindex="0" aria-label="Kova Health — Campaign case study">
-            <div class="work-card__bg"></div>
-            <div class="work-card__overlay">
-              <span class="work-card__category">Campaign</span>
-              <h3 class="work-card__title">Kova Health</h3>
-              <a href="contact.html" class="work-card__link">View Case Study →</a>
-            </div>
-            <div class="work-card__footer">
-              <span class="work-card__category">Campaign</span>
-              <span class="work-card__category">2024</span>
-            </div>
-          </article>
-
-          <article class="work-card reveal-up" data-delay="320" tabindex="0" aria-label="Lumen AI — Engineering case study">
-            <div class="work-card__bg"></div>
-            <div class="work-card__overlay">
-              <span class="work-card__category">Engineering</span>
-              <h3 class="work-card__title">Lumen AI</h3>
-              <a href="contact.html" class="work-card__link">View Case Study →</a>
-            </div>
-            <div class="work-card__footer">
-              <span class="work-card__category">Engineering</span>
-              <span class="work-card__category">2024</span>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ SECTION 5: INSIGHTS ══ -->
-    <section id="insights" class="section section--insights" aria-labelledby="insightsTitle">
-      <div class="section__inner">
-
-        <div class="section__label reveal-up">Blog</div>
-        <h2 class="section__title reveal-up" id="insightsTitle" style="transition-delay:80ms">Insights</h2>
-
-        <div class="insights__grid">
-
-          <!-- Featured post -->
-          <article class="insight-card glass-card reveal-up" data-delay="0">
-            <div class="insight-card__image">
-              <div class="insight-card__image-placeholder"></div>
-            </div>
-            <div class="insight-card__body">
-              <div class="insight-card__meta">
-                <span class="tag">Design Systems</span>
-                <time datetime="2026-05">May 2026</time>
-              </div>
-              <h3 class="insight-card__title">The Future of Design Systems: Tokens, AI, and the Living Style Guide</h3>
-              <p class="insight-card__excerpt">Design systems are evolving from static documentation into adaptive, AI-augmented foundations. Here is what that means for modern product teams building at scale.</p>
-              <a href="insights.html" class="link-arrow">Read Article →</a>
-            </div>
-          </article>
-
-          <!-- Regular posts -->
-          <article class="insight-card glass-card reveal-up" data-delay="80">
-            <div class="insight-card__meta">
-              <span class="tag">Engineering</span>
-              <time datetime="2026-04">April 2026</time>
-            </div>
-            <h3 class="insight-card__title">Why We Moved Away from Micro-Frontends (And What We Use Instead)</h3>
-            <p class="insight-card__excerpt">A candid look at the promises and pitfalls of micro-frontends, and the simpler architecture that solved our scale problems.</p>
-            <a href="insights.html" class="link-arrow">Read Article →</a>
-          </article>
-
-          <article class="insight-card glass-card reveal-up" data-delay="160">
-            <div class="insight-card__meta">
-              <span class="tag">Strategy</span>
-              <time datetime="2026-04">April 2026</time>
-            </div>
-            <h3 class="insight-card__title">Positioning in a Crowded Market: How Differentiation Actually Works</h3>
-            <p class="insight-card__excerpt">Most brands think they are differentiated. Their customers disagree. We explore what genuine positioning looks like in practice.</p>
-            <a href="insights.html" class="link-arrow">Read Article →</a>
-          </article>
-
-          <article class="insight-card glass-card reveal-up" data-delay="240">
-            <div class="insight-card__meta">
-              <span class="tag">AI</span>
-              <time datetime="2026-03">March 2026</time>
-            </div>
-            <h3 class="insight-card__title">Integrating AI Without Losing the Human Touch in Your Product</h3>
-            <p class="insight-card__excerpt">The best AI integrations are invisible. We share our framework for identifying where intelligence adds value and where it erodes trust.</p>
-            <a href="insights.html" class="link-arrow">Read Article →</a>
-          </article>
-
-          <article class="insight-card glass-card reveal-up" data-delay="320">
-            <div class="insight-card__meta">
-              <span class="tag">UX Research</span>
-              <time datetime="2026-03">March 2026</time>
-            </div>
-            <h3 class="insight-card__title">Five Research Methods That Actually Change Product Decisions</h3>
-            <p class="insight-card__excerpt">Most UX research ends up in a slide deck nobody reads. Here are the methods we use that reliably influence what gets built and why.</p>
-            <a href="insights.html" class="link-arrow">Read Article →</a>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ SECTION 6: NEWS & UPDATES ══ -->
-    <section id="news" class="section section--news" aria-labelledby="newsTitle">
-      <div class="section__inner">
-
-        <div class="section__label reveal-up">Latest</div>
-        <h2 class="section__title reveal-up" id="newsTitle" style="transition-delay:80ms">News &amp; Updates</h2>
-
-        <div class="news__timeline">
-
-          <div class="news-item">
-            <div class="news-item__content glass-card reveal-left" data-delay="0">
-              <span class="tag news-item__tag">Award</span>
-              <time class="news-item__date" datetime="2026-05">May 2026</time>
-              <h3 class="news-item__title">Leo Digital Named Agency of the Year by Digital Week</h3>
-              <p class="news-item__body">We are honoured to be recognised for our work across brand, product, and engineering for the second consecutive year.</p>
-            </div>
-            <div class="news-item__dot" aria-hidden="true"></div>
-            <div class="news-item__empty"></div>
-          </div>
-
-          <div class="news-item">
-            <div class="news-item__empty"></div>
-            <div class="news-item__dot" aria-hidden="true"></div>
-            <div class="news-item__content glass-card reveal-right" data-delay="80">
-              <span class="tag news-item__tag">Partnership</span>
-              <time class="news-item__date" datetime="2026-04">April 2026</time>
-              <h3 class="news-item__title">Strategic Partnership Announced with Vertex Labs</h3>
-              <p class="news-item__body">Our new partnership with Vertex Labs expands our AI and data capabilities to serve enterprise clients at global scale.</p>
-            </div>
-          </div>
-
-          <div class="news-item">
-            <div class="news-item__content glass-card reveal-left" data-delay="160">
-              <span class="tag news-item__tag">Growth</span>
-              <time class="news-item__date" datetime="2026-03">March 2026</time>
-              <h3 class="news-item__title">New Singapore Office Opens, Expanding Asia-Pacific Presence</h3>
-              <p class="news-item__body">Our Singapore studio marks our fifth global location and third in the Asia-Pacific region, bringing us closer to our growing client base.</p>
-            </div>
-            <div class="news-item__dot" aria-hidden="true"></div>
-            <div class="news-item__empty"></div>
-          </div>
-
-          <div class="news-item">
-            <div class="news-item__empty"></div>
-            <div class="news-item__dot" aria-hidden="true"></div>
-            <div class="news-item__content glass-card reveal-right" data-delay="240">
-              <span class="tag news-item__tag">Launch</span>
-              <time class="news-item__date" datetime="2026-02">February 2026</time>
-              <h3 class="news-item__title">Launching LeoOS: Our Open-Source Design System Framework</h3>
-              <p class="news-item__body">After three years of internal development, we are releasing LeoOS — our component framework and token system — to the open-source community.</p>
-            </div>
-          </div>
-
-          <div class="news-item">
-            <div class="news-item__content glass-card reveal-left" data-delay="320">
-              <span class="tag news-item__tag">Team</span>
-              <time class="news-item__date" datetime="2026-01">January 2026</time>
-              <h3 class="news-item__title">Welcome: Five New Team Members Join Leo Digital</h3>
-              <p class="news-item__body">We welcome senior talent across engineering, brand strategy, and UX research as we continue to grow our capabilities and client roster.</p>
-            </div>
-            <div class="news-item__dot" aria-hidden="true"></div>
-            <div class="news-item__empty"></div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ SECTION 7: CAREERS ══ -->
-    <section id="careers" class="section section--careers" aria-labelledby="careersTitle">
-      <div class="section__inner">
-
-        <div class="section__label reveal-up">Join Us</div>
-        <h2 class="section__title reveal-up" id="careersTitle" style="transition-delay:80ms">Open Roles</h2>
-
-        <div class="careers__intro reveal-up" style="transition-delay:160ms">
-          <p>We are always looking for exceptional talent who care deeply about craft, collaboration, and impact. Here is where you can make a difference.</p>
-        </div>
-
-        <div class="careers__list">
-
-          <article class="career-item glass-card reveal-up" data-delay="0">
-            <button class="career-item__header" aria-expanded="false" aria-controls="job-1">
-              <div class="career-item__meta">
-                <h3 class="career-item__title">Senior UX Designer</h3>
-                <div class="career-item__tags">
-                  <span class="tag">Full-time</span>
-                  <span class="tag">Remote</span>
-                  <span class="tag">Design</span>
+        <!-- ── Card 1 — Creative Strategy ── -->
+        <div class="stk-card stk-card--1" id="stkCard1">
+          <span class="stk-card__bg-num" aria-hidden="true">01</span>
+          <div class="stk-card__inner">
+            <div class="stk-card__content">
+              <span class="stk-eyebrow">Creative Strategy</span>
+              <h2 class="stk-title">Ideas that change markets</h2>
+              <p class="stk-desc">We build brand identities from the ground up — from positioning and visual language to the campaigns that make them impossible to ignore.</p>
+              <div class="stk-stats">
+                <div class="stk-stat">
+                  <span class="stk-stat__num">300+</span>
+                  <span class="stk-stat__label">Brands built</span>
+                </div>
+                <div class="stk-stat">
+                  <span class="stk-stat__num">8 yr</span>
+                  <span class="stk-stat__label">Avg. partnership</span>
+                </div>
+                <div class="stk-stat">
+                  <span class="stk-stat__num">97%</span>
+                  <span class="stk-stat__label">Retention rate</span>
                 </div>
               </div>
-              <span class="career-item__chevron" aria-hidden="true">+</span>
-            </button>
-            <div class="career-item__body" id="job-1">
-              <div class="career-item__body-inner">
-                <p class="career-item__desc">We are looking for a Senior UX Designer to lead end-to-end product design across complex digital products — from discovery and research to delivery and iteration. You will work closely with engineering, strategy, and client teams to shape experiences that are both meaningful and measurable.</p>
-                <ul class="career-item__list">
-                  <li>Lead user research, synthesis, and design exploration for enterprise-scale products</li>
-                  <li>Produce high-fidelity prototypes and component specifications using Figma</li>
-                  <li>Present and defend design decisions to senior stakeholders with clarity and confidence</li>
-                  <li>Mentor junior designers and contribute to our internal design practice</li>
-                </ul>
-                <a href="#contact" class="btn btn--primary">Apply Now</a>
-              </div>
+              <a href="#" class="stk-cta">
+                Explore strategy
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
             </div>
-          </article>
-
-          <article class="career-item glass-card reveal-up" data-delay="80">
-            <button class="career-item__header" aria-expanded="false" aria-controls="job-2">
-              <div class="career-item__meta">
-                <h3 class="career-item__title">Lead Frontend Engineer</h3>
-                <div class="career-item__tags">
-                  <span class="tag">Full-time</span>
-                  <span class="tag">Hybrid</span>
-                  <span class="tag">Engineering</span>
-                </div>
-              </div>
-              <span class="career-item__chevron" aria-hidden="true">+</span>
-            </button>
-            <div class="career-item__body" id="job-2">
-              <div class="career-item__body-inner">
-                <p class="career-item__desc">As Lead Frontend Engineer, you will own the technical delivery of our most ambitious client projects — setting standards for performance, accessibility, and code quality while mentoring a team of talented engineers.</p>
-                <ul class="career-item__list">
-                  <li>Architect and implement scalable frontend solutions using modern frameworks and tooling</li>
-                  <li>Champion performance, accessibility, and web standards across all deliverables</li>
-                  <li>Collaborate closely with design teams to bring complex interactions to life</li>
-                  <li>Lead technical discovery, estimations, and architectural reviews for new projects</li>
-                </ul>
-                <a href="#contact" class="btn btn--primary">Apply Now</a>
-              </div>
+            <div class="stk-card__visual" aria-hidden="true">
+              <svg class="stk-card__icon" viewBox="0 0 180 180" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+                <polygon points="90,16 158,55 158,125 90,164 22,125 22,55"/>
+                <polygon points="90,46 126,67 126,113 90,134 54,113 54,67" stroke-opacity="0.35"/>
+                <circle cx="90" cy="90" r="16"/>
+                <line x1="90" y1="74" x2="90" y2="16"/>
+                <line x1="103.9" y1="82" x2="158" y2="55"/>
+                <line x1="103.9" y1="98" x2="158" y2="125"/>
+                <line x1="90" y1="106" x2="90" y2="164"/>
+                <line x1="76.1" y1="98" x2="22" y2="125"/>
+                <line x1="76.1" y1="82" x2="22" y2="55"/>
+              </svg>
             </div>
-          </article>
-
-          <article class="career-item glass-card reveal-up" data-delay="160">
-            <button class="career-item__header" aria-expanded="false" aria-controls="job-3">
-              <div class="career-item__meta">
-                <h3 class="career-item__title">Brand Strategist</h3>
-                <div class="career-item__tags">
-                  <span class="tag">Full-time</span>
-                  <span class="tag">London</span>
-                  <span class="tag">Strategy</span>
-                </div>
-              </div>
-              <span class="career-item__chevron" aria-hidden="true">+</span>
-            </button>
-            <div class="career-item__body" id="job-3">
-              <div class="career-item__body-inner">
-                <p class="career-item__desc">We need a Brand Strategist with the rare ability to translate business ambition into compelling brand platforms. You will work at the intersection of insight, language, and visual thinking — shaping how brands present themselves to the world.</p>
-                <ul class="career-item__list">
-                  <li>Lead brand audits, competitive analysis, and positioning workshops with clients</li>
-                  <li>Develop brand platforms including positioning statements, narrative, and messaging hierarchies</li>
-                  <li>Work alongside creative directors to ensure strategy is expressed through design</li>
-                  <li>Build and manage client relationships across multiple simultaneous engagements</li>
-                </ul>
-                <a href="#contact" class="btn btn--primary">Apply Now</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="career-item glass-card reveal-up" data-delay="240">
-            <button class="career-item__header" aria-expanded="false" aria-controls="job-4">
-              <div class="career-item__meta">
-                <h3 class="career-item__title">Data Analyst</h3>
-                <div class="career-item__tags">
-                  <span class="tag">Full-time</span>
-                  <span class="tag">Remote</span>
-                  <span class="tag">Data</span>
-                </div>
-              </div>
-              <span class="career-item__chevron" aria-hidden="true">+</span>
-            </button>
-            <div class="career-item__body" id="job-4">
-              <div class="career-item__body-inner">
-                <p class="career-item__desc">We are seeking a Data Analyst who can find the signal in the noise — transforming raw data into clear, actionable recommendations that drive product and marketing decisions for our clients.</p>
-                <ul class="career-item__list">
-                  <li>Build and maintain analytics dashboards, tracking frameworks, and reporting systems</li>
-                  <li>Conduct deep analysis on user behaviour, campaign performance, and conversion funnels</li>
-                  <li>Collaborate with client teams to define KPIs and measurement strategies from the start</li>
-                  <li>Communicate complex findings to non-technical stakeholders with clarity</li>
-                </ul>
-                <a href="#contact" class="btn btn--primary">Apply Now</a>
-              </div>
-            </div>
-          </article>
-
+          </div>
         </div>
+
+        <!-- ── Card 2 — Growth Marketing ── -->
+        <div class="stk-card stk-card--2" id="stkCard2">
+          <span class="stk-card__bg-num" aria-hidden="true">02</span>
+          <div class="stk-card__inner">
+            <div class="stk-card__content">
+              <span class="stk-eyebrow">Growth Marketing</span>
+              <h2 class="stk-title">Campaigns that convert</h2>
+              <p class="stk-desc">Performance marketing engineered around real data — paid search, social ads, and SEO working together to drive qualified traffic and measurable ROI.</p>
+              <div class="stk-stats">
+                <div class="stk-stat">
+                  <span class="stk-stat__num">4.8×</span>
+                  <span class="stk-stat__label">Avg. ROAS</span>
+                </div>
+                <div class="stk-stat">
+                  <span class="stk-stat__num">120%</span>
+                  <span class="stk-stat__label">YoY growth</span>
+                </div>
+                <div class="stk-stat">
+                  <span class="stk-stat__num">$2B+</span>
+                  <span class="stk-stat__label">Ad spend managed</span>
+                </div>
+              </div>
+              <a href="#" class="stk-cta">
+                View results
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+            <div class="stk-card__visual" aria-hidden="true">
+              <svg class="stk-card__icon" viewBox="0 0 180 180" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+                <rect x="18" y="112" width="34" height="50" rx="6"/>
+                <rect x="73" y="78" width="34" height="84" rx="6"/>
+                <rect x="128" y="44" width="34" height="118" rx="6"/>
+                <path d="M35 102 L90 68 L145 38" stroke-width="2.5"/>
+                <path d="M133 30 L153 38 L144 55" fill="currentColor" stroke-width="0"/>
+                <line x1="10" y1="162" x2="170" y2="162" stroke-opacity="0.3"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Card 3 — Digital Experience ── -->
+        <div class="stk-card stk-card--3" id="stkCard3">
+          <span class="stk-card__bg-num" aria-hidden="true">03</span>
+          <div class="stk-card__inner">
+            <div class="stk-card__content">
+              <span class="stk-eyebrow">Digital Experience</span>
+              <h2 class="stk-title">Websites built to win</h2>
+              <p class="stk-desc">From fast-loading landing pages to complex web apps — we design and build digital experiences that feel effortless and convert at every step of the funnel.</p>
+              <div class="stk-stats">
+                <div class="stk-stat">
+                  <span class="stk-stat__num">99</span>
+                  <span class="stk-stat__label">PageSpeed score</span>
+                </div>
+                <div class="stk-stat">
+                  <span class="stk-stat__num">3.2×</span>
+                  <span class="stk-stat__label">Conversion lift</span>
+                </div>
+                <div class="stk-stat">
+                  <span class="stk-stat__num">500+</span>
+                  <span class="stk-stat__label">Sites launched</span>
+                </div>
+              </div>
+              <a href="#" class="stk-cta">
+                See our work
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+            <div class="stk-card__visual" aria-hidden="true">
+              <svg class="stk-card__icon" viewBox="0 0 180 180" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+                <rect x="12" y="28" width="156" height="110" rx="12"/>
+                <line x1="12" y1="56" x2="168" y2="56"/>
+                <circle cx="30" cy="42" r="5" fill="currentColor" stroke-width="0"/>
+                <circle cx="48" cy="42" r="5" fill="currentColor" stroke-width="0"/>
+                <circle cx="66" cy="42" r="5" fill="currentColor" stroke-width="0"/>
+                <line x1="28" y1="82" x2="72" y2="82" stroke-opacity="0.6"/>
+                <line x1="28" y1="97" x2="110" y2="97"/>
+                <line x1="28" y1="112" x2="88" y2="112" stroke-opacity="0.6"/>
+                <line x1="98" y1="112" x2="140" y2="112"/>
+                <line x1="28" y1="127" x2="92" y2="127" stroke-opacity="0.6"/>
+                <rect x="34" y="148" width="112" height="12" rx="6" stroke-opacity="0.2"/>
+                <rect x="62" y="148" width="56" height="12" rx="6"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- ══ SECTION 8: CONTACT ══ -->
-    <section id="contact" class="section section--contact" aria-labelledby="contactTitle">
-      <div class="section__inner">
+    <!-- ── Services Grid ── -->
+    <section class="srv-grid" id="servicesGrid" aria-label="Our services">
+      <div class="srv-grid__header">
+        <div class="srv-grid__meta">
+          <span class="srv-grid__eyebrow">What We Do</span>
+          <h2 class="srv-grid__title">Capabilities<br>that convert</h2>
+        </div>
+        <p class="srv-grid__sub">Eight disciplines. One integrated team. Built to grow ambitious brands.</p>
+      </div>
 
-        <div class="section__label reveal-up">Say Hello</div>
-        <h2 class="section__title reveal-up" id="contactTitle" style="transition-delay:80ms">Let's Work Together</h2>
+      <div class="srv-grid__cells">
 
-        <div class="contact__grid">
-
-          <!-- Form -->
-          <div class="contact__form-wrap glass-card reveal-left">
-            <form class="contact__form" id="contactForm" novalidate>
-              <div class="form-group">
-                <label for="contactName">Full Name</label>
-                <input type="text" id="contactName" name="name"
-                       placeholder="John Doe" required autocomplete="name" />
-              </div>
-              <div class="form-group">
-                <label for="contactEmail">Email</label>
-                <input type="email" id="contactEmail" name="email"
-                       placeholder="john@company.com" required autocomplete="email" />
-              </div>
-              <div class="form-group">
-                <label for="contactCompany">Company</label>
-                <input type="text" id="contactCompany" name="company"
-                       placeholder="Your Company" autocomplete="organization" />
-              </div>
-              <div class="form-group">
-                <label for="contactMessage">Message</label>
-                <textarea id="contactMessage" name="message" rows="5"
-                          placeholder="Tell us about your project..." required></textarea>
-              </div>
-              <button type="submit" class="btn btn--primary btn--full">Send Message</button>
-            </form>
+        <!-- 01 -->
+        <div class="srv-cell">
+          <div class="srv-cell__top">
+            <span class="srv-cell__num">01</span>
+            <svg class="srv-cell__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </div>
+          <h3 class="srv-cell__title">Websites<br>&amp; Apps</h3>
+          <svg class="srv-cell__icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="6" y="14" width="88" height="58" rx="7"/>
+            <line x1="6" y1="32" x2="94" y2="32"/>
+            <circle cx="18" cy="23" r="3" fill="currentColor" stroke-width="0"/>
+            <circle cx="29" cy="23" r="3" fill="currentColor" stroke-width="0"/>
+            <circle cx="40" cy="23" r="3" fill="currentColor" stroke-width="0"/>
+            <line x1="36" y1="86" x2="64" y2="86"/>
+            <line x1="50" y1="72" x2="50" y2="86"/>
+            <line x1="18" y1="44" x2="38" y2="44" stroke-opacity="0.55"/>
+            <line x1="18" y1="53" x2="56" y2="53"/>
+            <line x1="18" y1="62" x2="44" y2="62" stroke-opacity="0.55"/>
+          </svg>
+        </div>
 
-          <!-- Info -->
-          <div class="contact__info reveal-right">
-
-            <div class="contact__map">
-              <div class="contact__map-pin">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 21s-8-7.25-8-12a8 8 0 0 1 16 0c0 4.75-8 12-8 12z"/>
-                  <circle cx="12" cy="9" r="2.5"/>
-                </svg>
-                <span>London, United Kingdom</span>
-              </div>
-            </div>
-
-            <div class="contact__details">
-              <div class="contact__detail-item">
-                <div class="contact__detail-icon">✉</div>
-                <div>
-                  <div class="contact__detail-label">Email</div>
-                  <div class="contact__detail-value">hello@leodigital.com</div>
-                </div>
-              </div>
-              <div class="contact__detail-item">
-                <div class="contact__detail-icon">☏</div>
-                <div>
-                  <div class="contact__detail-label">Phone</div>
-                  <div class="contact__detail-value">+44 (0) 20 7946 0958</div>
-                </div>
-              </div>
-              <div class="contact__detail-item">
-                <div class="contact__detail-icon">◎</div>
-                <div>
-                  <div class="contact__detail-label">Address</div>
-                  <div class="contact__detail-value">12 Finsbury Square, London EC2A 1AB</div>
-                </div>
-              </div>
-            </div>
-
+        <!-- 02 -->
+        <div class="srv-cell">
+          <div class="srv-cell__top">
+            <span class="srv-cell__num">02</span>
+            <svg class="srv-cell__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </div>
+          <h3 class="srv-cell__title">Creative<br>&amp; Digital</h3>
+          <svg class="srv-cell__icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="36" cy="50" r="26"/>
+            <circle cx="64" cy="50" r="26"/>
+            <path d="M50 26 Q50 50 50 74" stroke-opacity="0.4"/>
+          </svg>
+        </div>
+
+        <!-- 03 -->
+        <div class="srv-cell">
+          <div class="srv-cell__top">
+            <span class="srv-cell__num">03</span>
+            <svg class="srv-cell__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <h3 class="srv-cell__title">Brand<br>Launches</h3>
+          <svg class="srv-cell__icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M50 88 L50 24 C50 24 34 38 22 42 C34 46 50 60 50 60"/>
+            <path d="M50 24 C50 24 66 38 78 42 C66 46 50 60 50 60" stroke-opacity="0.4"/>
+            <line x1="24" y1="70" x2="40" y2="86"/>
+            <circle cx="50" cy="18" r="5"/>
+            <line x1="50" y1="13" x2="50" y2="7"/>
+          </svg>
+        </div>
+
+        <!-- 04 -->
+        <div class="srv-cell">
+          <div class="srv-cell__top">
+            <span class="srv-cell__num">04</span>
+            <svg class="srv-cell__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <h3 class="srv-cell__title">High Impact<br>Campaigns</h3>
+          <svg class="srv-cell__icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="50" cy="50" r="42"/>
+            <circle cx="50" cy="50" r="28"/>
+            <circle cx="50" cy="50" r="14"/>
+            <circle cx="50" cy="50" r="4" fill="currentColor" stroke-width="0"/>
+          </svg>
+        </div>
+
+        <!-- 05 -->
+        <div class="srv-cell">
+          <div class="srv-cell__top">
+            <span class="srv-cell__num">05</span>
+            <svg class="srv-cell__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <h3 class="srv-cell__title">Films<br>&amp; Shoots</h3>
+          <svg class="srv-cell__icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="8" y="30" width="60" height="44" rx="6"/>
+            <path d="M68 42 L92 30 L92 72 L68 60 Z"/>
+            <circle cx="34" cy="52" r="10"/>
+            <circle cx="34" cy="52" r="4" fill="currentColor" stroke-width="0"/>
+            <line x1="22" y1="24" x2="16" y2="30"/>
+            <line x1="38" y1="24" x2="32" y2="30"/>
+            <line x1="54" y1="24" x2="48" y2="30"/>
+          </svg>
+        </div>
+
+        <!-- 06 -->
+        <div class="srv-cell">
+          <div class="srv-cell__top">
+            <span class="srv-cell__num">06</span>
+            <svg class="srv-cell__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <h3 class="srv-cell__title">Performance<br>Marketing</h3>
+          <svg class="srv-cell__icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="10" y="62" width="18" height="28" rx="3"/>
+            <rect x="41" y="44" width="18" height="46" rx="3"/>
+            <rect x="72" y="22" width="18" height="68" rx="3"/>
+            <path d="M19 54 L50 36 L81 18"/>
+            <path d="M74 10 L89 18 L81 33" fill="currentColor" stroke-width="0"/>
+          </svg>
+        </div>
+
+        <!-- 07 -->
+        <div class="srv-cell">
+          <div class="srv-cell__top">
+            <span class="srv-cell__num">07</span>
+            <svg class="srv-cell__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <h3 class="srv-cell__title">Award Winning<br>Campaigns</h3>
+          <svg class="srv-cell__icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M32 10 L68 10 L78 38 C78 58 66 74 50 82 C34 74 22 58 22 38 Z"/>
+            <line x1="50" y1="82" x2="50" y2="94"/>
+            <line x1="32" y1="94" x2="68" y2="94"/>
+            <line x1="22" y1="38" x2="10" y2="42" stroke-opacity="0.45"/>
+            <line x1="78" y1="38" x2="90" y2="42" stroke-opacity="0.45"/>
+            <path d="M42 42 L47 52 L58 36" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- 08 -->
+        <div class="srv-cell">
+          <div class="srv-cell__top">
+            <span class="srv-cell__num">08</span>
+            <svg class="srv-cell__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <h3 class="srv-cell__title">Innovations</h3>
+          <svg class="srv-cell__icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M50 14 C30 14 18 28 18 42 C18 54 26 62 36 68 L36 78 L64 78 L64 68 C74 62 82 54 82 42 C82 28 70 14 50 14 Z"/>
+            <line x1="36" y1="78" x2="64" y2="78"/>
+            <line x1="38" y1="86" x2="62" y2="86"/>
+            <line x1="43" y1="94" x2="57" y2="94"/>
+            <line x1="50" y1="30" x2="50" y2="44"/>
+            <line x1="40" y1="36" x2="60" y2="48" stroke-opacity="0.45"/>
+            <line x1="60" y1="36" x2="40" y2="48" stroke-opacity="0.45"/>
+          </svg>
         </div>
 
       </div>
@@ -782,271 +509,76 @@
 
   </main>
 
-  <!-- ── Footer ── -->
   <footer class="site-footer" role="contentinfo">
-    <div class="footer__inner">
-
-      <div class="footer__brand">
-        <img src="images/logo_dark.png" alt="Leo Digital" class="footer__logo-img" />
-        <p class="footer__tagline">
-          Strategy, design, and engineering at the intersection of ambition and craft.
-        </p>
-        <div class="footer__social" style="margin-top:1.5rem">
-          <a href="#" class="social-link" aria-label="Twitter / X">𝕏</a>
-          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
-          <a href="#" class="social-link" aria-label="Instagram">◻</a>
-          <a href="#" class="social-link" aria-label="Dribbble">◌</a>
-        </div>
-      </div>
-
-      <div>
-        <div class="footer__col-title">Navigation</div>
-        <ul class="footer__links-list">
-          <li><a href="index.html">Home</a></li>
+    <div class="ftr__top">
+      <div class="ftr__col">
+        <span class="ftr__col-head">Company</span>
+        <ul class="ftr__list">
           <li><a href="about.html">About</a></li>
-          <li><a href="expertise.html">Expertise</a></li>
-          <li><a href="work.html">Our Work</a></li>
-          <li><a href="insights.html">Insights</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <div class="footer__col-title">Company</div>
-        <ul class="footer__links-list">
-          <li><a href="news.html">News &amp; Updates</a></li>
           <li><a href="careers.html">Careers</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="contact.html">Privacy Policy</a></li>
-          <li><a href="contact.html">Terms of Service</a></li>
+          <li><a href="news.html">News &amp; Updates</a></li>
+          <li><a href="insights.html">Insights</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
         </ul>
       </div>
-
+      <div class="ftr__col">
+        <span class="ftr__col-head">Services</span>
+        <ul class="ftr__list">
+          <li><a href="#">Websites &amp; Apps</a></li>
+          <li><a href="#">Creative &amp; Digital</a></li>
+          <li><a href="#">Brand Launches</a></li>
+          <li><a href="#">Performance Marketing</a></li>
+          <li><a href="#">Films &amp; Shoots</a></li>
+          <li><a href="#">Innovations</a></li>
+        </ul>
+      </div>
+      <div class="ftr__col">
+        <span class="ftr__col-head">Connect</span>
+        <ul class="ftr__list">
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer__legal">
+    <div class="ftr__divider"></div>
+    <div class="ftr__wordmark-wrap" aria-hidden="true">
+      <span class="ftr__wordmark">Leo Digital</span>
+    </div>
+    <div class="ftr__legal">
       <span>© 2026 Leo Digital Ltd. All rights reserved.</span>
-      <span>Crafted with precision in London</span>
+      <span>Crafted with precision in Bengaluru</span>
     </div>
   </footer>
 
   <!-- JavaScript -->
   <script src="js/navbar.js"></script>
+  <script src="js/hero-ai.js"></script>
+  <script src="js/timebox.js"></script>
   <script src="js/modal.js"></script>
   <script src="js/menu.js"></script>
-  <script src="js/observer.js"></script>
-  <script src="js/counter.js"></script>
-  <script src="js/careers.js"></script>
-  <script src="js/banner.js"></script>
   <script src="js/main.js"></script>
-
-  <!-- ══ 3D GLOBE ANIMATION ══ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+  <script src="js/stack-cards.js"></script>
+  <script src="js/footer.js"></script>
   <script>
-  (function () {
-    'use strict';
-    const canvas = document.getElementById('scene3dCanvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-
-    let W, H, cx, cy;
-    const FOV          = 480;
-    const SPHERE_R     = 0;   // set after first resize
-    const DOT_COUNT    = 220;
-    const CONNECT_DIST = 95;  // 3D distance threshold for lines
-
-    let sphereR = 180;        // updated on resize
-
-    /* ── Fibonacci sphere — even point distribution ── */
-    function makeSphere(count, r) {
-      const pts = [];
-      const golden = Math.PI * (3 - Math.sqrt(5));
-      for (let i = 0; i < count; i++) {
-        const y     = 1 - (i / (count - 1)) * 2;
-        const rad   = Math.sqrt(Math.max(0, 1 - y * y));
-        const theta = golden * i;
-        pts.push({ ox: rad * Math.cos(theta) * r,
-                   oy: y * r,
-                   oz: rad * Math.sin(theta) * r,
-                   x: 0, y: 0, z: 0 });
+    (function () {
+      var cells = document.querySelectorAll('.srv-cell');
+      if (!cells.length || !('IntersectionObserver' in window)) {
+        cells.forEach(function (c) { c.classList.add('is-visible'); });
+        return;
       }
-      return pts;
-    }
-
-    /* ── Twinkling stars ── */
-    const STAR_COUNT = 160;
-    const stars = Array.from({ length: STAR_COUNT }, () => ({
-      rx: Math.random(), ry: Math.random(),
-      r:  Math.random() * 1.4 + 0.3,
-      a:  Math.random() * 0.5 + 0.15,
-      phase: Math.random() * Math.PI * 2,
-      speed: 0.008 + Math.random() * 0.025
-    }));
-
-    let pts = [];
-    let rotY = 0, rotX = 0.18;
-    let mouseX = 0, mouseY = 0;
-    let targetMX = 0, targetMY = 0;
-    let t = 0;
-
-    function resize() {
-      const rect = canvas.parentElement.getBoundingClientRect();
-      W = canvas.width  = Math.round(rect.width);
-      H = canvas.height = Math.round(rect.height);
-      cx = W / 2;
-      cy = H / 2;
-      sphereR = Math.min(W, H) * 0.30;
-      pts = makeSphere(DOT_COUNT, sphereR);
-    }
-
-    /* ── Rotate a point (mutates .x .y .z) ── */
-    function rotate(pt, rx, ry) {
-      const cy_ = Math.cos(ry), sy = Math.sin(ry);
-      const x1  = pt.ox * cy_ - pt.oz * sy;
-      const z1  = pt.ox * sy  + pt.oz * cy_;
-      const cx_ = Math.cos(rx), sx = Math.sin(rx);
-      pt.x = x1;
-      pt.y = pt.oy * cx_ - z1 * sx;
-      pt.z = pt.oy * sx  + z1 * cx_;
-    }
-
-    /* ── Perspective project ── */
-    function project(pt) {
-      const scale = FOV / (FOV + pt.z + sphereR);
-      return {
-        sx: pt.x * scale + cx,
-        sy: pt.y * scale + cy,
-        scale,
-        depth: (pt.z + sphereR) / (sphereR * 2)  // 0=back 1=front
-      };
-    }
-
-    /* ── Background glow orbs — #383c4e / #b6bac5 palette ── */
-    function drawGlows() {
-      // Left — slate blue tint  (#383c4e brightened)
-      const g1 = ctx.createRadialGradient(cx - W * 0.30, cy, 0,
-                                           cx - W * 0.30, cy, W * 0.50);
-      g1.addColorStop(0, 'rgba(80,88,120,0.30)');
-      g1.addColorStop(1, 'rgba(56,60,78,0)');
-      ctx.fillStyle = g1; ctx.fillRect(0, 0, W, H);
-
-      // Right — lavender silver tint  (#b6bac5 softened)
-      const g2 = ctx.createRadialGradient(cx + W * 0.30, cy, 0,
-                                           cx + W * 0.30, cy, W * 0.42);
-      g2.addColorStop(0, 'rgba(182,186,197,0.14)');
-      g2.addColorStop(1, 'rgba(182,186,197,0)');
-      ctx.fillStyle = g2; ctx.fillRect(0, 0, W, H);
-
-      // Centre sphere ambient
-      const g3 = ctx.createRadialGradient(cx, cy, 0, cx, cy, sphereR * 1.8);
-      g3.addColorStop(0,   'rgba(182,186,197,0.10)');
-      g3.addColorStop(0.5, 'rgba(100,108,140,0.06)');
-      g3.addColorStop(1,   'transparent');
-      ctx.fillStyle = g3; ctx.fillRect(0, 0, W, H);
-    }
-
-    /* ── Star field ── */
-    function drawStars() {
-      stars.forEach(s => {
-        const a = s.a * (0.4 + 0.6 * Math.sin(t * s.speed + s.phase));
-        ctx.beginPath();
-        ctx.arc(s.rx * W, s.ry * H, s.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255,255,255,${a})`;
-        ctx.fill();
-      });
-    }
-
-    /* ── Main render ── */
-    function draw() {
-      t++;
-
-      // Smooth mouse lerp
-      mouseX += (targetMX - mouseX) * 0.04;
-      mouseY += (targetMY - mouseY) * 0.04;
-
-      ctx.clearRect(0, 0, W, H);
-
-      drawGlows();
-      drawStars();
-
-      const ry = rotY + mouseX * 0.5;
-      const rx = rotX + mouseY * 0.25;
-
-      pts.forEach(pt => rotate(pt, rx, ry));
-      const proj = pts.map((pt, i) => ({ ...project(pt), i }));
-
-      /* Sort back-to-front for painter's algorithm */
-      proj.sort((a, b) => pts[a.i].z - pts[b.i].z);
-
-      /* ── Connecting lines — #b6bac5 silver with depth alpha ── */
-      for (let a = 0; a < proj.length; a++) {
-        const pa  = proj[a];
-        const pta = pts[pa.i];
-        for (let b = a + 1; b < proj.length; b++) {
-          const pb  = proj[b];
-          const ptb = pts[pb.i];
-          const dx  = pta.x - ptb.x, dy = pta.y - ptb.y, dz = pta.z - ptb.z;
-          const d   = Math.sqrt(dx*dx + dy*dy + dz*dz);
-          if (d >= CONNECT_DIST) continue;
-
-          const fade  = 1 - d / CONNECT_DIST;
-          const alpha = fade * 0.45 * Math.min(pa.depth, pb.depth + 0.2);
-          const depth = (pa.depth + pb.depth) * 0.5;
-
-          /* Blend: dark slate (#383c4e) at back → silver (#b6bac5) at front */
-          const r = Math.round(56  + depth * 126);   // 56→182
-          const g = Math.round(60  + depth * 126);   // 60→186
-          const bv= Math.round(78  + depth * 119);   // 78→197
-          ctx.strokeStyle = `rgba(${r},${g},${bv},${alpha})`;
-          ctx.lineWidth   = 0.65 + depth * 0.5;
-          ctx.beginPath();
-          ctx.moveTo(pa.sx, pa.sy);
-          ctx.lineTo(pb.sx, pb.sy);
-          ctx.stroke();
-        }
-      }
-
-      /* ── Dots — silver #b6bac5 tones ── */
-      proj.forEach(({ sx, sy, depth, scale }) => {
-        const r  = Math.max(0.9, scale * 4.8);
-        const a  = 0.20 + depth * 0.80;
-
-        /* Colour: dark slate at back, bright silver at front */
-        const rv = Math.round(80  + depth * 140);
-        const gv = Math.round(84  + depth * 138);
-        const bv = Math.round(100 + depth * 130);
-
-        // Glow halo on front dots
-        if (depth > 0.5) {
-          ctx.beginPath();
-          ctx.arc(sx, sy, r * 3.2, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(${rv},${gv},${bv},${a * 0.15})`;
-          ctx.fill();
-        }
-
-        // Core dot
-        ctx.beginPath();
-        ctx.arc(sx, sy, r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${rv},${gv},${bv},${a})`;
-        ctx.fill();
-      });
-
-      rotY += 0.0025;
-
-      requestAnimationFrame(draw);
-    }
-
-    /* ── Mouse parallax ── */
-    document.addEventListener('mousemove', e => {
-      targetMX = (e.clientX / window.innerWidth  - 0.5) * 0.6;
-      targetMY = (e.clientY / window.innerHeight - 0.5) * 0.3;
-    });
-
-    window.addEventListener('resize', () => {
-      resize();
-      pts = makeSphere(DOT_COUNT, sphereR);
-    });
-
-    resize();
-    draw();
-  })();
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12 });
+      cells.forEach(function (c) { io.observe(c); });
+    })();
   </script>
 
 </body>

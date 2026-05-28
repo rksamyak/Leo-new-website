@@ -1,0 +1,147 @@
+/* ════════════════════════════════════════
+   FOOTER — Premium design with giant wordmark
+   ════════════════════════════════════════ */
+
+.site-footer {
+  background: #F6F1E8;
+  border-top: 1px solid rgba(17,17,17,0.10);
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Top links section ── */
+.ftr__top {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 5rem) clamp(3.5rem, 7vw, 6rem);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(2rem, 5vw, 6rem);
+}
+
+.ftr__col-head {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(17,17,17,0.32);
+  margin-bottom: 1.75rem;
+  display: block;
+}
+
+.ftr__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.ftr__list a {
+  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+  font-weight: 500;
+  color: #111111;
+  text-decoration: none;
+  transition: color 0.22s ease;
+  display: inline-block;
+  position: relative;
+}
+
+.ftr__list a::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #7B3FCC;
+  transition: width 0.28s ease;
+}
+
+.ftr__list a:hover { color: #7B3FCC; }
+.ftr__list a:hover::after { width: 100%; }
+
+/* ── Divider above wordmark ── */
+.ftr__divider {
+  height: 1px;
+  background: rgba(17,17,17,0.10);
+  margin: 0 clamp(1.5rem, 5vw, 5rem);
+}
+
+/* ── Giant wordmark ── */
+.ftr__wordmark-wrap {
+  overflow: visible;
+  padding: clamp(1.5rem, 3vw, 3rem) clamp(0.75rem, 2vw, 2.5rem) clamp(0.75rem, 2vw, 2rem);
+  line-height: 1;
+  /* scroll-reveal initial state */
+  opacity: 0;
+  transform: translateY(70px) scaleY(0.90);
+  transform-origin: bottom center;
+  transition:
+    opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ftr__wordmark-wrap.is-visible {
+  opacity: 1;
+  transform: translateY(0) scaleY(1);
+}
+
+.ftr__wordmark {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: clamp(5rem, 16vw, 22rem);
+  letter-spacing: -0.04em;
+  color: #111111;
+  white-space: nowrap;
+  line-height: 1.05;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ── Legal bar ── */
+.ftr__legal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.375rem clamp(1.5rem, 5vw, 5rem);
+  border-top: 1px solid rgba(17,17,17,0.08);
+  font-size: 0.8rem;
+  color: rgba(17,17,17,0.38);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ── Override old footer styles ── */
+.footer__inner,
+.footer__brand,
+.footer__tagline,
+.footer__col-title,
+.footer__links-list,
+.footer__social,
+.footer__logo-img { display: none !important; }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .ftr__top { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .ftr__top { grid-template-columns: 1fr; }
+  .ftr__legal {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ftr__wordmark-wrap {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
