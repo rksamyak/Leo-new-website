@@ -192,33 +192,93 @@
       </div>
       <div class="hero-ai__grid" aria-hidden="true"></div>
 
-      <!-- ── Main content ── -->
-      <div class="hero-ai__content">
+      <!-- ── 2-column layout ── -->
+      <div class="hero-ai__layout">
 
-        <h1 class="hero-ai__title hero__title--clickable" id="heroTitle" tabindex="0">
-          Scale your<br><em>brand faster</em>
-        </h1>
+        <!-- LEFT: tagline content -->
+        <div class="hero-ai__left">
+          <div class="hero-ai__content">
 
-        <p class="hero-ai__sub">
-          Transform your business with powerful digital marketing strategies, creative branding, social media growth, and high-converting campaigns.
-        </p>
+            <h1 class="hero-ai__title hero__title--clickable" id="heroTitle" tabindex="0">
+              Scale your<br><em>brand faster</em>
+            </h1>
 
-        <div class="hero-ai__ctas">
-          <button class="hero-ai__btn-primary" id="heroMicBtn">
-            <svg class="hero-ai__mic-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
-              <polyline points="16 7 22 7 22 13"/>
-            </svg>
-            Start Growing
-          </button>
+            <p class="hero-ai__sub">
+              Transform your business with powerful digital marketing strategies, creative branding, social media growth, and high-converting campaigns.
+            </p>
+
+            <div class="hero-ai__ctas">
+              <button class="hero-ai__btn-primary" id="heroMicBtn">
+                <svg class="hero-ai__mic-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+                  <polyline points="16 7 22 7 22 13"/>
+                </svg>
+                Start Growing
+              </button>
+            </div>
+
+            <div class="hero-ai__trust">
+              <span class="hero-ai__trust-dot" aria-hidden="true"></span>
+              Trusted by 400+ brands worldwide
+            </div>
+
+          </div>
         </div>
 
-        <div class="hero-ai__trust">
-          <span class="hero-ai__trust-dot" aria-hidden="true"></span>
-          Trusted by 400+ brands worldwide
+        <!-- CONNECTOR: animated flowing dots → inquiry box -->
+        <div class="hero-ai__connector" aria-hidden="true">
+          <div class="hero-ai__dot-track">
+            <span class="hd-dot"></span>
+            <span class="hd-dot"></span>
+            <span class="hd-dot"></span>
+            <span class="hd-dot"></span>
+            <span class="hd-dot"></span>
+            <span class="hd-dot"></span>
+            <span class="hd-dot"></span>
+          </div>
+          <svg class="hd-arrow" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="3,1 11,7 3,13" fill="none" stroke="#A855F7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
 
-      </div>
+        <!-- RIGHT: Inquiry box -->
+        <div class="hero-ai__inquiry-wrap">
+          <div class="hero-ai__inquiry">
+
+            <div class="hiq-header">
+              <span class="hiq-eyebrow">Free Consultation</span>
+              <h2 class="hiq-title">Start a project</h2>
+              <p class="hiq-sub">Tell us your goal — we'll craft the strategy.</p>
+            </div>
+
+            <form class="hiq-form" onsubmit="return false;" novalidate>
+              <div class="hiq-field">
+                <label for="hiqName">Your Name</label>
+                <input type="text" id="hiqName" placeholder="e.g. Sarah Johnson" autocomplete="name" />
+              </div>
+              <div class="hiq-field">
+                <label for="hiqEmail">Email Address</label>
+                <input type="email" id="hiqEmail" placeholder="you@company.com" autocomplete="email" />
+              </div>
+              <div class="hiq-field">
+                <label for="hiqMsg">What are you looking for?</label>
+                <textarea id="hiqMsg" rows="3" placeholder="Brand strategy, paid ads, social media growth..."></textarea>
+              </div>
+              <button type="submit" class="hiq-submit">
+                Send Inquiry
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </form>
+
+            <p class="hiq-note">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6EE7B7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              We reply within 24 hours
+            </p>
+
+          </div>
+        </div>
+
+      </div><!-- /.hero-ai__layout -->
 
     </section>
 
@@ -251,39 +311,72 @@
           </a>
         </div>
 
-        <!-- ── 3D Phone ── -->
-        <div class="one-card__phone-wrap" aria-hidden="true">
-          <div class="phone-device">
-            <div class="phone-notch"></div>
-            <div class="phone-button"></div>
-            <div class="phone-screen">
-              <div class="ps-statusbar">
-                <span class="ps-time">9:41</span>
-                <div class="ps-icons">
-                  <div class="ps-icon ps-icon--signal"></div>
-                  <div class="ps-icon ps-icon--battery"></div>
+        <!-- ── Triple Phone Mockup ── -->
+        <div class="three-phones" aria-hidden="true">
+          <div class="three-phones__glow"></div>
+
+          <!-- Left: Instagram profile (dairytalesindia) -->
+          <div class="tph tph--left">
+            <div class="tph__notch"></div>
+            <div class="tph__screen tph__screen--insta-profile">
+              <div class="tph__ip-bar"><span class="tph__ip-time">6:15</span></div>
+              <div class="tph__ip-header">
+                <div class="tph__ip-avatar"></div>
+                <span class="tph__ip-name">dairytalesindia</span>
+              </div>
+              <div class="tph__ip-stats">
+                <span>28<br><small>Posts</small></span>
+                <span>70<br><small>Followers</small></span>
+                <span>1<br><small>Following</small></span>
+              </div>
+              <div class="tph__ip-grid">
+                <div class="tph__ip-cell c1"></div>
+                <div class="tph__ip-cell c2"></div>
+                <div class="tph__ip-cell c3"></div>
+                <div class="tph__ip-cell c4"></div>
+                <div class="tph__ip-cell c5"></div>
+                <div class="tph__ip-cell c6"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Center: Instagram post (instaxindia) -->
+          <div class="tph tph--center">
+            <div class="tph__notch"></div>
+            <div class="tph__screen tph__screen--insta-post">
+              <div class="tph__ap-header">
+                <div class="tph__ap-avatar"></div>
+                <span class="tph__ap-user">instaxindia</span>
+              </div>
+              <div class="tph__ap-image">
+                <div class="tph__ap-badge">Big<br>Fashion<br>Festival</div>
+                <div class="tph__ap-copy">
+                  <span class="tph__ap-brand">instax FUJIFILM</span>
+                  <span class="tph__ap-headline">Capture memories</span>
+                  <span class="tph__ap-offer">Up to 45% Off</span>
                 </div>
+                <div class="tph__heart-pop">❤</div>
               </div>
-              <div class="ps-orb">
-                <div class="ps-ring ps-ring--outer"></div>
-                <div class="ps-ring ps-ring--inner"></div>
-                <div class="ps-orb__core">
-                  <span class="ps-orb__num">97</span>
-                  <span class="ps-orb__unit">%</span>
-                  <span class="ps-orb__label">Growth</span>
-                </div>
+              <div class="tph__ap-actions">
+                <span class="tph__ap-like">❤ 739</span>
+                <span>💬 25</span>
+                <span>✈ 68</span>
               </div>
-              <div class="ps-bars">
-                <div class="ps-bar ps-bar--1"></div>
-                <div class="ps-bar ps-bar--2"></div>
-                <div class="ps-bar ps-bar--3"></div>
-                <div class="ps-bar ps-bar--4"></div>
-                <div class="ps-bar ps-bar--5"></div>
+            </div>
+          </div>
+
+          <!-- Right: Anthology website -->
+          <div class="tph tph--right">
+            <div class="tph__notch"></div>
+            <div class="tph__screen tph__screen--web">
+              <div class="tph__web-hero">
+                <span class="tph__web-logo">anthology</span>
               </div>
-              <svg class="ps-wave" viewBox="0 0 180 28" xmlns="http://www.w3.org/2000/svg">
-                <path class="ps-wave__path" d="M0 14 Q22 4 45 14 Q68 24 90 14 Q112 4 135 14 Q158 24 180 14"/>
-              </svg>
-              <div class="ps-scan"></div>
+              <div class="tph__web-body">
+                <p class="tph__web-headline">Every experience matters</p>
+                <p class="tph__web-sub">Unlock a world of possibilities</p>
+                <span class="tph__web-cta">Learn More →</span>
+              </div>
             </div>
           </div>
         </div>
