@@ -466,6 +466,37 @@
   .nav-item--mobile-only {
     display: block !important;
   }
+
+  /* Mobile Login button — styled as a nav item, not a pill */
+  .nav-item--mobile-only .btn-login {
+    display: inline-flex;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0.7rem 0.875rem;
+    border-radius: 10px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    background: rgba(217, 184, 255, 0.12);
+    border: 1px solid rgba(168, 85, 247, 0.20);
+    color: #7B3FCC;
+    box-shadow: none;
+  }
+
+  .nav-item--mobile-only .btn-login .btn-login__icon {
+    color: #7B3FCC;
+  }
+
+  /* Mobile Contact link — separator line above */
+  .nav-item--mobile-only.mobile-contact-item {
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
+    padding-top: 0.375rem;
+    margin-top: 0.25rem;
+  }
+
+  .nav-item--mobile-only.mobile-contact-item .nav-link {
+    color: #111111;
+    font-weight: 600;
+  }
 }
 
 @media (max-width: 480px) {

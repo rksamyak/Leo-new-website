@@ -1,0 +1,194 @@
+/* ────────────────────────────────────────────
+   Scroll Expansion Hero — vanilla port
+──────────────────────────────────────────── */
+
+/* Scroll-space section: tall enough to drive the animation */
+.seh {
+  position: relative;
+  height: 250vh;
+  background: var(--clr-bg);
+}
+
+/* Sticky viewport container */
+.seh__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--clr-bg);
+}
+
+/* Expanding media wrapper — JS drives width / height / border-radius */
+.seh__wrap {
+  position: relative;
+  width: 65%;
+  height: 55vh;
+  border-radius: 20px;
+  overflow: hidden;
+  will-change: width, height, border-radius;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.18);
+}
+
+/* Video */
+.seh__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay — fades out as the media expands */
+.seh__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2.5rem;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.68) 0%,
+    rgba(0, 0, 0, 0.28) 42%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.seh__label {
+  font-family: var(--font-sans);
+  font-size: 0.71875rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 0.75rem;
+}
+
+.seh__title {
+  font-family: var(--font-sans);
+  font-size: clamp(1.75rem, 4vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.08;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.seh__hint {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8125rem;
+  font-family: var(--font-sans);
+  color: rgba(255, 255, 255, 0.60);
+  animation: sehBounce 2.2s ease-in-out infinite;
+}
+
+.seh__hint svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+@keyframes sehBounce {
+  0%, 100% { transform: translateY(0);   }
+  50%       { transform: translateY(7px); }
+}
+
+/* ── "Our Approach" content that follows ── */
+.seh-about {
+  background: var(--clr-bg);
+  padding: var(--section-pad-y) var(--section-pad-x);
+}
+
+.seh-about__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.seh-about__eyebrow {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-white-60);
+  margin-bottom: 1.25rem;
+}
+
+.seh-about__title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: var(--fw-black);
+  line-height: var(--lh-tight);
+  color: var(--clr-white);
+  margin-bottom: 1.5rem;
+}
+
+.seh-about__text {
+  font-size: var(--fs-lg);
+  line-height: var(--lh-loose);
+  color: var(--clr-white-80);
+  max-width: 680px;
+  margin: 0 auto 3.5rem;
+}
+
+.seh-about__cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.seh-about__col {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  transition: box-shadow var(--transition-slow), transform var(--transition-slow);
+}
+
+.seh-about__col:hover {
+  box-shadow: var(--glass-shadow-lg);
+  transform: translateY(-4px);
+}
+
+.seh-about__col h3 {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--clr-white);
+  margin-bottom: 0.625rem;
+}
+
+.seh-about__col p {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-normal);
+  color: var(--clr-white-60);
+  margin: 0;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .seh__wrap {
+    width: 88%;
+    height: 46vh;
+    border-radius: 16px;
+  }
+
+  .seh-about__cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .seh__wrap {
+    width: 94%;
+    height: 42vh;
+  }
+}

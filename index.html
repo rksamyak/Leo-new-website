@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="css/testimonials.css" />
   <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/scroll-expansion-hero.css" />
 </head>
 <body>
 
@@ -84,9 +85,15 @@
           </li>
 
           <!-- Mobile-only links -->
+          <li class="nav-item nav-item--mobile-only mobile-contact-item">
+            <a href="#" class="nav-link">Contact</a>
+          </li>
           <li class="nav-item nav-item--mobile-only">
-            <button class="nav-link btn-login" aria-haspopup="dialog" aria-controls="modalOverlay">
-              Login
+            <button class="btn-login" aria-haspopup="dialog" aria-controls="modalOverlay">
+              <span class="btn-login__icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </span>
+              Log in
             </button>
           </li>
         </ul>
@@ -282,105 +289,46 @@
 
     </section>
 
-    <!-- ══ SINGLE CARD ══ -->
-    <section class="one-card-section">
-      <div class="one-card">
-
-        <!-- ── Text content ── -->
-        <div class="one-card__inner">
-          <span class="one-card__eyebrow">Who We Are</span>
-          <h2 class="one-card__title">Built for brands<br>that want more</h2>
-          <p class="one-card__desc">Leo Digital is a full-service digital agency combining strategy, creativity, and technology to help ambitious brands grow faster and reach further.</p>
-          <div class="one-card__stats">
-            <div class="one-card__stat">
-              <span class="one-card__stat-num">400+</span>
-              <span class="one-card__stat-label">Brands Served</span>
-            </div>
-            <div class="one-card__stat">
-              <span class="one-card__stat-num">12 yr</span>
-              <span class="one-card__stat-label">In Business</span>
-            </div>
-            <div class="one-card__stat">
-              <span class="one-card__stat-num">98%</span>
-              <span class="one-card__stat-label">Client Retention</span>
-            </div>
-          </div>
-          <a href="#" class="one-card__cta">
-            Start a project
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-
-        <!-- ── Triple Phone Mockup ── -->
-        <div class="three-phones" aria-hidden="true">
-          <div class="three-phones__glow"></div>
-
-          <!-- Left: Instagram profile (dairytalesindia) -->
-          <div class="tph tph--left">
-            <div class="tph__notch"></div>
-            <div class="tph__screen tph__screen--insta-profile">
-              <div class="tph__ip-bar"><span class="tph__ip-time">6:15</span></div>
-              <div class="tph__ip-header">
-                <div class="tph__ip-avatar"></div>
-                <span class="tph__ip-name">dairytalesindia</span>
-              </div>
-              <div class="tph__ip-stats">
-                <span>28<br><small>Posts</small></span>
-                <span>70<br><small>Followers</small></span>
-                <span>1<br><small>Following</small></span>
-              </div>
-              <div class="tph__ip-grid">
-                <div class="tph__ip-cell c1"></div>
-                <div class="tph__ip-cell c2"></div>
-                <div class="tph__ip-cell c3"></div>
-                <div class="tph__ip-cell c4"></div>
-                <div class="tph__ip-cell c5"></div>
-                <div class="tph__ip-cell c6"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Center: Instagram post (instaxindia) -->
-          <div class="tph tph--center">
-            <div class="tph__notch"></div>
-            <div class="tph__screen tph__screen--insta-post">
-              <div class="tph__ap-header">
-                <div class="tph__ap-avatar"></div>
-                <span class="tph__ap-user">instaxindia</span>
-              </div>
-              <div class="tph__ap-image">
-                <div class="tph__ap-badge">Big<br>Fashion<br>Festival</div>
-                <div class="tph__ap-copy">
-                  <span class="tph__ap-brand">instax FUJIFILM</span>
-                  <span class="tph__ap-headline">Capture memories</span>
-                  <span class="tph__ap-offer">Up to 45% Off</span>
-                </div>
-                <div class="tph__heart-pop">❤</div>
-              </div>
-              <div class="tph__ap-actions">
-                <span class="tph__ap-like">❤ 739</span>
-                <span>💬 25</span>
-                <span>✈ 68</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right: Anthology website -->
-          <div class="tph tph--right">
-            <div class="tph__notch"></div>
-            <div class="tph__screen tph__screen--web">
-              <div class="tph__web-hero">
-                <span class="tph__web-logo">anthology</span>
-              </div>
-              <div class="tph__web-body">
-                <p class="tph__web-headline">Every experience matters</p>
-                <p class="tph__web-sub">Unlock a world of possibilities</p>
-                <span class="tph__web-cta">Learn More →</span>
-              </div>
+    <!-- ══ SCROLL EXPANSION HERO ══ -->
+    <section class="seh" id="sehSection">
+      <div class="seh__sticky">
+        <div class="seh__wrap" id="sehWrap">
+          <video class="seh__video" autoplay muted loop playsinline
+                 poster="https://images.pexels.com/videos/5752729/space-earth-universe-cosmos-5752729.jpeg">
+            <source src="https://me7aitdbxq.ufs.sh/f/2wsMIGDMQRdYuZ5R8ahEEZ4aQK56LizRdfBSqeDMsmUIrJN1" type="video/mp4">
+          </video>
+          <div class="seh__overlay" id="sehOverlay">
+            <span class="seh__label">Leo Digital</span>
+            <h2 class="seh__title">Campaigns That<br>Move People</h2>
+            <div class="seh__hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+              Scroll to expand
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
+    <!-- ══ APPROACH — follows the expansion ══ -->
+    <section class="seh-about">
+      <div class="seh-about__inner">
+        <span class="seh-about__eyebrow">Our Approach</span>
+        <h2 class="seh-about__title">Strategy meets<br>creativity</h2>
+        <p class="seh-about__text">At Leo Digital, every campaign begins with a deep understanding of your brand, your audience, and the goals you're chasing. We combine data science with bold creative to build experiences that convert and endure.</p>
+        <div class="seh-about__cols">
+          <div class="seh-about__col">
+            <h3>Data-Driven</h3>
+            <p>Every decision is backed by real insights and measurable outcomes — no guesswork, just results.</p>
+          </div>
+          <div class="seh-about__col">
+            <h3>Creative First</h3>
+            <p>Bold ideas that capture attention and tell your brand story in ways your audience won't forget.</p>
+          </div>
+          <div class="seh-about__col">
+            <h3>Always-On</h3>
+            <p>Continuous optimisation across every channel, every hour. Your brand never sleeps and neither do we.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -919,6 +867,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
   <script src="js/stack-cards.js"></script>
   <script src="js/footer.js"></script>
+  <script src="js/scroll-expansion-hero.js"></script>
   <script>
     (function () {
       var cells = document.querySelectorAll('.srv-cell');

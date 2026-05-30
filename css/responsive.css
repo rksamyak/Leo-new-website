@@ -47,6 +47,26 @@
     --navbar-height: 76px;
   }
 
+  /* Hide inquiry form + connector on mobile — hero should be clean */
+  .hero-ai__connector,
+  .hero-ai__inquiry-wrap {
+    display: none;
+  }
+
+  .hero-ai__layout {
+    justify-content: center;
+    padding: 3rem 1.25rem 3.5rem;
+    min-height: auto;
+  }
+
+  .hero-ai__layout .hero-ai__content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-ai__layout .hero-ai__ctas  { justify-content: center; }
+  .hero-ai__layout .hero-ai__trust { justify-content: center; }
+
   /* Hero */
   .hero__title {
     font-size: clamp(2.2rem, 9vw, 3.5rem);
