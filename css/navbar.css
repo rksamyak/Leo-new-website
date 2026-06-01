@@ -46,6 +46,57 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.95);
 }
 
+/* ── Dark mode — when floating over the purple hero ── */
+.navbar--over-dark .navbar__wrap {
+  background: rgba(60, 10, 140, 0.35);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 4px 28px rgba(0, 0, 0, 0.25),
+    0 1px 4px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.navbar--over-dark.scrolled .navbar__wrap {
+  background: rgba(60, 10, 140, 0.55);
+}
+
+.navbar--over-dark .nav-link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar--over-dark .nav-link:hover,
+.navbar--over-dark .nav-item--dropdown:hover > .nav-link {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.navbar--over-dark .nav-link--active {
+  color: #ffffff;
+}
+
+.navbar--over-dark .nav-chevron {
+  color: rgba(255, 255, 255, 0.50);
+}
+
+.navbar--over-dark .btn-login {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.90);
+}
+
+.navbar--over-dark .btn-login:hover {
+  background: rgba(255, 255, 255, 0.20);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.navbar--over-dark .btn-login__icon {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.navbar--over-dark .navbar__logo-img {
+  filter: brightness(0) invert(1);
+}
+
 /* ── Inner row ── */
 .navbar__inner {
   width: 100%;

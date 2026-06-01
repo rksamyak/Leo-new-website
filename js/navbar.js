@@ -1,9 +1,14 @@
 function initNavbar() {
-  const navbar   = document.getElementById('navbar');
-  const SCROLL_THRESHOLD = 40;
+  const navbar = document.getElementById('navbar');
+  const hero   = document.getElementById('hero-ai');
 
   function onScroll() {
-    navbar.classList.toggle('scrolled', window.scrollY > SCROLL_THRESHOLD);
+    const y = window.scrollY;
+    navbar.classList.toggle('scrolled', y > 40);
+
+    // Dark glass when floating over the purple hero section
+    const heroEnd = hero ? hero.offsetHeight - 80 : 0;
+    navbar.classList.toggle('navbar--over-dark', heroEnd > 0 && y < heroEnd);
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });

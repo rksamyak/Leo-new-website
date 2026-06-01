@@ -1,0 +1,219 @@
+/* ════════════════════════════════════════
+   PARTNERS — Dual-row animated logo ticker
+   ════════════════════════════════════════ */
+
+.partners-section {
+  background: var(--clr-bg);
+  padding: clamp(4.5rem, 9vw, 7.5rem) 0 clamp(3.5rem, 7vw, 6rem);
+  overflow: hidden;
+}
+
+/* ── Section heading ── */
+.partners-header {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 2rem;
+  margin-bottom: 3.75rem;
+}
+
+.partners-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #7B3FCC;
+  margin-bottom: 1.25rem;
+}
+
+.partners-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.6rem, 5.5vw, 4rem);
+  font-weight: 800;
+  color: #111111;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  margin-bottom: 1rem;
+}
+
+.partners-title em {
+  font-style: italic;
+  color: #7B3FCC;
+}
+
+.partners-sub {
+  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+  color: rgba(17,17,17,0.48);
+  line-height: 1.72;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* ── Row wrapper (overflow clip + fade masks) ── */
+.partners-row {
+  position: relative;
+  overflow: hidden;
+  padding: 0.5rem 0;
+}
+
+.partners-row + .partners-row {
+  margin-top: 1.125rem;
+}
+
+/* Left / right gradient fade edges */
+.partners-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 12%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.partners-fade--left {
+  left: 0;
+  background: linear-gradient(to right, var(--clr-bg) 20%, transparent);
+}
+
+.partners-fade--right {
+  right: 0;
+  background: linear-gradient(to left, var(--clr-bg) 20%, transparent);
+}
+
+/* ── Scrolling track ── */
+.partners-track {
+  display: flex;
+  gap: 1.125rem;
+  width: max-content;
+  padding: 0.5rem 0;
+  cursor: default;
+}
+
+.partners-track--fwd {
+  animation: pScrollFwd 34s linear infinite;
+}
+
+.partners-track--rev {
+  animation: pScrollRev 28s linear infinite;
+}
+
+.partners-track--fwd:hover,
+.partners-track--rev:hover {
+  animation-play-state: paused;
+}
+
+@keyframes pScrollFwd {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes pScrollRev {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* ── Individual logo card ── */
+.p-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.875rem 2rem;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: rgba(17, 17, 17, 0.68);
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.03);
+  transition:
+    transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.28s ease,
+    border-color 0.28s ease,
+    color 0.28s ease;
+  user-select: none;
+  letter-spacing: 0.005em;
+}
+
+/* ── Logo icon (SVG brand mark) ── */
+.p-logo__icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  display: block;
+}
+
+/* ── Brand name text ── */
+.p-logo__name {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.005em;
+  line-height: 1;
+}
+
+.p-logo:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow:
+    0 14px 36px rgba(124, 58, 237, 0.13),
+    0 4px 10px rgba(0, 0, 0, 0.07);
+  border-color: rgba(124, 58, 237, 0.25);
+  color: #111111;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .partners-header {
+    margin-bottom: 2.75rem;
+  }
+
+  .p-logo {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    border-radius: 12px;
+  }
+
+  .partners-fade {
+    width: 8%;
+  }
+}
+
+@media (max-width: 480px) {
+  .partners-section {
+    padding: 3rem 0 2.5rem;
+  }
+
+  .partners-header {
+    margin-bottom: 2rem;
+    padding: 0 1.25rem;
+  }
+
+  .p-logo {
+    padding: 0.6875rem 1.25rem;
+    font-size: 0.8125rem;
+    border-radius: 10px;
+  }
+
+  .partners-row + .partners-row {
+    margin-top: 0.875rem;
+  }
+
+  .partners-fade {
+    width: 5%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partners-track--fwd,
+  .partners-track--rev {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    padding: 0 2rem;
+  }
+}

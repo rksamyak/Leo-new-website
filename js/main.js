@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initDropdowns();
-  if (typeof initHeroAI === 'function') initHeroAI();
-  initModal();
-  initMobileMenu();
-  initScrollReveal();
-  initCounters();
-  initCareers();
+  if (typeof initHeroAI       === 'function') initHeroAI();
+  if (typeof initModal        === 'function') initModal();
+  if (typeof initMobileMenu   === 'function') initMobileMenu();
+  if (typeof initScrollReveal === 'function') initScrollReveal();
+  if (typeof initCounters     === 'function') initCounters();
+  if (typeof initCareers      === 'function') initCareers();
   initContactForm();
   initNewsDots();
 });

@@ -10,11 +10,18 @@
   function clamp(x, lo, hi) { return Math.max(lo, Math.min(hi, x)); }
   function lerp(a, b, t)    { return a + (b - a) * t; }
 
-  var isMobile = window.innerWidth <= 480;
+  function getBreakpointValues() {
+    var w = window.innerWidth;
+    if (w <= 480) return { w: 95, h: 40, r: 12 };
+    if (w <= 768) return { w: 92, h: 44, r: 14 };
+    if (w <= 900) return { w: 90, h: 46, r: 16 };
+    return { w: 65, h: 55, r: 20 };
+  }
 
-  var START_W = isMobile ? 94 : (window.innerWidth <= 900 ? 88 : 65);
-  var START_H = isMobile ? 42 : (window.innerWidth <= 900 ? 46 : 55);
-  var START_R = isMobile ? 12 : (window.innerWidth <= 900 ? 14 : 20);
+  var bp = getBreakpointValues();
+  var START_W = bp.w;
+  var START_H = bp.h;
+  var START_R = bp.r;
 
   function tick() {
     var rect  = section.getBoundingClientRect();
@@ -33,10 +40,10 @@
   }
 
   function onResize() {
-    isMobile = window.innerWidth <= 480;
-    START_W  = isMobile ? 94 : (window.innerWidth <= 900 ? 88 : 65);
-    START_H  = isMobile ? 42 : (window.innerWidth <= 900 ? 46 : 55);
-    START_R  = isMobile ? 12 : (window.innerWidth <= 900 ? 14 : 20);
+    var bp = getBreakpointValues();
+    START_W = bp.w;
+    START_H = bp.h;
+    START_R = bp.r;
     tick();
   }
 
