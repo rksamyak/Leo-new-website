@@ -1,0 +1,616 @@
+/* ══════════════════════════════════════
+   OUR WORK PAGE
+   ══════════════════════════════════════ */
+
+/* ── Hero Banner ── */
+.ow-hero {
+  position: relative;
+  z-index: var(--z-base);
+  min-height: 74vh;
+  display: flex;
+  align-items: center;
+  background: #08001a;
+  padding: calc(var(--navbar-height) + 3.5rem) var(--section-pad-x) 5rem;
+  overflow: hidden;
+}
+
+.ow-hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -8%;
+  width: 58%;
+  height: 95%;
+  background: radial-gradient(ellipse, rgba(123, 47, 204, 0.30) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.ow-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -15%;
+  right: 2%;
+  width: 42%;
+  height: 75%;
+  background: radial-gradient(ellipse, rgba(155, 63, 232, 0.14) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.ow-hero__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Eyebrow label ── */
+.ow-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(217, 184, 255, 0.65);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: owFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
+}
+
+.ow-hero__eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: rgba(217, 184, 255, 0.45);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ── Stack-animated title ── */
+.ow-hero__title {
+  display: block;
+  font-size: clamp(4.5rem, 11.5vw, 10rem);
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+  margin-bottom: 2.5rem;
+}
+
+/* Each line is an overflow:hidden clip — the animation mask */
+.ow-hero__line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.06em;
+}
+
+/* The word inside each clip container animates up from below */
+.ow-hero__word {
+  display: block;
+  transform: translateY(112%);
+  animation: owStackReveal 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.ow-hero__line:nth-child(1) .ow-hero__word { animation-delay: 0.12s; }
+.ow-hero__line:nth-child(2) .ow-hero__word { animation-delay: 0.32s; }
+
+/* Accent colour on "Work" */
+.ow-hero__accent {
+  background: linear-gradient(90deg, #c084fc 0%, #a855f7 55%, #9333ea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtitle fades in after the title */
+.ow-hero__sub {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.48);
+  line-height: 1.85;
+  max-width: 480px;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: owFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards;
+}
+
+/* ── Keyframes ── */
+@keyframes owStackReveal {
+  from { transform: translateY(112%); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes owFadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Scroll indicator at hero bottom ── */
+.ow-hero__scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  opacity: 0;
+  animation: owFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.85s forwards;
+}
+
+.ow-hero__scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, rgba(217, 184, 255, 0.50), transparent);
+  animation: scrollBounce 2.2s ease-in-out infinite;
+}
+
+.ow-hero__scroll-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(217, 184, 255, 0.38);
+  font-weight: 600;
+}
+
+/* ════════════════════════════════════════
+   WORK GRID
+   ════════════════════════════════════════ */
+
+.ow-grid {
+  position: relative;
+  z-index: var(--z-base);
+  background: #f4f1ed;
+}
+
+.ow-grid__layout {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ── Individual work card ── */
+.ow-card {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  border: 0.5px solid rgba(0, 0, 0, 0.08);
+  background: #f0ece6;
+}
+
+/* Title sits top-left over the gradient */
+.ow-card__body {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.75rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ow-card__title {
+  font-size: clamp(1rem, 1.55vw, 1.375rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: #4a1fa8;
+  transition: color 0.3s ease;
+}
+
+/* Full-bleed gradient that fills the card */
+.ow-card__media {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.ow-card:hover .ow-card__media {
+  transform: scale(1.05);
+}
+
+.ow-card:hover .ow-card__title {
+  color: #6b2fcc;
+}
+
+/* ── Arrow indicator ── */
+.ow-card__arrow {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.75rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.80);
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  z-index: 2;
+}
+
+.ow-card:hover .ow-card__arrow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Per-service gradient themes ── */
+.ow-card--web .ow-card__media {
+  background: linear-gradient(145deg, #e8e0f5 0%, #c8b3f0 45%, #9b6ee8 100%);
+}
+.ow-card--creative .ow-card__media {
+  background: linear-gradient(145deg, #fce8f5 0%, #f5a8d8 45%, #e0399a 100%);
+}
+.ow-card--brand .ow-card__media {
+  background: linear-gradient(145deg, #dff4f7 0%, #82cfe0 45%, #1d9db8 100%);
+}
+.ow-card--campaigns .ow-card__media {
+  background: linear-gradient(145deg, #fff8e0 0%, #ffd97a 45%, #f5a800 100%);
+}
+.ow-card--films .ow-card__media {
+  background: linear-gradient(145deg, #eaecee 0%, #8fa5b0 45%, #2f4451 100%);
+}
+.ow-card--perf .ow-card__media {
+  background: linear-gradient(145deg, #fff3e0 0%, #ffc66a 45%, #f57c00 100%);
+}
+.ow-card--award .ow-card__media {
+  background: linear-gradient(145deg, #fce4e8 0%, #e88a9a 45%, #b71c3c 100%);
+}
+.ow-card--innovations .ow-card__media {
+  background: linear-gradient(145deg, #e8eaf8 0%, #9fa8e0 45%, #283593 100%);
+}
+
+/* ── Decorative icon mark bottom-right of each card ── */
+.ow-card__icon {
+  position: absolute;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  width: 44px;
+  height: 44px;
+  color: rgba(255, 255, 255, 0.55);
+  z-index: 2;
+  transition: color 0.3s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+.ow-card:hover .ow-card__icon {
+  color: rgba(255, 255, 255, 0.85);
+  transform: scale(1.1) rotate(-5deg);
+}
+
+/* ════════════════════════════════════════
+   CTA SECTION
+   ════════════════════════════════════════ */
+
+.ow-cta {
+  background: var(--clr-bg);
+  padding: var(--space-24) var(--section-pad-x);
+  position: relative;
+  z-index: var(--z-base);
+}
+
+.ow-cta__card {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: var(--glass-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--glass-shadow-lg);
+  padding: 3rem 3.5rem;
+}
+
+.ow-cta__text h2 {
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--clr-white);
+  line-height: 1.15;
+  margin-bottom: 0.55rem;
+}
+
+.ow-cta__text p {
+  font-size: 1rem;
+  color: var(--clr-white-60);
+  line-height: 1.75;
+}
+
+/* ════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════ */
+
+@media (max-width: 1100px) {
+  .ow-card__title {
+    font-size: clamp(0.9rem, 1.4vw, 1.2rem);
+  }
+}
+
+@media (max-width: 960px) {
+  .ow-hero {
+    min-height: 60vh;
+    padding-bottom: 4rem;
+  }
+
+  .ow-grid__layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ow-card {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 640px) {
+  .ow-hero {
+    min-height: 55vh;
+    padding-bottom: 3rem;
+  }
+
+  .ow-hero__title {
+    font-size: clamp(3.5rem, 18vw, 5.5rem);
+  }
+
+  .ow-grid__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ow-card {
+    aspect-ratio: 3 / 2;
+  }
+
+  .ow-card__title {
+    font-size: 1.25rem;
+  }
+
+  .ow-cta__card {
+    padding: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* ════════════════════════════════════════
+   WORK OVERLAY — Full-screen project view
+   ════════════════════════════════════════ */
+
+/* Prevent body scroll when overlay is open */
+body.overlay-open {
+  overflow: hidden;
+}
+
+/* Backdrop + container */
+.work-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: rgba(6, 0, 18, 0.97);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.work-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Sticky header inside overlay ── */
+.work-overlay__header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2.5rem;
+  background: rgba(6, 0, 18, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.work-overlay__title {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+}
+
+.work-overlay__close {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.70);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.work-overlay__close:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+/* ── Scrollable body ── */
+.work-overlay__body {
+  padding: 3rem 2.5rem 5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ── Project grid ── */
+.work-overlay__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* ════════════════════════════════════════
+   PROJECT CARD — Browser mockup frame
+   ════════════════════════════════════════ */
+
+.proj-card {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(38px);
+  transition:
+    opacity  0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Stack-in animation: added by JS with stagger */
+.proj-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Browser chrome shell ── */
+.proj-card__browser {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.55),
+    0 4px 12px rgba(0, 0, 0, 0.35);
+  transition:
+    transform 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-bottom: 1rem;
+}
+
+.proj-card:hover .proj-card__browser {
+  transform: translateY(-7px) scale(1.02);
+  box-shadow:
+    0 36px 90px rgba(0, 0, 0, 0.70),
+    0 8px 20px rgba(0, 0, 0, 0.40);
+}
+
+/* Top bar with traffic-light dots */
+.proj-card__chrome {
+  height: 34px;
+  background: rgba(22, 12, 50, 0.95);
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.proj-card__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.proj-card__dot:nth-child(1) { background: #ff5f57; }
+.proj-card__dot:nth-child(2) { background: #ffbd2e; }
+.proj-card__dot:nth-child(3) { background: #28ca41; }
+
+/* Fake URL bar */
+.proj-card__url-bar {
+  flex: 1;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+/* Screenshot / gradient area */
+.proj-card__screen {
+  aspect-ratio: 16 / 10;
+  background-size: cover;
+  background-position: top center;
+  display: block;
+}
+
+/* ── Card info below browser ── */
+.proj-card__info {
+  padding: 0.1rem 0 0;
+}
+
+.proj-card__name {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.18rem;
+  line-height: 1.2;
+}
+
+.proj-card__meta {
+  display: block;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.40);
+  margin-bottom: 0.45rem;
+  line-height: 1.5;
+}
+
+.proj-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(192, 132, 252, 0.70);
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.proj-card:hover .proj-card__link {
+  color: #c084fc;
+  gap: 7px;
+}
+
+/* ── Overlay responsive ── */
+@media (max-width: 1024px) {
+  .work-overlay__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .work-overlay__header {
+    padding: 1rem 1.25rem;
+  }
+
+  .work-overlay__body {
+    padding: 1.75rem 1.25rem 4rem;
+  }
+
+  .work-overlay__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

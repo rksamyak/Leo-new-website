@@ -251,6 +251,11 @@ body {
   flex-shrink: 0;
 }
 .hb-btn--nav:hover { background: var(--w12); border-color: var(--w40); }
+.hb-btn--nav:active {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.60);
+  filter: brightness(1.25);
+}
 
 /* Primary purple button */
 .hb-btn--primary {
@@ -266,7 +271,14 @@ body {
     0 10px 36px rgba(106,0,255,0.65),
     inset 0 1px 0 rgba(255,255,255,0.20);
 }
-.hb-btn--primary:active { transform: translateY(0); }
+.hb-btn--primary:active {
+  transform: translateY(0);
+  box-shadow:
+    0 6px 32px rgba(106,0,255,0.80),
+    0 0 48px rgba(177,0,255,0.55),
+    inset 0 1px 0 rgba(255,255,255,0.28);
+  filter: brightness(1.25);
+}
 
 /* Arrow that slides right on hover */
 .hb-btn__arrow { transition: transform 200ms ease; }
@@ -284,6 +296,16 @@ body {
   border-color: var(--w60);
   color: var(--white);
   transform: translateY(-1px);
+}
+.hb-btn--ghost:active {
+  transform: translateY(0);
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,255,255,0.70);
+  color: var(--white);
+  box-shadow:
+    0 0 24px rgba(255,255,255,0.18),
+    inset 0 0 16px rgba(255,255,255,0.08);
+  filter: brightness(1.30);
 }
 
 /* Play button circle */

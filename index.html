@@ -41,7 +41,7 @@
         <ul class="navbar__links" id="navLinks" role="list">
           <li class="nav-item"><a href="index.html" class="nav-link nav-link--active">Home</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Our Work</a></li>
+          <li class="nav-item"><a href="our-work.html" class="nav-link">Our Work</a></li>
 
           <li class="nav-item nav-item--dropdown">
             <button class="nav-link" aria-haspopup="true" aria-expanded="false">
@@ -70,7 +70,7 @@
                 <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
                 <span class="dropdown__item-text"><span class="dropdown__item-label">Careers</span><span class="dropdown__item-desc">Work with us</span></span>
               </a>
-              <a href="about.html" class="dropdown__item" role="menuitem">
+              <a href="#" class="dropdown__item" role="menuitem">
                 <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
                 <span class="dropdown__item-text"><span class="dropdown__item-label">About</span><span class="dropdown__item-desc">Our story and mission</span></span>
               </a>
@@ -114,39 +114,64 @@
   <div class="modal-overlay" id="modalOverlay"
        role="dialog" aria-modal="true" aria-labelledby="modalTitle"
        hidden>
-    <div class="modal" id="loginModal">
+    <div class="modal-border-wrap">
+      <div class="modal" id="loginModal">
 
-      <button class="modal__close" id="modalClose" aria-label="Close login modal">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-          <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </button>
+        <!-- Animated background orbs -->
+        <div class="modal-orb modal-orb--1" aria-hidden="true"></div>
+        <div class="modal-orb modal-orb--2" aria-hidden="true"></div>
+        <div class="modal-orb modal-orb--3" aria-hidden="true"></div>
 
-      <h2 class="modal__title" id="modalTitle">Welcome Back</h2>
-      <p class="modal__subtitle">Sign in to your account</p>
+        <!-- Close -->
+        <button class="modal__close" id="modalClose" aria-label="Close login modal">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
 
-      <!-- Google -->
-      <button class="btn-google" id="googleLoginBtn">
-        <svg class="google-icon" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4"/>
-          <path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="#34A853"/>
-          <path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/>
-          <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335"/>
-        </svg>
-        Continue with Google
-      </button>
+        <!-- Brand mark -->
+        <div class="modal__brand" aria-hidden="true">
+          <div class="modal__brand-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#brandGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <defs>
+                <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%"   stop-color="#b18aff"/>
+                  <stop offset="100%" stop-color="#66ffd9"/>
+                </linearGradient>
+              </defs>
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+        </div>
 
-      <div class="modal__divider"><span>or</span></div>
+        <h2 class="modal__title" id="modalTitle">Welcome Back</h2>
+        <p class="modal__subtitle" id="modalSubtitle">Sign in to your account</p>
 
-      <div class="modal__magic-link">
-        <label for="magicEmail" class="sr-only">Email address</label>
-        <input type="email" id="magicEmail" name="email" class="modal__input"
-               placeholder="Enter your email address"
-               autocomplete="email" />
-        <button class="btn-magic" id="sendMagicLink">Send Magic Link</button>
-      </div>
+        <!-- Google -->
+        <button class="btn-google" id="googleLoginBtn">
+          <svg class="google-icon" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4"/>
+            <path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="#34A853"/>
+            <path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/>
+            <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335"/>
+          </svg>
+          Continue with Google
+        </button>
 
-    </div>
+        <div class="modal__divider"><span>or</span></div>
+
+        <div class="modal__magic-link">
+          <label for="magicEmail" class="sr-only">Email address</label>
+          <input type="email" id="magicEmail" name="email" class="modal__input"
+                 placeholder="Enter your email address"
+                 autocomplete="email" />
+          <button class="btn-magic" id="sendMagicLink">Send Magic Link</button>
+        </div>
+
+      </div><!-- /.modal -->
+    </div><!-- /.modal-border-wrap -->
   </div>
 
   <!-- ── Timebox Overlay Modal ── -->
@@ -238,7 +263,7 @@
             </svg>
             Start Growing
           </button>
-          <a href="about.html" class="hero-btn-ghost">
+          <a href="our-work.html" class="hero-btn-ghost">
             View Our Work
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -920,7 +945,7 @@
         <div class="ftr__col">
           <h4 class="ftr__col-head">Company</h4>
           <ul class="ftr__list">
-            <li><a href="about.html">About</a></li>
+            <li><a href="#">About</a></li>
             <li><a href="careers.html">Careers</a></li>
             <li><a href="news.html">News &amp; Updates</a></li>
             <li><a href="insights.html">Insights</a></li>
