@@ -1,22 +1,19 @@
 function initModal() {
-  const overlay  = document.getElementById('modalOverlay');
-  const modal    = document.getElementById('loginModal');
-  const openBtns = document.querySelectorAll('.btn-login');
-  const closeBtn = document.getElementById('modalClose');
+  const overlay   = document.getElementById('modalOverlay');
+  const modal     = document.getElementById('loginModal');
+  const openBtns  = document.querySelectorAll('.btn-login');
+  const closeBtn  = document.getElementById('modalClose');
   if (!overlay || !openBtns.length || !closeBtn) return;
 
-  const title    = document.getElementById('modalTitle');
-  const subtitle = document.getElementById('modalSubtitle');
-
   const FOCUSABLE = 'button:not([disabled]), input:not([disabled]), [href]';
-
   let lastActiveTrigger = null;
 
-  // ── Open / Close ──────────────────────────────────────────────────────────
+  // ── Open / Close ─────────────────────────────────────────────────────────
   function openModal(trigger) {
     lastActiveTrigger = trigger;
     overlay.removeAttribute('hidden');
     document.body.style.overflow = 'hidden';
+    resetMagicLink();
     requestAnimationFrame(() => {
       const first = modal.querySelector(FOCUSABLE);
       if (first) first.focus();
@@ -26,11 +23,7 @@ function initModal() {
   function closeModal() {
     overlay.setAttribute('hidden', '');
     document.body.style.overflow = '';
-    if (lastActiveTrigger) {
-      lastActiveTrigger.focus();
-    } else if (openBtns[0]) {
-      openBtns[0].focus();
-    }
+    if (lastActiveTrigger) lastActiveTrigger.focus();
   }
 
   openBtns.forEach(btn => {
@@ -57,206 +50,76 @@ function initModal() {
     }
   });
 
-  window.addEventListener('leo:close-modal', () => {
-    if (!overlay.hasAttribute('hidden')) closeModal();
-  });
+  window.addEventListener('leo:close-modal', closeModal);
 
-  // ── Screen navigation ─────────────────────────────────────────────────────
-  const screens = {
-    signin:    document.getElementById('screenSignin'),
-    signup:    document.getElementById('screenSignup'),
-    forgot:    document.getElementById('screenForgot'),
-    otp:       document.getElementById('screenOtp'),
-    otpVerify: document.getElementById('screenOtpVerify'),
-  };
-
-  const headers = {
-    signin:    { title: 'Welcome Back',    subtitle: 'Sign in to your account' },
-    signup:    { title: 'Create Account',  subtitle: 'Join Leo Digital today' },
-    forgot:    { title: 'Reset Password',  subtitle: 'We will email you a link' },
-    otp:       { title: 'Email OTP',       subtitle: 'Passwordless sign in' },
-    otpVerify: { title: 'Enter Code',      subtitle: 'Check your inbox' },
-  };
-
-  function showScreen(name) {
-    Object.values(screens).forEach(s => s && s.setAttribute('hidden', ''));
-    if (screens[name]) screens[name].removeAttribute('hidden');
-    if (title)    title.textContent    = headers[name].title;
-    if (subtitle) subtitle.textContent = headers[name].subtitle;
-    clearAllErrors();
-    const first = screens[name] && screens[name].querySelector(FOCUSABLE);
-    if (first) setTimeout(() => first.focus(), 50);
+  // ── Status message ────────────────────────────────────────────────────────
+  const statusEl = document.getElementById('modalStatus');
+  function setStatus(msg, isError) {
+    if (!statusEl) return;
+    statusEl.textContent = msg;
+    statusEl.className = 'modal__status' + (isError ? ' modal__status--error' : ' modal__status--success');
+    statusEl.removeAttribute('hidden');
+  }
+  function clearStatus() {
+    if (!statusEl) return;
+    statusEl.textContent = '';
+    statusEl.setAttribute('hidden', '');
   }
 
-  // ── Error helpers ─────────────────────────────────────────────────────────
-  function setError(id, msg) {
-    const el = document.getElementById(id);
-    if (el) el.textContent = msg;
-  }
-  function clearAllErrors() {
-    ['siError','suError','fpError','otpReqError','otpVerifyError'].forEach(id => setError(id, ''));
+  // ── Magic Link ────────────────────────────────────────────────────────────
+  const emailInput = document.getElementById('magicEmail');
+  const sendBtn    = document.getElementById('sendMagicLink');
+  const emailRe    = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function resetMagicLink() {
+    if (emailInput) emailInput.value = '';
+    if (sendBtn) { sendBtn.disabled = false; sendBtn.textContent = 'Send Magic Link'; }
+    clearStatus();
   }
 
-  // ── Validation ────────────────────────────────────────────────────────────
-  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  function validEmail(v) { return emailRe.test(v.trim()); }
+  async function handleMagicLink() {
+    const email = (emailInput?.value || '').trim();
+    if (!emailRe.test(email)) return setStatus('Please enter a valid email address.', true);
+    if (!supabaseClient)      return setStatus('Auth service unavailable. Refresh the page.', true);
 
-  // ── Password eye toggle ───────────────────────────────────────────────────
-  function wireEye(eyeId, inputId) {
-    const eye = document.getElementById(eyeId);
-    const inp = document.getElementById(inputId);
-    if (!eye || !inp) return;
-    eye.addEventListener('click', () => {
-      inp.type = inp.type === 'password' ? 'text' : 'password';
+    sendBtn.disabled = true;
+    sendBtn.textContent = 'Sending…';
+    clearStatus();
+
+    const { error } = await supabaseClient.auth.signInWithOtp({
+      email,
+      options: { emailRedirectTo: window.location.origin + '/' }
     });
-  }
-  wireEye('siEye', 'siPass');
-  wireEye('suEye', 'suPass');
 
-  // ── Screen switches ───────────────────────────────────────────────────────
-  const on = (id, cb) => { const el = document.getElementById(id); if (el) el.addEventListener('click', cb); };
-  on('goSignup', () => showScreen('signup'));
-  on('goSignin', () => showScreen('signin'));
-  on('goForgot', () => showScreen('forgot'));
-  on('fpBack',   () => showScreen('signin'));
-  on('goOtp',    () => showScreen('otp'));
-  on('otpBack',  () => showScreen('signin'));
-
-  // ── Sign In ───────────────────────────────────────────────────────────────
-  on('siSubmit', async () => {
-    const email = (document.getElementById('siEmail')?.value || '').trim();
-    const pass  =  document.getElementById('siPass')?.value  || '';
-    if (!validEmail(email)) return setError('siError', 'Enter a valid email.');
-    if (pass.length < 6)    return setError('siError', 'Password must be at least 6 characters.');
-    if (!supabaseClient)    return setError('siError', 'Auth service unavailable. Refresh page.');
-
-    const btn = document.getElementById('siSubmit');
-    btn.disabled = true; btn.textContent = 'Signing in…';
-    const { error } = await supabaseClient.auth.signInWithPassword({ email, password: pass });
     if (error) {
-      setError('siError', error.message);
-      btn.disabled = false; btn.textContent = 'Sign In';
-    }
-  });
-
-  // ── Sign Up ───────────────────────────────────────────────────────────────
-  on('suSubmit', async () => {
-    const email = (document.getElementById('suEmail')?.value || '').trim();
-    const pass  =  document.getElementById('suPass')?.value  || '';
-    if (!validEmail(email)) return setError('suError', 'Enter a valid email.');
-    if (pass.length < 6)    return setError('suError', 'Password must be at least 6 characters.');
-    if (!supabaseClient)    return setError('suError', 'Auth service unavailable. Refresh page.');
-
-    const btn = document.getElementById('suSubmit');
-    btn.disabled = true; btn.textContent = 'Creating account…';
-    const { error } = await supabaseClient.auth.signUp({ email, password: pass });
-    if (error) {
-      setError('suError', error.message);
-      btn.disabled = false; btn.textContent = 'Create Account';
+      setStatus(error.message, true);
+      sendBtn.disabled = false;
+      sendBtn.textContent = 'Send Magic Link';
     } else {
-      btn.textContent = '✓ Check your email to confirm';
-    }
-  });
-
-  // ── Forgot Password ───────────────────────────────────────────────────────
-  on('fpSubmit', async () => {
-    const email = (document.getElementById('fpEmail')?.value || '').trim();
-    if (!validEmail(email)) return setError('fpError', 'Enter a valid email.');
-    if (!supabaseClient)    return setError('fpError', 'Auth service unavailable. Refresh page.');
-
-    const btn = document.getElementById('fpSubmit');
-    btn.disabled = true; btn.textContent = 'Sending…';
-    const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
-      redirectTo: window.location.origin + '/'
-    });
-    if (error) {
-      setError('fpError', error.message);
-      btn.disabled = false; btn.textContent = 'Send Reset Link';
-    } else {
-      btn.textContent = '✓ Reset link sent — check your inbox';
-    }
-  });
-
-  // ── OTP: Send code ────────────────────────────────────────────────────────
-  let otpEmailUsed = '';
-
-  async function sendOtp() {
-    const email = (document.getElementById('otpEmail')?.value || '').trim();
-    if (!validEmail(email)) return setError('otpReqError', 'Enter a valid email.');
-    if (!supabaseClient)    return setError('otpReqError', 'Auth service unavailable. Refresh page.');
-
-    const btn = document.getElementById('otpSend');
-    btn.disabled = true; btn.textContent = 'Sending…';
-    const { error } = await supabaseClient.auth.signInWithOtp({ email });
-    if (error) {
-      setError('otpReqError', error.message);
-      btn.disabled = false; btn.textContent = 'Send Code';
-    } else {
-      otpEmailUsed = email;
-      const desc = document.getElementById('otpSentDesc');
-      if (desc) desc.textContent = 'Code sent to ' + email + '. Enter it below.';
-      showScreen('otpVerify');
+      sendBtn.textContent = '✓ Link sent!';
+      setStatus('Check your inbox — click the link to sign in.', false);
     }
   }
 
-  on('otpSend',   sendOtp);
-  on('otpResend', () => {
-    showScreen('otp');
-    document.getElementById('otpEmail').value = otpEmailUsed;
-  });
+  if (sendBtn)    sendBtn.addEventListener('click', handleMagicLink);
+  if (emailInput) emailInput.addEventListener('keydown', e => { if (e.key === 'Enter') handleMagicLink(); });
 
-  // ── OTP: Verify code ─────────────────────────────────────────────────────
-  function setupOtpBoxes() {
-    const boxes = document.querySelectorAll('.modal__otp-box');
-    boxes.forEach((box, i) => {
-      box.addEventListener('input', () => {
-        box.value = box.value.replace(/\D/g, '').slice(-1);
-        box.classList.toggle('filled', !!box.value);
-        if (box.value && i < boxes.length - 1) boxes[i + 1].focus();
+  // ── Google OAuth ──────────────────────────────────────────────────────────
+  const googleBtn = document.getElementById('googleLoginBtn');
+  if (googleBtn) {
+    googleBtn.addEventListener('click', async () => {
+      if (!supabaseClient) return setStatus('Auth service unavailable. Refresh the page.', true);
+      googleBtn.disabled = true;
+      googleBtn.textContent = 'Redirecting…';
+      const { error } = await supabaseClient.auth.signInWithOAuth({
+        provider: 'google',
+        options: { redirectTo: window.location.origin + '/' }
       });
-      box.addEventListener('keydown', e => {
-        if (e.key === 'Backspace' && !box.value && i > 0) boxes[i - 1].focus();
-      });
-      box.addEventListener('paste', e => {
-        e.preventDefault();
-        const digits = (e.clipboardData.getData('text').replace(/\D/g, '')).slice(0, 6).split('');
-        digits.forEach((d, j) => { if (boxes[i + j]) { boxes[i + j].value = d; boxes[i + j].classList.add('filled'); } });
-        const next = boxes[Math.min(i + digits.length, boxes.length - 1)];
-        if (next) next.focus();
-      });
+      if (error) {
+        setStatus(error.message, true);
+        googleBtn.disabled = false;
+        googleBtn.innerHTML = `<svg class="google-icon" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4"/><path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="#34A853"/><path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/><path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335"/></svg> Continue with Google`;
+      }
     });
   }
-  setupOtpBoxes();
-
-  on('otpVerify', async () => {
-    const boxes = [...document.querySelectorAll('.modal__otp-box')];
-    const token = boxes.map(b => b.value).join('');
-    if (token.length < 6) return setError('otpVerifyError', 'Enter all 6 digits.');
-    if (!supabaseClient)  return setError('otpVerifyError', 'Auth service unavailable.');
-
-    const btn = document.getElementById('otpVerify');
-    btn.disabled = true; btn.textContent = 'Verifying…';
-    const { error } = await supabaseClient.auth.verifyOtp({
-      email: otpEmailUsed,
-      token,
-      type: 'email'
-    });
-    if (error) {
-      setError('otpVerifyError', error.message);
-      btn.disabled = false; btn.textContent = 'Verify Code';
-    }
-  });
-
-  // ── Enter key submits active screen ──────────────────────────────────────
-  modal.addEventListener('keydown', e => {
-    if (e.key !== 'Enter') return;
-    if (e.target.classList.contains('modal__otp-box')) return;
-    const map = { screenSignin: 'siSubmit', screenSignup: 'suSubmit', screenForgot: 'fpSubmit', screenOtp: 'otpSend' };
-    const active = Object.entries(screens).find(([, s]) => s && !s.hasAttribute('hidden'));
-    if (active) {
-      const screenEl = active[1];
-      const btnId = map[screenEl.id];
-      if (btnId) document.getElementById(btnId)?.click();
-    }
-  });
 }

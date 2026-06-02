@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="css/modal.css" />
   <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/our-work.css" />
+  <link rel="stylesheet" href="css/lang.css" />
 </head>
 <body>
 
@@ -42,54 +43,54 @@
         </a>
 
         <ul class="navbar__links" id="navLinks" role="list">
-          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
-          <li class="nav-item"><a href="our-work.html" class="nav-link nav-link--active">Our Work</a></li>
+          <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link" data-i18n="nav.services">Services</a></li>
+          <li class="nav-item"><a href="our-work.html" class="nav-link nav-link--active" data-i18n="nav.ourwork">Our Work</a></li>
 
           <li class="nav-item nav-item--dropdown">
             <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-              Resources
+              <span data-i18n="nav.resources">Resources</span>
               <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="dropdown" role="menu">
               <a href="insights.html" class="dropdown__item" role="menuitem">
                 <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
-                <span class="dropdown__item-text"><span class="dropdown__item-label">Insights</span><span class="dropdown__item-desc">Thought leadership</span></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label" data-i18n="nav.insights">Insights</span><span class="dropdown__item-desc" data-i18n="nav.insights.desc">Thought leadership</span></span>
               </a>
               <a href="news.html" class="dropdown__item" role="menuitem">
                 <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8z"/></svg></span>
-                <span class="dropdown__item-text"><span class="dropdown__item-label">News</span><span class="dropdown__item-desc">Latest updates &amp; press</span></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label" data-i18n="nav.news">News</span><span class="dropdown__item-desc" data-i18n="nav.news.desc">Latest updates &amp; press</span></span>
               </a>
             </div>
           </li>
 
           <li class="nav-item nav-item--dropdown">
             <button class="nav-link" aria-haspopup="true" aria-expanded="false">
-              Company
+              <span data-i18n="nav.company">Company</span>
               <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="dropdown" role="menu">
               <a href="careers.html" class="dropdown__item" role="menuitem">
                 <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
-                <span class="dropdown__item-text"><span class="dropdown__item-label">Careers</span><span class="dropdown__item-desc">Work with us</span></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label" data-i18n="nav.careers">Careers</span><span class="dropdown__item-desc" data-i18n="nav.careers.desc">Work with us</span></span>
               </a>
               <a href="#" class="dropdown__item" role="menuitem">
                 <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
-                <span class="dropdown__item-text"><span class="dropdown__item-label">About</span><span class="dropdown__item-desc">Our story and mission</span></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label" data-i18n="nav.about">About</span><span class="dropdown__item-desc" data-i18n="nav.about.desc">Our story and mission</span></span>
               </a>
             </div>
           </li>
 
           <!-- Mobile-only links -->
           <li class="nav-item nav-item--mobile-only mobile-contact-item">
-            <a href="#" class="nav-link">Contact</a>
+            <a href="#" class="nav-link" data-i18n="nav.contact">Contact</a>
           </li>
           <li class="nav-item nav-item--mobile-only">
             <button class="btn-login" aria-haspopup="dialog" aria-controls="modalOverlay">
               <span class="btn-login__icon" aria-hidden="true">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
               </span>
-              Log in
+              <span data-i18n="nav.login">Log in</span>
             </button>
           </li>
         </ul>
@@ -99,9 +100,9 @@
             <span class="btn-login__icon" aria-hidden="true">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             </span>
-            Log in
+            <span data-i18n="nav.login">Log in</span>
           </button>
-          <a href="#" class="btn-cta">Contact</a>
+          <a href="#" class="btn-cta" data-i18n="nav.contact">Contact</a>
           <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
             <span class="hamburger__bar"></span>
             <span class="hamburger__bar"></span>
@@ -131,6 +132,7 @@
         <input type="email" id="magicEmail" name="email" class="modal__input" placeholder="Enter your email address" autocomplete="email" />
         <button class="btn-magic" id="sendMagicLink">Send Magic Link</button>
       </div>
+      <p class="modal__status" id="modalStatus" hidden></p>
     </div>
   </div>
 
@@ -335,50 +337,54 @@
 
       <div class="ftr__nav-cols">
         <div class="ftr__col">
-          <h4 class="ftr__col-head">Company</h4>
+          <h4 class="ftr__col-head" data-i18n="ftr.company">Company</h4>
           <ul class="ftr__list">
-            <li><a href="#">About</a></li>
-            <li><a href="careers.html">Careers</a></li>
-            <li><a href="news.html">News &amp; Updates</a></li>
-            <li><a href="insights.html">Insights</a></li>
+            <li><a href="#" data-i18n="ftr.about">About</a></li>
+            <li><a href="careers.html" data-i18n="ftr.careers">Careers</a></li>
+            <li><a href="news.html" data-i18n="ftr.news">News &amp; Updates</a></li>
+            <li><a href="insights.html" data-i18n="ftr.insights">Insights</a></li>
           </ul>
         </div>
         <div class="ftr__col">
-          <h4 class="ftr__col-head">Services</h4>
+          <h4 class="ftr__col-head" data-i18n="ftr.services">Services</h4>
           <ul class="ftr__list">
-            <li><a href="#">Websites &amp; Apps</a></li>
-            <li><a href="#">Creative &amp; Digital</a></li>
-            <li><a href="#">Brand Launches</a></li>
-            <li><a href="#">Performance Marketing</a></li>
-            <li><a href="#">Films &amp; Shoots</a></li>
-            <li><a href="#">Innovations</a></li>
+            <li><a href="#" data-i18n="ftr.websites">Websites &amp; Apps</a></li>
+            <li><a href="#" data-i18n="ftr.creative">Creative &amp; Digital</a></li>
+            <li><a href="#" data-i18n="ftr.brand">Brand Launches</a></li>
+            <li><a href="#" data-i18n="ftr.perf">Performance Marketing</a></li>
+            <li><a href="#" data-i18n="ftr.films">Films &amp; Shoots</a></li>
+            <li><a href="#" data-i18n="ftr.innov">Innovations</a></li>
           </ul>
         </div>
         <div class="ftr__col">
-          <h4 class="ftr__col-head">Connect</h4>
+          <h4 class="ftr__col-head" data-i18n="ftr.connect">Connect</h4>
           <ul class="ftr__list">
-            <li><a href="#">LinkedIn</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">YouTube</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#" data-i18n="ftr.linkedin">LinkedIn</a></li>
+            <li><a href="#" data-i18n="ftr.instagram">Instagram</a></li>
+            <li><a href="#" data-i18n="ftr.facebook">Facebook</a></li>
+            <li><a href="#" data-i18n="ftr.youtube">YouTube</a></li>
+            <li><a href="#" data-i18n="ftr.contact">Contact</a></li>
           </ul>
         </div>
       </div>
     </div>
 
     <div class="ftr__legal">
-      <span>© 2026 Leo Digital Ltd. All rights reserved.</span>
+      <span data-i18n="ftr.legal">© 2026 Leo Digital Ltd. All rights reserved.</span>
       <div class="ftr__legal-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Cookie Settings</a>
+        <a href="#" data-i18n="ftr.privacy">Privacy Policy</a>
+        <a href="#" data-i18n="ftr.terms">Terms of Service</a>
+        <a href="#" data-i18n="ftr.cookies">Cookie Settings</a>
       </div>
     </div>
   </footer>
 
   <!-- Scripts -->
+  <script src="js/i18n.js"></script>
   <script src="js/navbar.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/auth.js"></script>
   <script src="js/modal.js"></script>
   <script src="js/menu.js"></script>
   <script src="js/observer.js"></script>

@@ -1,0 +1,129 @@
+/* ═══════════════════════════════════════════
+   LANGUAGE SWITCHER  +  RTL OVERRIDES
+   ═══════════════════════════════════════════ */
+
+/* ── Switcher pill ─────────────────────────── */
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 100px;
+  padding: 3px 4px;
+  flex-shrink: 0;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.45);
+  padding: 0.22rem 0.6rem;
+  border-radius: 100px;
+  transition: background 0.18s, color 0.18s;
+  font-family: inherit;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.lang-btn--active {
+  background: #7c3aed;
+  color: #fff;
+}
+
+.lang-btn:hover:not(.lang-btn--active) {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.lang-sep {
+  color: rgba(255, 255, 255, 0.18);
+  font-size: 0.65rem;
+  padding: 0 1px;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Navbar scrolled state (dark bg) keeps good contrast — no override needed */
+
+/* ── RTL global ────────────────────────────── */
+[dir="rtl"] {
+  font-family: 'Cairo', 'Inter', sans-serif;
+}
+
+/* Navbar */
+[dir="rtl"] .navbar__inner          { flex-direction: row-reverse; }
+[dir="rtl"] .navbar__actions        { flex-direction: row-reverse; }
+[dir="rtl"] .navbar__links          { margin-right: auto; margin-left: unset; }
+[dir="rtl"] .nav-item--dropdown .dropdown {
+  left: auto;
+  right: 0;
+}
+[dir="rtl"] .dropdown__item         { flex-direction: row-reverse; }
+[dir="rtl"] .nav-chevron            { transform: scaleX(-1); }
+[dir="rtl"] .btn-login              { flex-direction: row-reverse; }
+
+/* Hero (index) */
+[dir="rtl"] .hero-eyebrow           { flex-direction: row-reverse; }
+[dir="rtl"] .hero-ctas              { flex-direction: row-reverse; }
+[dir="rtl"] .hero-trust             { flex-direction: row-reverse; }
+[dir="rtl"] .hero-stats             { flex-direction: row-reverse; }
+[dir="rtl"] .hero-btn-ghost svg     { transform: scaleX(-1); }
+
+/* Approach cols */
+[dir="rtl"] .seh-about__cols        { flex-direction: row-reverse; }
+[dir="rtl"] .seh-about__eyebrow,
+[dir="rtl"] .seh-about__title,
+[dir="rtl"] .seh-about__text        { text-align: right; }
+[dir="rtl"] .seh-about__col         { text-align: right; }
+
+/* Services */
+[dir="rtl"] .srv-grid__header       { text-align: right; }
+[dir="rtl"] .srv-grid__meta         { text-align: right; }
+[dir="rtl"] .srv-cell__top          { flex-direction: row-reverse; }
+
+/* Partners */
+[dir="rtl"] .partners-header        { text-align: right; }
+
+/* Careers hero */
+[dir="rtl"] .cr-hero__ctas          { flex-direction: row-reverse; }
+[dir="rtl"] .cr-btn svg             { transform: scaleX(-1); }
+[dir="rtl"] .cr-hero__inner         { text-align: right; }
+
+/* Careers apply */
+[dir="rtl"] .cr-apply__inner        { flex-direction: row-reverse; }
+[dir="rtl"] .cr-apply__left         { text-align: right; }
+[dir="rtl"] .cr-apply__checklist li { flex-direction: row-reverse; }
+[dir="rtl"] .cr-apply__checklist    { padding-right: 0; }
+
+/* Form */
+[dir="rtl"] .cr-form__row           { flex-direction: row-reverse; }
+[dir="rtl"] .cr-form__label         { text-align: right; display: block; }
+[dir="rtl"] .cr-form__input,
+[dir="rtl"] .cr-form__textarea,
+[dir="rtl"] .cr-form__select        { text-align: right; direction: rtl; }
+[dir="rtl"] .cr-form__select-wrap .cr-form__chevron {
+  right: auto;
+  left: 0.875rem;
+}
+[dir="rtl"] .cr-form__select        { padding-right: 1rem; padding-left: 2.5rem; }
+[dir="rtl"] .cr-form__submit        { flex-direction: row-reverse; }
+[dir="rtl"] .cr-form__submit-arrow  { transform: scaleX(-1); }
+[dir="rtl"] .cr-form__success       { text-align: right; }
+
+/* Footer */
+[dir="rtl"] .ftr__inner             { flex-direction: row-reverse; }
+[dir="rtl"] .ftr__nav-cols          { flex-direction: row-reverse; }
+[dir="rtl"] .ftr__brand-col         { text-align: right; }
+[dir="rtl"] .ftr__social            { flex-direction: row-reverse; }
+[dir="rtl"] .ftr__list              { text-align: right; }
+[dir="rtl"] .ftr__legal             { flex-direction: row-reverse; }
+[dir="rtl"] .ftr__legal-links       { flex-direction: row-reverse; }
+
+/* Modal */
+[dir="rtl"] .modal                  { text-align: right; }
+[dir="rtl"] .modal__magic-link      { flex-direction: column; }
+[dir="rtl"] .modal__input           { text-align: right; direction: rtl; }

@@ -46,6 +46,14 @@
   margin: 0;
 }
 
+.ftr__offices {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(107, 114, 128, 0.70);
+  letter-spacing: 0.04em;
+  margin-top: 0.5rem;
+}
+
 .ftr__social {
   display: flex;
   gap: 1rem;
