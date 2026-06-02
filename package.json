@@ -1,0 +1,8 @@
+{
+  "name": "leo-digital-web",
+  "version": "1.0.0",
+  "description": "Leo Digital Communication website",
+  "scripts": {
+    "build": "rm -rf dist && mkdir -p dist && cp -r css js images *.html dist/ && echo 'Build complete → dist/'"
+  }
+}

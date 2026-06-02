@@ -1,0 +1,273 @@
+/* ══════════════════════════════════════════
+   TIMEBOX — Animated Clock Modal
+   Colors match the site's purple/lavender
+   brand palette (A855F7 / E9D5FF)
+   ══════════════════════════════════════════ */
+
+/* ── Overlay ── */
+.timebox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-modal) + 10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+
+  background: rgba(10, 5, 20, 0.60);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+}
+
+.timebox-overlay:not([hidden]) {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Card ── */
+.timebox {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  padding: 2.5rem 2.75rem 2.25rem;
+  width: min(420px, 100%);
+  text-align: center;
+
+  background: linear-gradient(
+    145deg,
+    rgba(30, 15, 55, 0.95) 0%,
+    rgba(20, 10, 40, 0.98) 60%,
+    rgba(25, 12, 50, 0.97) 100%
+  );
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  box-shadow:
+    0 0 0 1px rgba(168, 85, 247, 0.12),
+    0 32px 80px rgba(10, 5, 20, 0.60),
+    0 8px 24px rgba(168, 85, 247, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+
+  transform: translateY(20px) scale(0.96);
+  transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timebox-overlay:not([hidden]) .timebox {
+  transform: translateY(0) scale(1);
+}
+
+/* ── Ambient orbs ── */
+.timebox__orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(40px);
+}
+
+.timebox__orb--1 {
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.40) 0%, transparent 70%);
+  top: -80px;
+  right: -60px;
+  animation: timebox-pulse 4s ease-in-out infinite;
+}
+
+.timebox__orb--2 {
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.30) 0%, transparent 70%);
+  bottom: -70px;
+  left: -50px;
+  animation: timebox-pulse 5s ease-in-out infinite reverse;
+}
+
+.timebox__orb--3 {
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.18) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: timebox-pulse 6s ease-in-out infinite 1s;
+}
+
+@keyframes timebox-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.12); }
+}
+
+/* ── Close button ── */
+.timebox__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  border-radius: 50%;
+  background: rgba(168, 85, 247, 0.10);
+  color: rgba(233, 213, 255, 0.70);
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+.timebox__close:hover {
+  background: rgba(168, 85, 247, 0.22);
+  border-color: rgba(168, 85, 247, 0.50);
+  color: #e9d5ff;
+}
+
+/* ── Inner content ── */
+.timebox__inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Label ── */
+.timebox__label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(168, 85, 247, 0.80);
+  margin-bottom: 1.25rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.timebox__label::before,
+.timebox__label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.35), transparent);
+}
+
+/* ── Clock digits ── */
+.timebox__clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.timebox__digit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 88px;
+  padding: 0.4rem 0.6rem;
+  border-radius: 12px;
+  font-size: 3.2rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  color: #f5e9ff;
+  background: rgba(168, 85, 247, 0.10);
+  border: 1px solid rgba(168, 85, 247, 0.18);
+  box-shadow:
+    0 0 20px rgba(168, 85, 247, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  font-family: 'Inter', monospace;
+
+  animation: digit-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes digit-glow {
+  from { box-shadow: 0 0 16px rgba(168, 85, 247, 0.10), inset 0 1px 0 rgba(255,255,255,0.06); }
+  to   { box-shadow: 0 0 32px rgba(168, 85, 247, 0.28), inset 0 1px 0 rgba(255,255,255,0.10); }
+}
+
+.timebox__sep {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: rgba(168, 85, 247, 0.60);
+  line-height: 1;
+  animation: sep-blink 1s step-end infinite;
+  margin-bottom: 4px;
+}
+
+@keyframes sep-blink {
+  0%, 49%  { opacity: 1; }
+  50%, 100% { opacity: 0.2; }
+}
+
+/* ── Date line ── */
+.timebox__date {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(233, 213, 255, 0.60);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.01em;
+}
+
+/* ── Progress bar (seconds indicator) ── */
+.timebox__bar {
+  height: 3px;
+  border-radius: 9999px;
+  background: rgba(168, 85, 247, 0.12);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.timebox__bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #7c3aed, #a855f7, #c084fc, #e879f9);
+  background-size: 200% 100%;
+  transition: width 1s linear;
+  animation: bar-shimmer 2.5s linear infinite;
+}
+
+@keyframes bar-shimmer {
+  0%   { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+/* ── Timezone ── */
+.timebox__timezone {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(168, 85, 247, 0.50);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ── Hero title clickable hint ── */
+.hero__title--clickable {
+  cursor: pointer;
+  position: relative;
+}
+
+.hero__title--clickable::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(168,85,247,0.5) 40%, rgba(168,85,247,0.5) 60%, transparent 100%);
+  border-radius: 9999px;
+  opacity: 0;
+  transform: scaleX(0.4);
+  transition: opacity 250ms ease, transform 250ms ease;
+}
+
+.hero__title--clickable:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.hero__title--clickable:hover {
+  cursor: pointer;
+}

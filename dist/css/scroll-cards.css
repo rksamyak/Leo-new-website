@@ -1,0 +1,386 @@
+/* ══════════════════════════════════════════
+   SCROLL CARDS  —  Snap / Slam Storytelling
+   ══════════════════════════════════════════ */
+
+/* ── Tall section provides the scroll room ── */
+.sc-section {
+  position: relative;
+  height: 400vh;
+  z-index: var(--z-base);
+}
+
+/* ── Sticky viewport-height frame ── */
+.sc-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* Subtle purple atmosphere */
+.sc-sticky::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 65% 65% at 50% 55%, rgba(139, 92, 246, 0.07) 0%, transparent 68%),
+    radial-gradient(ellipse 45% 40% at 20% 85%, rgba(109, 40, 217, 0.04) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 82% 18%, rgba(167, 139, 250, 0.04) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+/* ── Section eyebrow ── */
+.sc-eyebrow {
+  position: absolute;
+  top: clamp(1.75rem, 4vh, 2.75rem);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(13, 13, 13, 0.26);
+  white-space: nowrap;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* ── Progress dots (right rail) ── */
+.sc-progress {
+  position: absolute;
+  right: clamp(1rem, 3vw, 2.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 10;
+}
+
+.sc-progress__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(139, 92, 246, 0.22);
+  /* spring transition for the dot pop */
+  transition: background 0.35s ease,
+              transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.35s ease;
+}
+
+.sc-progress__dot--active {
+  background: rgba(139, 92, 246, 0.9);
+  transform: scale(1.65);
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.55);
+}
+
+/* ── Card counter (left rail) ── */
+.sc-counter {
+  position: absolute;
+  left: clamp(1rem, 3vw, 2.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.sc-counter__current {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: rgba(139, 92, 246, 0.8);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.sc-counter__sep {
+  display: block;
+  width: 1px;
+  height: 24px;
+  background: rgba(139, 92, 246, 0.2);
+}
+
+.sc-counter__total {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(13, 13, 13, 0.25);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Stage: the card arena ── */
+.sc-stage {
+  position: relative;
+  width: min(660px, 90vw);
+  height: min(420px, 62vh);
+  /* Shift slightly above center — gives visual breathing room
+     for the deck-peek cards below */
+  margin-bottom: 64px;
+  z-index: 2;
+}
+
+/* ── Deck peek: ghost cards showing behind the active card ──
+   Pure CSS — gives the "stack of cards" depth illusion.
+   They're decorative and never receive pointer events.       */
+.sc-stage::before,
+.sc-stage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  pointer-events: none;
+  /* Visible behind actual cards */
+  z-index: 0;
+}
+
+/* Second card in deck */
+.sc-stage::before {
+  background: linear-gradient(145deg, #111114 0%, #0c0c0e 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.28);
+  transform: translateY(14px) scale(0.956);
+  transform-origin: bottom center;
+  opacity: 0.85;
+}
+
+/* Third card in deck (deepest) */
+.sc-stage::after {
+  background: linear-gradient(145deg, #0e0e10 0%, #0a0a0c 100%);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transform: translateY(27px) scale(0.916);
+  transform-origin: bottom center;
+  opacity: 0.55;
+}
+
+/* ══════════════════════════════════════════
+   BASE CARD
+   ══════════════════════════════════════════ */
+.sc-card {
+  position: absolute;
+  inset: 0;
+  border-radius: 36px;
+  padding: clamp(2rem, 4vw, 3.25rem);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  will-change: transform, opacity;
+  /* Crisp edges for the slam motion */
+  backface-visibility: hidden;
+
+  /* Top-edge highlight + side borders */
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  border-left: 1px solid rgba(255, 255, 255, 0.055);
+  border-right: 1px solid rgba(0, 0, 0, 0.22);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.28);
+}
+
+/* Inner glass sheen */
+.sc-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 36px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.055) 0%,
+    rgba(255, 255, 255, 0.01) 38%,
+    transparent 56%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Card 1 — deep violet */
+.sc-card--1 {
+  background: linear-gradient(148deg, #111118 0%, #0d0d14 55%, #090910 100%);
+  box-shadow:
+    0 0 0 1px  rgba(139, 92, 246, 0.14),
+    0 0  56px  rgba(139, 92, 246, 0.22),
+    0 0  120px rgba(139, 92, 246, 0.10),
+    0 28px 72px rgba(0, 0, 0, 0.48),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  z-index: 3;
+}
+
+/* Card 2 — violet-blue shift */
+.sc-card--2 {
+  background: linear-gradient(148deg, #0f0f18 0%, #0b0b12 55%, #08080e 100%);
+  box-shadow:
+    0 0 0 1px  rgba(167, 139, 250, 0.14),
+    0 0  56px  rgba(167, 139, 250, 0.19),
+    0 0  120px rgba(167, 139, 250, 0.08),
+    0 28px 72px rgba(0, 0, 0, 0.48),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  z-index: 4;   /* above card-1 when sliding in */
+}
+
+/* Card 3 — lavender */
+.sc-card--3 {
+  background: linear-gradient(148deg, #10101a 0%, #0c0c14 55%, #090911 100%);
+  box-shadow:
+    0 0 0 1px  rgba(196, 181, 253, 0.13),
+    0 0  56px  rgba(196, 181, 253, 0.16),
+    0 0  120px rgba(196, 181, 253, 0.07),
+    0 28px 72px rgba(0, 0, 0, 0.48),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  z-index: 5;   /* highest — always on top when it arrives */
+}
+
+/* ── Card inner ── */
+.sc-card__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* ── Header row ── */
+.sc-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sc-card__left { flex: 1; min-width: 0; }
+
+.sc-card__eyebrow {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(167, 139, 250, 0.78);
+  margin-bottom: 0.625rem;
+}
+
+.sc-card__title {
+  font-size: clamp(1.9rem, 4.5vw, 2.625rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.03;
+  color: #ffffff;
+}
+
+/* ── Icon badge ── */
+.sc-card__icon-wrap {
+  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(196, 181, 253, 0.92);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.16);
+}
+
+/* ── Description ── */
+.sc-card__desc {
+  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.48);
+  max-width: 400px;
+  flex: 1;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Stats ── */
+.sc-card__stat-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.sc-card__stat {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 0.875rem 1.125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.sc-card__stat-num {
+  font-size: clamp(1.375rem, 3vw, 1.75rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.sc-card__stat-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.38);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* ── CTA ── */
+.sc-card__footer { margin-top: auto; }
+
+.sc-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.8125rem 1.625rem;
+  background: rgba(139, 92, 246, 0.14);
+  border: 1px solid rgba(139, 92, 246, 0.28);
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(196, 181, 253, 0.95);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease,
+              color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  letter-spacing: 0.01em;
+}
+
+.sc-card__cta:hover {
+  background: rgba(139, 92, 246, 0.26);
+  border-color: rgba(139, 92, 246, 0.50);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(139, 92, 246, 0.28);
+}
+
+.sc-card__cta svg { transition: transform 0.3s ease; }
+.sc-card__cta:hover svg { transform: translateX(3px); }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .sc-card { padding: 2rem 1.75rem; border-radius: 28px; }
+  .sc-card::before { border-radius: 28px; }
+  .sc-stage::before { border-radius: 24px; }
+  .sc-stage::after  { border-radius: 20px; }
+  .sc-card__icon-wrap { width: 46px; height: 46px; }
+  .sc-counter { display: none; }
+}
+
+@media (max-width: 520px) {
+  .sc-section { height: 500vh; }
+  .sc-card { padding: 1.625rem 1.375rem; border-radius: 24px; }
+  .sc-card__stat-row { gap: 0.625rem; }
+  .sc-card__stat { padding: 0.75rem 0.875rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sc-card__cta { transition: none; }
+}

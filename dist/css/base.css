@@ -1,0 +1,220 @@
+/* ── Section Layout ── */
+.section {
+  position: relative;
+  z-index: var(--z-base);
+  padding: var(--section-pad-y) var(--section-pad-x);
+  background: var(--clr-bg);
+}
+
+.section--hero {
+  padding-top: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--clr-bg);
+}
+
+.section__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Bold overline label */
+.section__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--clr-white);
+  margin-bottom: var(--space-5);
+}
+
+.section__label::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--clr-white);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* Large bold heading */
+.section__title {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: var(--fw-black);
+  line-height: var(--lh-tight);
+  color: var(--clr-white);
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-12);
+}
+
+/* ── Glassmorphism Card — white frosted ── */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow);
+  transition:
+    background var(--transition-base),
+    border var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+}
+
+.glass-card:hover {
+  background: var(--glass-bg-hover);
+  border: var(--glass-border-hover);
+  box-shadow: var(--glass-shadow-lg);
+  transform: translateY(-5px);
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base),
+    transform var(--transition-fast),
+    box-shadow var(--transition-base);
+  border: 2px solid transparent;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Soft purple primary */
+.btn--primary {
+  background: #D9B8FF;
+  color: #111111;
+  border-color: #D9B8FF;
+  box-shadow: 0 4px 20px rgba(217, 184, 255, 0.40);
+}
+
+.btn--primary:hover {
+  background: #C89CFF;
+  border-color: #C89CFF;
+  box-shadow: 0 8px 32px rgba(217, 184, 255, 0.55);
+}
+
+/* Outlined ghost */
+.btn--ghost {
+  background: transparent;
+  color: var(--clr-white);
+  border-color: rgba(17, 17, 17, 0.20);
+}
+
+.btn--ghost:hover {
+  border-color: rgba(17, 17, 17, 0.40);
+  background: rgba(255, 255, 255, 0.40);
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* ── Bold Text Gradient ── */
+.text-gradient {
+  background: linear-gradient(135deg, #111111 0%, #6E6E73 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Tag Badge ── */
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.75rem;
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--clr-white-80);
+}
+
+/* ── Link Arrow ── */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--clr-white);
+  transition: color var(--transition-base), gap var(--transition-base);
+  text-decoration: none;
+}
+
+.link-arrow:hover {
+  color: #555;
+  gap: var(--space-3);
+}
+
+/* ── Form Fields ── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-group label {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--clr-white);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: var(--space-3) var(--space-4);
+  background: rgba(255, 255, 255, 0.80);
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--radius-md);
+  color: #0D0D0D;
+  font-size: var(--fs-base);
+  font-family: var(--font-sans);
+  outline: none;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #D9B8FF;
+  box-shadow: 0 0 0 3px rgba(217, 184, 255, 0.20);
+  background: #ffffff;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(13, 13, 13, 0.35);
+}
+
+.form-group input.field--error,
+.form-group textarea.field--error {
+  border-color: rgba(220, 50, 50, 0.70);
+}
+
+/* ── Section separator ── */
+.section + .section {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}

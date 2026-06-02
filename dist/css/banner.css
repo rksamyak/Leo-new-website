@@ -1,0 +1,277 @@
+/* ═══════════════════════════════════════
+   FIBER OPTICS STRIP
+   Sits between the floating navbar pill and
+   the banner carousel — never full-page.
+   ═══════════════════════════════════════ */
+
+.fiber-strip {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  /* Push down so it starts exactly below the floating navbar pill */
+  margin-top: var(--navbar-height);
+  overflow: hidden;
+  background:
+    linear-gradient(to bottom,
+      #040e07 0%,
+      #071510 30%,
+      #0a1e0f 70%,
+      rgba(10, 30, 15, 0.0) 100%
+    );
+  z-index: 1;
+}
+
+/* Bottom fade — dissolves into the page */
+.fiber-strip::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--clr-bg));
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Top fade — merges under the navbar pill */
+.fiber-strip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--clr-bg), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+#fiberCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ═══════════════════════════════════════
+   BANNER CAROUSEL
+   ═══════════════════════════════════════ */
+
+.banner-carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 0 var(--space-8);
+}
+
+/* ── Track ── */
+.banner-track {
+  display: flex;
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* ── Slide ── */
+.banner-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-height: 420px;
+  background: var(--banner-gradient);
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: var(--space-16) var(--space-20);
+  overflow: hidden;
+}
+
+/* ── Content ── */
+.banner-slide__content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.banner-slide__label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  border-radius: 99px;
+  padding: 0.3rem 0.875rem;
+  margin-bottom: var(--space-4);
+}
+
+.banner-slide__title {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-4);
+}
+
+.banner-slide__body {
+  font-size: 1.0625rem;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.75;
+  margin-bottom: var(--space-8);
+  max-width: 480px;
+}
+
+.banner-slide__cta {
+  background: #FFFFFF !important;
+  border: 2px solid #FFFFFF !important;
+  color: #0D0D0D !important;
+  font-weight: 700 !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.20) !important;
+}
+
+.banner-slide__cta:hover {
+  background: rgba(255, 255, 255, 0.90) !important;
+  border-color: rgba(255, 255, 255, 0.90) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* ── Decorative visual ── */
+.banner-slide__visual {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.banner-orb {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.22;
+  filter: blur(60px);
+}
+
+.banner-orb--a {
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.35);
+  right: -80px;
+  top: -120px;
+}
+
+.banner-orb--b {
+  width: 320px;
+  height: 320px;
+  background: rgba(255, 255, 255, 0.20);
+  right: 200px;
+  bottom: -80px;
+}
+
+.banner-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ── Controls ── */
+.banner-controls {
+  position: absolute;
+  bottom: var(--space-6);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  z-index: 10;
+}
+
+.banner-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  color: #ffffff;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 180ms ease, transform 180ms ease;
+  line-height: 1;
+}
+
+.banner-btn:hover {
+  background: rgba(255, 255, 255, 0.32);
+  transform: scale(1.08);
+}
+
+.banner-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.banner-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 280ms ease, transform 280ms ease, width 280ms ease;
+}
+
+.banner-dot--active {
+  background: #ffffff;
+  width: 24px;
+  border-radius: 99px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .banner-slide {
+    min-height: 360px;
+    padding: var(--space-12) var(--space-6);
+    padding-bottom: calc(var(--space-12) + 48px);
+  }
+
+  .banner-slide__body {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .fiber-strip {
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fiber-strip {
+    height: 260px;
+  }
+
+  .banner-slide {
+    min-height: 320px;
+    padding: var(--space-10) var(--space-4);
+    padding-bottom: calc(var(--space-10) + 48px);
+  }
+
+  .banner-slide__title {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+  }
+}

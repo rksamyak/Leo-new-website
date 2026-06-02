@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero Banner — Digital Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/hero-banner.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════
+       ANIMATED BACKGROUND
+  ══════════════════════════════════ -->
+  <div class="hb-bg" aria-hidden="true">
+    <!-- Background photo with gradient mask -->
+    <div class="hb-bg-image"></div>
+    <div class="hb-glow hb-glow--1"></div>
+    <div class="hb-glow hb-glow--2"></div>
+    <div class="hb-glow hb-glow--3"></div>
+    <div class="hb-noise"></div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       NAVBAR — Transparent → Sticky Glass
+  ══════════════════════════════════ -->
+  <nav class="hb-nav" id="hbNav" role="navigation" aria-label="Main navigation">
+    <div class="hb-nav__inner">
+
+      <!-- Logo -->
+      <a href="#" class="hb-nav__logo" aria-label="Nexus Home">
+        <span class="hb-nav__logo-dot" aria-hidden="true"></span>
+        Nexus
+      </a>
+
+      <!-- Desktop nav links -->
+      <ul class="hb-nav__links" id="hbNavLinks" role="list">
+        <li><a href="#" class="hb-nav__link hb-nav__link--active">Home</a></li>
+        <li><a href="#features" class="hb-nav__link">Features</a></li>
+        <li><a href="#gallery" class="hb-nav__link">Gallery</a></li>
+        <li><a href="#pricing" class="hb-nav__link">Pricing</a></li>
+      </ul>
+
+      <!-- CTA + Hamburger -->
+      <a href="#" class="hb-btn hb-btn--nav">Get Started</a>
+      <button class="hb-hamburger" id="hbHamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════
+       HERO SECTION
+  ══════════════════════════════════ -->
+  <section class="hb-hero" id="hbHero" aria-label="Hero section">
+    <div class="hb-hero__inner">
+
+      <!-- ── LEFT COLUMN ── -->
+      <div class="hb-hero__content" id="hbContent">
+
+        <!-- Badge -->
+        <div class="hb-eyebrow">
+          <span class="hb-eyebrow__dot" aria-hidden="true"></span>
+          Award-Winning Design
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+
+        <!-- Heading -->
+        <h1 class="hb-hero__title hb-title--masked">
+          Crafting Digital<br>
+          <span class="hb-gradient-text">Experiences</span><br>
+          That Matter
+        </h1>
+
+        <!-- Description -->
+        <p class="hb-hero__desc">
+          We design interfaces that combine beauty with functionality,
+          creating seamless experiences that users love and businesses thrive on.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hb-hero__actions">
+          <a href="#" class="hb-btn hb-btn--primary">
+            View Portfolio
+            <span class="hb-btn__arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#" class="hb-btn hb-btn--ghost">
+            <span class="hb-play-wrap" aria-hidden="true">
+              <span class="hb-play-icon">&#9654;</span>
+            </span>
+            Watch Showreel
+          </a>
+        </div>
+
+      </div><!-- /hb-hero__content -->
+
+      <!-- ── RIGHT COLUMN: Two Glass Cards ── -->
+      <div class="hb-right-col" id="hbVisual">
+
+        <!-- ── Card 1: Stats ── -->
+        <div class="hb-stat-card hb-glass-card">
+          <!-- Glow blob -->
+          <div class="hb-stat-card__glow" aria-hidden="true"></div>
+
+          <!-- Top row: icon + big number -->
+          <div class="hb-stat-card__top">
+            <div class="hb-stat-card__icon-wrap" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+              </svg>
+            </div>
+            <div>
+              <div class="hb-stat-card__big-num">150+</div>
+              <div class="hb-stat-card__big-label">Projects Delivered</div>
+            </div>
+          </div>
+
+          <!-- Progress bar -->
+          <div class="hb-stat-card__prog-row">
+            <span>Client Satisfaction</span>
+            <span class="hb-stat-card__prog-pct">98%</span>
+          </div>
+          <div class="hb-prog-track">
+            <div class="hb-prog-fill"></div>
+          </div>
+
+          <!-- Divider -->
+          <div class="hb-stat-card__divider"></div>
+
+          <!-- Mini stats grid -->
+          <div class="hb-mini-stats-grid">
+            <div class="hb-mini-stat">
+              <span class="hb-mini-stat__num">5+</span>
+              <span class="hb-mini-stat__label">Years</span>
+            </div>
+            <div class="hb-mini-stat__sep" aria-hidden="true"></div>
+            <div class="hb-mini-stat">
+              <span class="hb-mini-stat__num">24/7</span>
+              <span class="hb-mini-stat__label">Support</span>
+            </div>
+            <div class="hb-mini-stat__sep" aria-hidden="true"></div>
+            <div class="hb-mini-stat">
+              <span class="hb-mini-stat__num">100%</span>
+              <span class="hb-mini-stat__label">Quality</span>
+            </div>
+          </div>
+
+          <!-- Tag pills -->
+          <div class="hb-stat-card__tags">
+            <span class="hb-tag-pill">
+              <span class="hb-tag-ping" aria-hidden="true"></span>
+              ACTIVE
+            </span>
+            <span class="hb-tag-pill">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/>
+              </svg>
+              PREMIUM
+            </span>
+          </div>
+
+        </div><!-- /.hb-stat-card -->
+
+        <!-- ── Card 2: Marquee ── -->
+        <div class="hb-marquee-card hb-glass-card">
+          <h3 class="hb-marquee-card__title">Trusted by Industry Leaders</h3>
+
+          <div class="hb-marquee-wrap">
+            <div class="hb-marquee-track" aria-label="Brand logos">
+
+              <!-- Set 1 -->
+              <div class="hb-brand-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/></svg>
+                <span>Acme Corp</span>
+              </div>
+              <div class="hb-brand-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 16-9-14-9 14z"/></svg>
+                <span>Quantum</span>
+              </div>
+              <div class="hb-brand-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"/></svg>
+                <span>Command+Z</span>
+              </div>
+              <div class="hb-brand-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10h.01M15 10h.01M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 19l3 3V10a8 8 0 0 0-8-8z"/></svg>
+                <span>Phantom</span>
+              </div>
+              <div class="hb-brand-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg>
+                <span>Ruby</span>
+              </div>
+              <div class="hb-brand-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2M15 20v2M2 15h2M20 15h2M2 9h2M20 9h2M9 2v2M9 20v2"/></svg>
+                <span>Chipset</span>
+              </div>
+
+              <!-- Set 2 (duplicate for loop) -->
+              <div class="hb-brand-item" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/></svg>
+                <span>Acme Corp</span>
+              </div>
+              <div class="hb-brand-item" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 16-9-14-9 14z"/></svg>
+                <span>Quantum</span>
+              </div>
+              <div class="hb-brand-item" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"/></svg>
+                <span>Command+Z</span>
+              </div>
+              <div class="hb-brand-item" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10h.01M15 10h.01M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 19l3 3V10a8 8 0 0 0-8-8z"/></svg>
+                <span>Phantom</span>
+              </div>
+              <div class="hb-brand-item" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg>
+                <span>Ruby</span>
+              </div>
+              <div class="hb-brand-item" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2M15 20v2M2 15h2M20 15h2M2 9h2M20 9h2M9 2v2M9 20v2"/></svg>
+                <span>Chipset</span>
+              </div>
+
+            </div><!-- /.hb-marquee-track -->
+          </div><!-- /.hb-marquee-wrap -->
+
+        </div><!-- /.hb-marquee-card -->
+
+      </div><!-- /.hb-right-col -->
+
+    </div><!-- /hb-hero__inner -->
+
+    <!-- Scroll indicator -->
+    <div class="hb-scroll-hint" aria-hidden="true">
+      <div class="hb-scroll-hint__mouse">
+        <div class="hb-scroll-hint__wheel"></div>
+      </div>
+      <span class="hb-scroll-hint__label">Scroll</span>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════
+       TRUSTED BRANDS BAR
+  ══════════════════════════════════ -->
+  <section class="hb-demo-section">
+    <div class="hb-demo-section__inner">
+      <p class="hb-demo-section__label">Trusted by teams at:</p>
+      <div class="hb-logo-row" aria-label="Client logos">
+        <div class="hb-logo-chip">Vercel</div>
+        <div class="hb-logo-chip">GitHub</div>
+        <div class="hb-logo-chip">Linear</div>
+        <div class="hb-logo-chip">Acme Corp</div>
+        <div class="hb-logo-chip">Quantum</div>
+        <div class="hb-logo-chip">Phantom</div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/hero-banner.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+/* ══════════════════════════════════════
+   PAGE LOADER — Full-screen branded overlay
+   ══════════════════════════════════════ */
+
+#page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #06000f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* Exit: curtain slides off upward */
+  transition: transform 0.65s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+#page-loader.is-hiding {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+/* ── Page-transition overlay (slides in from bottom) ── */
+#page-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #06000f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform: translateY(100%);
+  transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
+  pointer-events: none;
+}
+
+#page-transition.is-entering {
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ── Subtle radial glow behind logo ── */
+.loader__glow {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+  animation: loaderGlowPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes loaderGlowPulse {
+  0%, 100% { transform: scale(1);   opacity: 0.7; }
+  50%       { transform: scale(1.2); opacity: 1; }
+}
+
+/* ── Logo ── */
+.loader__logo {
+  position: relative;
+  z-index: 2;
+  width: 148px;
+  height: auto;
+  display: block;
+  animation: loaderLogoIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+@keyframes loaderLogoIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Thin progress bar ── */
+.loader__bar {
+  position: relative;
+  z-index: 2;
+  width: 110px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 2px;
+  margin-top: 1.75rem;
+  overflow: hidden;
+}
+
+.loader__bar-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #7c3aed, #c084fc, #a855f7);
+  background-size: 200% 100%;
+  animation:
+    loaderBarGrow 2s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+    loaderBarShimmer 1.6s linear infinite;
+}
+
+@keyframes loaderBarGrow {
+  0%   { width: 0%; }
+  55%  { width: 70%; }
+  85%  { width: 88%; }
+  100% { width: 94%; }
+}
+
+@keyframes loaderBarShimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Word rain container ── */
+.loader__words {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* ── Individual falling words ── */
+.loader__word {
+  position: absolute;
+  top: -48px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  white-space: nowrap;
+  animation: wordFall linear forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes wordFall {
+  0%   { transform: translateY(0);      opacity: 0; }
+  6%   { opacity: 1; }
+  88%  { opacity: 1; }
+  100% { transform: translateY(110vh);  opacity: 0; }
+}
