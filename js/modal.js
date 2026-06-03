@@ -68,23 +68,35 @@ function initModal() {
 
   // ── Magic Link ────────────────────────────────────────────────────────────
   const emailInput = document.getElementById('magicEmail');
+  const nameInput  = document.getElementById('userName');
+  const phoneInput = document.getElementById('userPhone');
   const sendBtn    = document.getElementById('sendMagicLink');
   const emailRe    = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   function resetMagicLink() {
+    if (nameInput)  nameInput.value  = '';
+    if (phoneInput) phoneInput.value = '';
     if (emailInput) emailInput.value = '';
     if (sendBtn) { sendBtn.disabled = false; sendBtn.textContent = 'Send Magic Link'; }
     clearStatus();
   }
 
   async function handleMagicLink() {
+    const name  = (nameInput?.value  || '').trim();
+    const phone = (phoneInput?.value || '').trim();
     const email = (emailInput?.value || '').trim();
+
+    if (!name)              return setStatus('Please enter your full name.', true);
+    if (!phone)             return setStatus('Please enter your phone number.', true);
     if (!emailRe.test(email)) return setStatus('Please enter a valid email address.', true);
-    if (!supabaseClient)      return setStatus('Auth service unavailable. Refresh the page.', true);
+    if (!supabaseClient)    return setStatus('Auth service unavailable. Refresh the page.', true);
 
     sendBtn.disabled = true;
     sendBtn.textContent = 'Sending…';
     clearStatus();
+
+    // Save name, phone, email to profiles table
+    await supabaseClient.from('profiles').upsert({ email, name, phone }, { onConflict: 'email' });
 
     const { error } = await supabaseClient.auth.signInWithOtp({
       email,
