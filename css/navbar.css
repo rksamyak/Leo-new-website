@@ -575,3 +575,38 @@
     height: 32px;
   }
 }
+
+/* ══════════════════════════════════════
+   MOBILE — dark-hero overrides
+   The hamburger sits over the purple hero so its bars must be white.
+   The mobile menu panel has a solid white background, so all nav-link
+   colours must be reset back to dark (overriding navbar--over-dark).
+   ══════════════════════════════════════ */
+@media (max-width: 960px) {
+  .navbar--over-dark .hamburger {
+    border-color: rgba(255, 255, 255, 0.35);
+  }
+  .navbar--over-dark .hamburger__bar {
+    background: #ffffff;
+  }
+
+  /* Mobile menu has a white background — force text back to dark */
+  .navbar--over-dark .nav-link {
+    color: #374151;
+  }
+  .navbar--over-dark .nav-link:hover,
+  .navbar--over-dark .nav-item--dropdown:hover > .nav-link {
+    color: #7B3FCC;
+    background: rgba(217, 184, 255, 0.15);
+  }
+  .navbar--over-dark .nav-link--active {
+    color: #111111;
+  }
+  .navbar--over-dark .nav-chevron {
+    color: #9ca3af;
+  }
+  .navbar--over-dark .nav-item--dropdown:hover .nav-chevron,
+  .navbar--over-dark .nav-item--dropdown.dropdown--open .nav-chevron {
+    color: #374151;
+  }
+}
