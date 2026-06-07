@@ -26,7 +26,7 @@
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #7B3FCC;
+  color: #6A89A7;
   margin-bottom: 1.1rem;
 }
 
@@ -127,7 +127,7 @@
 .srv-cell:hover .srv-cell__arrow {
   opacity: 1;
   transform: translate(0, 0);
-  color: #7B3FCC;
+  color: #6A89A7;
 }
 
 /* ── Title — purple ── */
@@ -136,7 +136,7 @@
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1.14;
-  color: #7B3FCC;
+  color: #6A89A7;
   position: relative;
   z-index: 3;
   margin-top: clamp(1.25rem, 2.5vw, 1.875rem);
@@ -145,7 +145,7 @@
   transition: color 0.4s ease;
 }
 
-.srv-cell:hover .srv-cell__title { color: #5B21B6; }
+.srv-cell:hover .srv-cell__title { color: #384959; }
 
 /* ── Image container (fills bottom of card) ── */
 .srv-cell__image-wrap {

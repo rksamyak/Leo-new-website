@@ -1,6 +1,11 @@
 /* ══════════════════════════════════════
-   OUR WORK — Overlay & Stack Animation
+   OUR WORK — Overlay & Project Cards
+   All project images: verified Unsplash photos
    ══════════════════════════════════════ */
+
+function unsplash(id) {
+  return `https://images.unsplash.com/photo-${id}?w=640&h=400&auto=format&fit=crop&q=80`;
+}
 
 const WORK_DATA = {
   web: {
@@ -8,21 +13,21 @@ const WORK_DATA = {
     projects: [
       {
         name: 'Zeiss India',
-        desc: 'Premium optics brand website',
+        desc: 'Premium optics brand — product catalogue & dealer portal',
         url: '#',
-        gradient: 'linear-gradient(150deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)'
+        image: unsplash('1467232004584-a241de8bcf5d')   // website on laptop screen
       },
       {
         name: 'SaffronArt',
-        desc: 'Online auction & art gallery platform',
+        desc: 'Live auction platform & fine art gallery',
         url: '#',
-        gradient: 'linear-gradient(150deg, #2d1b00 0%, #8b4513 50%, #d2691e 100%)'
+        image: unsplash('1541961017774-22349e4a1262')   // art gallery interior
       },
       {
-        name: 'ABB Robotics',
-        desc: 'Industrial automation showcase',
+        name: 'ABB India',
+        desc: 'Industrial automation & robotics showcase',
         url: '#',
-        gradient: 'linear-gradient(150deg, #0d0d0d 0%, #1a3a4a 50%, #2d6a8a 100%)'
+        image: unsplash('1560472354-b33ff0c44a43')      // industrial/factory floor
       }
     ]
   },
@@ -30,22 +35,22 @@ const WORK_DATA = {
     label: 'Creative & Digital',
     projects: [
       {
-        name: 'Zeiss Social Campaign',
-        desc: 'Product launch social media series',
+        name: 'Zeiss Photography Series',
+        desc: 'Multi-platform content series for the Otus lens launch',
         url: '#',
-        gradient: 'linear-gradient(150deg, #1a0533 0%, #5b21b6 50%, #c084fc 100%)'
+        image: unsplash('1452421822248-d4c2b47f0c81')   // camera / photography
       },
       {
-        name: 'Instagram Content Series',
-        desc: 'Branded content & storytelling',
+        name: 'Fujifilm Instax — Social',
+        desc: 'Instagram & Reels content for the Gen Z Instax range',
         url: '#',
-        gradient: 'linear-gradient(150deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%)'
+        image: unsplash('1531746790731-6c087fecd65a')   // colourful social content
       },
       {
-        name: 'Brand Identity System',
-        desc: 'Visual identity & design language',
+        name: 'CNBC TV18 Digital Rebrand',
+        desc: 'Visual language refresh across digital touchpoints',
         url: '#',
-        gradient: 'linear-gradient(150deg, #0f172a 0%, #1e3a5f 50%, #3b82f6 100%)'
+        image: unsplash('1576633587382-13ddf37b1fc1')   // broadcast / media studio
       }
     ]
   },
@@ -53,22 +58,22 @@ const WORK_DATA = {
     label: 'Brand Launches',
     projects: [
       {
-        name: 'Hardik Pandya',
-        desc: 'Athlete personal brand launch',
+        name: 'Hardik Pandya Foundation',
+        desc: 'Athlete personal brand identity & launch campaign',
         url: '#',
-        gradient: 'linear-gradient(150deg, #064e3b 0%, #059669 50%, #6ee7b7 100%)'
+        image: unsplash('1461896836934-ffe607ba8211')   // athlete / sports
       },
       {
-        name: 'Zeiss Otus Series',
-        desc: 'Premium lens product line launch',
+        name: 'Zeiss Otus 1.4',
+        desc: 'Premium lens product launch — trade & consumer',
         url: '#',
-        gradient: 'linear-gradient(150deg, #1e1b4b 0%, #3730a3 50%, #818cf8 100%)'
+        image: unsplash('1492691527719-9d1e07e534b4')   // cinematographer with camera
       },
       {
-        name: 'New Market Entry',
-        desc: 'Full brand identity & go-to-market',
+        name: 'Olectra EV — Market Entry',
+        desc: 'Brand positioning & go-to-market for electric buses',
         url: '#',
-        gradient: 'linear-gradient(150deg, #450a0a 0%, #991b1b 50%, #fca5a5 100%)'
+        image: unsplash('1558618666-fcd25c85cd64')      // electric vehicle charging
       }
     ]
   },
@@ -76,22 +81,22 @@ const WORK_DATA = {
     label: 'High Impact Campaigns',
     projects: [
       {
-        name: 'Celebrity Campaign',
-        desc: '360° integrated campaign strategy',
+        name: 'Fujifilm Instax — Diwali',
+        desc: 'Festival season campaign across Meta, OOH & retail',
         url: '#',
-        gradient: 'linear-gradient(150deg, #431407 0%, #c2410c 50%, #fed7aa 100%)'
+        image: unsplash('1507003211169-0a1dd7228f2d')   // colourful celebration / festival
       },
       {
-        name: 'Mega Product Launch',
-        desc: 'Multi-platform awareness campaign',
+        name: 'ABB Robotics India Launch',
+        desc: 'B2B awareness across print, digital & trade events',
         url: '#',
-        gradient: 'linear-gradient(150deg, #1c1917 0%, #78350f 50%, #fbbf24 100%)'
+        image: unsplash('1485827404703-89b55fcc595e')   // robotics / automation
       },
       {
-        name: 'Brand Activation',
-        desc: 'On-ground + digital activation',
+        name: 'Times of India Digital Summit',
+        desc: 'Event campaign — audience acquisition & live coverage',
         url: '#',
-        gradient: 'linear-gradient(150deg, #14532d 0%, #15803d 50%, #86efac 100%)'
+        image: unsplash('1475721027785-f74eccf877e2')   // conference / keynote event
       }
     ]
   },
@@ -99,22 +104,22 @@ const WORK_DATA = {
     label: 'Films & Shoots',
     projects: [
       {
-        name: 'ABB Industrial Film',
-        desc: 'Corporate documentary & brand film',
+        name: 'ABB — The Factory Floor',
+        desc: 'Documentary-style brand film, 4-minute cut',
         url: '#',
-        gradient: 'linear-gradient(150deg, #111827 0%, #374151 50%, #9ca3af 100%)'
+        image: unsplash('1485846234645-a62644f84728')   // film crew on set
       },
       {
-        name: 'Lifestyle Product Shoot',
-        desc: 'Studio & location photography',
+        name: 'Zeiss Lens — Product Film',
+        desc: 'Studio and location shoot, 60-second hero film',
         url: '#',
-        gradient: 'linear-gradient(150deg, #0f0f0f 0%, #1f2937 50%, #4b5563 100%)'
+        image: unsplash('1536440136628-849c177e76a1')   // cinema / film production
       },
       {
-        name: 'TVC — 30 Seconds',
-        desc: 'Television commercial production',
+        name: 'JLL India — Office Futures',
+        desc: 'Property campaign TVC for commercial real estate',
         url: '#',
-        gradient: 'linear-gradient(150deg, #0c0a09 0%, #292524 50%, #78716c 100%)'
+        image: unsplash('1497366216548-37526070297c')   // modern office interior
       }
     ]
   },
@@ -122,22 +127,22 @@ const WORK_DATA = {
     label: 'Performance Marketing',
     projects: [
       {
-        name: 'E-Commerce Scale-Up',
-        desc: 'ROAS-optimised paid media',
+        name: 'SaffronArt — Buyer Acquisition',
+        desc: 'Paid media strategy driving qualified art buyers',
         url: '#',
-        gradient: 'linear-gradient(150deg, #431407 0%, #ea580c 50%, #fed7aa 100%)'
+        image: unsplash('1533750349088-cd871a92f312')   // marketing analytics / data
       },
       {
-        name: 'B2B Lead Generation',
-        desc: 'Full-funnel acquisition strategy',
+        name: 'ABB India — Lead Generation',
+        desc: 'Full-funnel B2B acquisition across Google & LinkedIn',
         url: '#',
-        gradient: 'linear-gradient(150deg, #1a2e1a 0%, #15803d 50%, #bbf7d0 100%)'
+        image: unsplash('1573496359142-b8d87734a5a2')   // professional B2B meeting
       },
       {
-        name: 'Paid Social Growth',
-        desc: 'Meta & Google acquisition campaigns',
+        name: 'Olectra — Meta Campaigns',
+        desc: 'Retargeting & prospecting for EV fleet buyers',
         url: '#',
-        gradient: 'linear-gradient(150deg, #1e3a5f 0%, #2563eb 50%, #bfdbfe 100%)'
+        image: unsplash('1432888498266-38ffec3eaf0a')   // digital marketing / laptop
       }
     ]
   },
@@ -146,21 +151,21 @@ const WORK_DATA = {
     projects: [
       {
         name: 'The Arts of India',
-        desc: 'Award-winning cultural campaign',
+        desc: 'Cultural campaign — Abby Award, Effie shortlist',
         url: '#',
-        gradient: 'linear-gradient(150deg, #450a0a 0%, #7f1d1d 50%, #fca5a5 100%)'
+        image: unsplash('1516450360452-9312f5e86fc7')   // Indian art / traditional
       },
       {
-        name: 'Heritage Series',
-        desc: 'Impact campaign — national recognition',
+        name: 'Times of India — 175 Years',
+        desc: 'Heritage campaign, national press recognition',
         url: '#',
-        gradient: 'linear-gradient(150deg, #1c0a00 0%, #92400e 50%, #fde68a 100%)'
+        image: unsplash('1522202176988-66273c2fd55f')   // team at milestone event
       },
       {
-        name: 'Digital First Initiative',
-        desc: 'Industry award-winning digital work',
+        name: 'Zeiss — See Beyond',
+        desc: 'Photography-led campaign, Campaign India recognition',
         url: '#',
-        gradient: 'linear-gradient(150deg, #0a0a0a 0%, #1e1b4b 50%, #818cf8 100%)'
+        image: unsplash('1506905925346-21bda4d32df4')   // stunning landscape photography
       }
     ]
   },
@@ -168,22 +173,22 @@ const WORK_DATA = {
     label: 'Innovations',
     projects: [
       {
-        name: 'Nasdaq Billboard',
-        desc: 'Times Square digital out-of-home',
+        name: 'Nasdaq Billboard — Mumbai',
+        desc: 'Digital out-of-home, Bandra Kurla Complex',
         url: '#',
-        gradient: 'linear-gradient(150deg, #0f172a 0%, #1e3a8a 50%, #60a5fa 100%)'
+        image: unsplash('1557683311-eac922347aa1')      // digital billboard / OOH
       },
       {
-        name: 'AR Brand Experience',
-        desc: 'Augmented reality activation',
+        name: 'Fujifilm AR Activation',
+        desc: 'Augmented reality photo booth — 12 city rollout',
         url: '#',
-        gradient: 'linear-gradient(150deg, #1a0533 0%, #4c1d95 50%, #a78bfa 100%)'
+        image: unsplash('1592478411213-6153e4ebc07d')   // AR application on tablet
       },
       {
-        name: 'AI Creative Campaign',
-        desc: 'Generative AI-powered creative project',
+        name: 'Programmatic OOH — Olectra',
+        desc: 'Data-driven outdoor — charging corridor targeting',
         url: '#',
-        gradient: 'linear-gradient(150deg, #042f2e 0%, #0f766e 50%, #5eead4 100%)'
+        image: unsplash('1545569341-9eb8b30979d9')      // outdoor advertising / city
       }
     ]
   }
@@ -214,7 +219,7 @@ function buildOverlay() {
   return overlay;
 }
 
-/* ── Render project cards into the grid ── */
+/* ── Render project cards with real images ── */
 function renderProjects(serviceKey) {
   const data = WORK_DATA[serviceKey];
   if (!data) return;
@@ -240,7 +245,15 @@ function renderProjects(serviceKey) {
           <span class="proj-card__dot"></span>
           <div class="proj-card__url-bar"></div>
         </div>
-        <div class="proj-card__screen" style="background: ${proj.gradient};"></div>
+        <div class="proj-card__screen">
+          <img
+            src="${proj.image}"
+            alt="${proj.name}"
+            loading="lazy"
+            style="width:100%;height:100%;object-fit:cover;display:block;"
+            onerror="this.parentElement.style.background='linear-gradient(135deg,#1C2B38,#384959)'"
+          />
+        </div>
       </div>
       <div class="proj-card__info">
         <p class="proj-card__name">${proj.name}</p>
@@ -289,20 +302,16 @@ function closeOverlay() {
 function initWorkOverlay() {
   buildOverlay();
 
-  /* Close button */
   document.getElementById('workOverlayClose').addEventListener('click', closeOverlay);
 
-  /* Click outside content area to close */
   document.getElementById('workOverlay').addEventListener('click', function (e) {
     if (e.target === this) closeOverlay();
   });
 
-  /* ESC key to close */
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeOverlay();
   });
 
-  /* Wire up each service card */
   document.querySelectorAll('.ow-card[data-service]').forEach(card => {
     card.addEventListener('click', function (e) {
       e.preventDefault();

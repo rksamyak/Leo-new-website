@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="css/modal.css" />
   <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/our-work.css" />
+  <link rel="stylesheet" href="css/services-grid.css" />
   <link rel="stylesheet" href="css/lang.css" />
 </head>
 <body>
@@ -44,7 +45,26 @@
 
         <ul class="navbar__links" id="navLinks" role="list">
           <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link" data-i18n="nav.services">Services</a></li>
+                    <li class="nav-item nav-item--dropdown">
+            <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+              <span data-i18n="nav.services">Services</span>
+              <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="dropdown" role="menu">
+              <a href="services-digital.html" class="dropdown__item" role="menuitem">
+                <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label">Digital Marketing</span><span class="dropdown__item-desc">9 integrated disciplines</span></span>
+              </a>
+              <a href="services-creative.html" class="dropdown__item" role="menuitem">
+                <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label">Creative Services</span><span class="dropdown__item-desc">Film, UI/UX &amp; events</span></span>
+              </a>
+              <a href="services-technology.html" class="dropdown__item" role="menuitem">
+                <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label">Technology Services</span><span class="dropdown__item-desc">Dev, DevOps &amp; AI/ML</span></span>
+              </a>
+            </div>
+          </li>
           <li class="nav-item"><a href="our-work.html" class="nav-link nav-link--active" data-i18n="nav.ourwork">Our Work</a></li>
 
           <li class="nav-item nav-item--dropdown">
@@ -83,7 +103,7 @@
 
           <!-- Mobile-only links -->
           <li class="nav-item nav-item--mobile-only mobile-contact-item">
-            <a href="#" class="nav-link" data-i18n="nav.contact">Contact</a>
+            <a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
           </li>
           <li class="nav-item nav-item--mobile-only">
             <button class="btn-login" aria-haspopup="dialog" aria-controls="modalOverlay">
@@ -102,7 +122,7 @@
             </span>
             <span data-i18n="nav.login">Log in</span>
           </button>
-          <a href="#" class="btn-cta" data-i18n="nav.contact">Contact</a>
+          <a href="contact.html" class="btn-cta" data-i18n="nav.contact">Contact</a>
           <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
             <span class="hamburger__bar"></span>
             <span class="hamburger__bar"></span>
@@ -304,6 +324,119 @@
     </section>
 
     <!-- ═══════════════════════════════
+         CAPABILITIES GRID — same as home page
+         ═══════════════════════════════ -->
+    <section class="srv-grid" aria-label="Our capabilities">
+      <div class="srv-grid__header">
+        <div class="srv-grid__meta">
+          <span class="srv-grid__eyebrow">What We Do</span>
+          <h2 class="srv-grid__title">Capabilities<br>that convert</h2>
+        </div>
+        <p class="srv-grid__sub">Eight disciplines. One integrated team. Built to grow ambitious brands.</p>
+      </div>
+
+      <div class="srv-grid__cells">
+
+        <!-- 01 -->
+        <div class="srv-cell">
+          <div class="srv-cell__top">
+            <span class="srv-cell__num">01</span>
+            <svg class="srv-cell__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <h3 class="srv-cell__title">Websites<br>&amp; Apps</h3>
+          <div class="srv-cell__image-wrap">
+            <img class="srv-cell__image" src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Websites &amp; Apps" loading="lazy">
+          </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="srv-cell">
+          <div class="srv-cell__top">
+            <span class="srv-cell__num">02</span>
+            <svg class="srv-cell__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <h3 class="srv-cell__title">Creative<br>&amp; Digital</h3>
+          <div class="srv-cell__image-wrap">
+            <img class="srv-cell__image" src="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Creative &amp; Digital" loading="lazy">
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="srv-cell">
+          <div class="srv-cell__top">
+            <span class="srv-cell__num">03</span>
+            <svg class="srv-cell__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <h3 class="srv-cell__title">Brand<br>Launches</h3>
+          <div class="srv-cell__image-wrap">
+            <img class="srv-cell__image" src="https://images.pexels.com/photos/2406949/pexels-photo-2406949.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Brand Launches" loading="lazy">
+          </div>
+        </div>
+
+        <!-- 04 -->
+        <div class="srv-cell">
+          <div class="srv-cell__top">
+            <span class="srv-cell__num">04</span>
+            <svg class="srv-cell__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <h3 class="srv-cell__title">High Impact<br>Campaigns</h3>
+          <div class="srv-cell__image-wrap">
+            <img class="srv-cell__image" src="https://images.pexels.com/photos/1840608/pexels-photo-1840608.jpeg?auto=compress&cs=tinysrgb&w=800" alt="High Impact Campaigns" loading="lazy">
+          </div>
+        </div>
+
+        <!-- 05 -->
+        <div class="srv-cell">
+          <div class="srv-cell__top">
+            <span class="srv-cell__num">05</span>
+            <svg class="srv-cell__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <h3 class="srv-cell__title">Films<br>&amp; Shoots</h3>
+          <div class="srv-cell__image-wrap">
+            <img class="srv-cell__image" src="https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Films &amp; Shoots" loading="lazy">
+          </div>
+        </div>
+
+        <!-- 06 -->
+        <div class="srv-cell">
+          <div class="srv-cell__top">
+            <span class="srv-cell__num">06</span>
+            <svg class="srv-cell__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <h3 class="srv-cell__title">Performance<br>Marketing</h3>
+          <div class="srv-cell__image-wrap">
+            <img class="srv-cell__image" src="https://images.pexels.com/photos/5632388/pexels-photo-5632388.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Performance Marketing" loading="lazy">
+          </div>
+        </div>
+
+        <!-- 07 -->
+        <div class="srv-cell">
+          <div class="srv-cell__top">
+            <span class="srv-cell__num">07</span>
+            <svg class="srv-cell__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <h3 class="srv-cell__title">Award Winning<br>Campaigns</h3>
+          <div class="srv-cell__image-wrap">
+            <img class="srv-cell__image" src="https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Award Winning Campaigns" loading="lazy">
+          </div>
+        </div>
+
+        <!-- 08 -->
+        <div class="srv-cell">
+          <div class="srv-cell__top">
+            <span class="srv-cell__num">08</span>
+            <svg class="srv-cell__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+          <h3 class="srv-cell__title">Innovations</h3>
+          <div class="srv-cell__image-wrap">
+            <img class="srv-cell__image" src="https://images.pexels.com/photos/2868242/pexels-photo-2868242.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Innovations" loading="lazy">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════
          CTA SECTION
          ═══════════════════════════════ -->
     <section class="ow-cta">
@@ -395,6 +528,21 @@
   <script src="js/main.js"></script>
   <script src="js/footer.js"></script>
   <script src="js/our-work.js"></script>
+  <script>
+    (function () {
+      var cells = document.querySelectorAll('.srv-cell');
+      if (!cells.length || !('IntersectionObserver' in window)) {
+        cells.forEach(function (c) { c.classList.add('is-visible'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12 });
+      cells.forEach(function (c) { io.observe(c); });
+    })();
+  </script>
   <script src="js/loader.js"></script>
 
 </body>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Leo Digital</title>
+  <meta name="description" content="Leo Digital's full range of services — Digital Marketing, Creative Services and Technology. One integrated team built to grow ambitious brands." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/loader.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/services.css" />
+  <link rel="stylesheet" href="css/lang.css" />
+</head>
+<body>
+
+  <!-- ── Page Loader ── -->
+  <div id="page-loader">
+    <div class="loader__words"></div>
+    <div class="loader__glow"></div>
+    <img src="images/logo_white.png" alt="Leo Digital" class="loader__logo" />
+    <div class="loader__bar"><div class="loader__bar-fill"></div></div>
+  </div>
+
+  <!-- ── Navbar ── -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="navbar__wrap">
+      <nav class="navbar__inner" aria-label="Main navigation">
+
+        <a href="index.html" class="navbar__logo" aria-label="Leo Digital — Home">
+          <img src="images/logo_dark.png" alt="Leo Digital" class="navbar__logo-img" />
+        </a>
+
+        <ul class="navbar__links" id="navLinks" role="list">
+          <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+                    <li class="nav-item nav-item--dropdown">
+            <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+              <span data-i18n="nav.services">Services</span>
+              <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="dropdown" role="menu">
+              <a href="services-digital.html" class="dropdown__item" role="menuitem">
+                <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label">Digital Marketing</span><span class="dropdown__item-desc">9 integrated disciplines</span></span>
+              </a>
+              <a href="services-creative.html" class="dropdown__item" role="menuitem">
+                <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label">Creative Services</span><span class="dropdown__item-desc">Film, UI/UX &amp; events</span></span>
+              </a>
+              <a href="services-technology.html" class="dropdown__item" role="menuitem">
+                <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label">Technology Services</span><span class="dropdown__item-desc">Dev, DevOps &amp; AI/ML</span></span>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="our-work.html" class="nav-link" data-i18n="nav.ourwork">Our Work</a></li>
+
+          <li class="nav-item nav-item--dropdown">
+            <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+              <span data-i18n="nav.resources">Resources</span>
+              <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="dropdown" role="menu">
+              <a href="insights.html" class="dropdown__item" role="menuitem">
+                <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label" data-i18n="nav.insights">Insights</span><span class="dropdown__item-desc" data-i18n="nav.insights.desc">Thought leadership</span></span>
+              </a>
+              <a href="news.html" class="dropdown__item" role="menuitem">
+                <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8M15 18h-5M10 6h8v4h-8z"/></svg></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label" data-i18n="nav.news">News</span><span class="dropdown__item-desc" data-i18n="nav.news.desc">Latest updates &amp; press</span></span>
+              </a>
+            </div>
+          </li>
+
+          <li class="nav-item nav-item--dropdown">
+            <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+              <span data-i18n="nav.company">Company</span>
+              <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="dropdown" role="menu">
+              <a href="careers.html" class="dropdown__item" role="menuitem">
+                <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label" data-i18n="nav.careers">Careers</span><span class="dropdown__item-desc" data-i18n="nav.careers.desc">Work with us</span></span>
+              </a>
+              <a href="#" class="dropdown__item" role="menuitem">
+                <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label" data-i18n="nav.about">About</span><span class="dropdown__item-desc" data-i18n="nav.about.desc">Our story and mission</span></span>
+              </a>
+            </div>
+          </li>
+
+          <!-- Mobile-only links -->
+          <li class="nav-item nav-item--mobile-only mobile-contact-item">
+            <a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
+          </li>
+          <li class="nav-item nav-item--mobile-only">
+            <button class="btn-login" aria-haspopup="dialog" aria-controls="modalOverlay">
+              <span class="btn-login__icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </span>
+              <span data-i18n="nav.login">Log in</span>
+            </button>
+          </li>
+        </ul>
+
+        <div class="navbar__actions">
+          <button class="btn-login" id="loginBtn" aria-haspopup="dialog" aria-controls="modalOverlay">
+            <span class="btn-login__icon" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <span data-i18n="nav.login">Log in</span>
+          </button>
+          <a href="contact.html" class="btn-cta" data-i18n="nav.contact">Contact</a>
+          <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+            <span class="hamburger__bar"></span>
+            <span class="hamburger__bar"></span>
+            <span class="hamburger__bar"></span>
+          </button>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── Login Modal ── -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-border-wrap">
+      <div class="modal" id="loginModal">
+        <div class="modal-orb modal-orb--1" aria-hidden="true"></div>
+        <div class="modal-orb modal-orb--2" aria-hidden="true"></div>
+        <div class="modal-orb modal-orb--3" aria-hidden="true"></div>
+        <button class="modal__close" id="modalClose" aria-label="Close login modal">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="modal__brand" aria-hidden="true">
+          <div class="modal__brand-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#brandGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <defs><linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#b18aff"/><stop offset="100%" stop-color="#66ffd9"/></linearGradient></defs>
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+        </div>
+        <h2 class="modal__title" id="modalTitle">Welcome Back</h2>
+        <p class="modal__subtitle" id="modalSubtitle">Sign in to your account</p>
+        <button class="btn-google" id="googleLoginBtn">
+          <svg class="google-icon" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4"/><path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z" fill="#34A853"/><path d="M3.964 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/><path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335"/></svg>
+          Continue with Google
+        </button>
+        <div class="modal__divider"><span>or</span></div>
+        <div class="modal__magic-link">
+          <label for="userName" class="sr-only">Full name</label>
+          <input type="text" id="userName" name="name" class="modal__input" placeholder="Your full name" autocomplete="name" />
+          <label for="userPhone" class="sr-only">Phone number</label>
+          <input type="tel" id="userPhone" name="phone" class="modal__input" placeholder="Phone number" autocomplete="tel" />
+          <label for="magicEmail" class="sr-only">Email address</label>
+          <input type="email" id="magicEmail" name="email" class="modal__input" placeholder="Enter your email address" autocomplete="email" />
+          <button class="btn-magic" id="sendMagicLink">Send Magic Link</button>
+        </div>
+        <p class="modal__status" id="modalStatus" hidden></p>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ══ HERO ══ -->
+    <section class="svc-hero" aria-labelledby="svc-hero-title">
+      <div class="svc-hero__inner">
+        <p class="svc-hero__eyebrow">What We Do</p>
+        <h1 class="svc-hero__title" id="svc-hero-title">Services</h1>
+        <p class="svc-hero__sub">Three disciplines. One integrated team. Built to grow ambitious brands.</p>
+      </div>
+    </section>
+
+    <!-- ══ TABS + SERVICE CARDS ══ -->
+    <section class="svc-tabs-section" aria-label="Service categories">
+
+      <!-- Tab navigation -->
+      <div class="svc-tabs__nav" role="tablist" aria-label="Service categories">
+        <button class="svc-tab__btn svc-tab__btn--active" role="tab" aria-selected="true" aria-controls="tab-digital" data-tab="digital">Digital Marketing</button>
+        <button class="svc-tab__btn" role="tab" aria-selected="false" aria-controls="tab-creative" data-tab="creative">Creative Services</button>
+        <button class="svc-tab__btn" role="tab" aria-selected="false" aria-controls="tab-technology" data-tab="technology">Technology Services</button>
+      </div>
+
+      <!-- ══ PANEL 1 — Digital Marketing ══ -->
+      <div class="svc-tab__panel svc-tab__panel--active" id="tab-digital" role="tabpanel" aria-labelledby="tab-btn-digital">
+        <div class="svc-panel__head">
+          <span class="svc-panel__label">Digital Marketing</span>
+          <h2 class="svc-panel__title">Data-led strategy across every channel</h2>
+        </div>
+        <div class="svc-grid">
+
+          <div class="svc-card">
+            <svg class="svc-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <p class="svc-card__name">Audience &amp; Consulting</p>
+            <p class="svc-card__desc">Understanding who your customers are, where they are, and what moves them — before a single brief is written.</p>
+          </div>
+
+          <div class="svc-card">
+            <svg class="svc-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            <p class="svc-card__name">Media Strategy</p>
+            <p class="svc-card__desc">Planning where, when and how to reach your audience — across paid, owned and earned channels.</p>
+          </div>
+
+          <div class="svc-card">
+            <svg class="svc-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+            <p class="svc-card__name">Social Media Marketing</p>
+            <p class="svc-card__desc">Content, community and platform management — built for the platforms where your audience actually spends time.</p>
+          </div>
+
+          <div class="svc-card">
+            <svg class="svc-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            <p class="svc-card__name">Performance Marketing</p>
+            <p class="svc-card__desc">Paid acquisition across Google, Meta, LinkedIn and more — optimised for the metrics that matter to your business.</p>
+          </div>
+
+          <div class="svc-card">
+            <svg class="svc-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            <p class="svc-card__name">Brand Lifecycle Management</p>
+            <p class="svc-card__desc">From launch through to sustained loyalty — managing brand health, consistency and evolution at every stage.</p>
+          </div>
+
+          <div class="svc-card">
+            <svg class="svc-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+            <p class="svc-card__name">Influencer Marketing</p>
+            <p class="svc-card__desc">Matching the right voices to your brand story — from micro-creators to national faces, with full campaign management.</p>
+          </div>
+
+          <div class="svc-card">
+            <svg class="svc-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></svg>
+            <p class="svc-card__name">AI Optimization</p>
+            <p class="svc-card__desc">Using machine learning and automation to sharpen targeting, creative testing and campaign efficiency at scale.</p>
+          </div>
+
+          <div class="svc-card">
+            <svg class="svc-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <p class="svc-card__name">Reputation Management</p>
+            <p class="svc-card__desc">Monitoring, responding and protecting how your brand is seen — across search, social and the wider web.</p>
+          </div>
+
+          <div class="svc-card">
+            <svg class="svc-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <p class="svc-card__name">Email Marketing</p>
+            <p class="svc-card__desc">Direct communication that builds relationships and drives conversions — from welcome flows to lifecycle campaigns.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══ PANEL 2 — Creative Services ══ -->
+      <div class="svc-tab__panel" id="tab-creative" role="tabpanel" aria-labelledby="tab-btn-creative">
+        <div class="svc-panel__head">
+          <span class="svc-panel__label">Creative Services</span>
+          <h2 class="svc-panel__title">Ideas that hold attention and earn trust</h2>
+        </div>
+        <div class="svc-grid">
+
+          <div class="svc-card">
+            <svg class="svc-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 17h5M17 7h5"/></svg>
+            <p class="svc-card__name">Production</p>
+            <p class="svc-card__desc">End-to-end creative production — from initial concept through to final delivery, managed as one continuous process.</p>
+          </div>
+
+          <div class="svc-card">
+            <svg class="svc-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
+            <p class="svc-card__name">Film &amp; Shoots</p>
+            <p class="svc-card__desc">Brand films, TVCs, product photography and location shoots — crafted to tell your story with clarity and intent.</p>
+          </div>
+
+          <div class="svc-card">
+            <svg class="svc-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8h3M7 11h2M15 8l-2 3 2 3"/></svg>
+            <p class="svc-card__name">UI/UX</p>
+            <p class="svc-card__desc">Interfaces designed around real users — from wireframes to polished final designs that are functional and credible.</p>
+          </div>
+
+          <div class="svc-card">
+            <svg class="svc-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="17" cy="8" r="2"/><path d="M2 10h10"/></svg>
+            <p class="svc-card__name">Virtual &amp; Hybrid Events</p>
+            <p class="svc-card__desc">Live and on-demand event experiences — engaging audiences whether they are in the room or watching from anywhere.</p>
+          </div>
+
+          <div class="svc-card">
+            <svg class="svc-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12C2 6.5 6.5 2 12 2a10 10 0 0 1 8 4"/><path d="M5 19.5C5.5 18 6 15 6 12c0-.7.12-1.37.34-2"/><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"/><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"/><path d="M8.65 22c.21-.66.45-1.32.57-2"/><path d="M14 13.12c0 2.38 0 6.38-1 8.88"/><path d="M2 16h.01"/><path d="M21.8 16c.2-2 .131-5.354 0-6"/><path d="M9 6.8a6 6 0 0 1 9 5.2v2"/></svg>
+            <p class="svc-card__name">AR/VR Content</p>
+            <p class="svc-card__desc">Immersive brand experiences in augmented and virtual reality — activations that genuinely stand apart.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══ PANEL 3 — Technology Services ══ -->
+      <div class="svc-tab__panel" id="tab-technology" role="tabpanel" aria-labelledby="tab-btn-technology">
+        <div class="svc-panel__head">
+          <span class="svc-panel__label">Technology Services</span>
+          <h2 class="svc-panel__title">The technical foundation behind every experience</h2>
+        </div>
+        <div class="svc-grid">
+
+          <div class="svc-card">
+            <svg class="svc-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+            <p class="svc-card__name">Design</p>
+            <p class="svc-card__desc">Translating brand vision into digital interfaces — visual systems, component libraries and design tokens built to scale.</p>
+          </div>
+
+          <div class="svc-card">
+            <svg class="svc-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <p class="svc-card__name">Development</p>
+            <p class="svc-card__desc">Web and mobile development built to perform — fast, accessible and maintainable, delivered on time.</p>
+          </div>
+
+          <div class="svc-card">
+            <svg class="svc-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93A10 10 0 0 0 4.93 19.07M4.93 4.93A10 10 0 0 0 19.07 19.07M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+            <p class="svc-card__name">Implementation</p>
+            <p class="svc-card__desc">Deploying platforms, CMS and systems with precision — from staging through to production without disruption.</p>
+          </div>
+
+          <div class="svc-card">
+            <svg class="svc-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <p class="svc-card__name">Third-Party Applications</p>
+            <p class="svc-card__desc">Integration and management of external platforms — CRMs, analytics, ad tech and marketing stacks connected properly.</p>
+          </div>
+
+          <div class="svc-card">
+            <svg class="svc-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            <p class="svc-card__name">QA</p>
+            <p class="svc-card__desc">Quality assurance across every touchpoint — functional, performance and cross-browser testing before anything goes live.</p>
+          </div>
+
+          <div class="svc-card">
+            <svg class="svc-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M1.05 12H7M17.01 12h5.95M12 1.05V7M12 17v5.95"/></svg>
+            <p class="svc-card__name">DevOps</p>
+            <p class="svc-card__desc">Infrastructure, pipelines and continuous delivery — keeping your platforms reliable, secure and ready to scale.</p>
+          </div>
+
+          <div class="svc-card">
+            <svg class="svc-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            <p class="svc-card__name">AI/ML</p>
+            <p class="svc-card__desc">Machine learning models tailored to your business — recommendation engines, classification, prediction and automation.</p>
+          </div>
+
+          <div class="svc-card">
+            <svg class="svc-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/><path d="M9 7h6M9 11h4"/></svg>
+            <p class="svc-card__name">AR/VR Applications</p>
+            <p class="svc-card__desc">Building immersive technology experiences — from try-on tools and virtual showrooms to full mixed-reality applications.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ══ CTA ══ -->
+    <section class="svc-cta" aria-label="Start a project">
+      <div class="svc-cta__card">
+        <div class="svc-cta__text">
+          <h2>Ready to get started?</h2>
+          <p>Tell us about your brand and we'll find the right combination of services to move it forward.</p>
+        </div>
+        <a href="#" class="svc-cta__btn" id="svcCtaBtn">
+          Talk to us
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="ftr__inner">
+      <div class="ftr__brand-col">
+        <a href="index.html" class="ftr__logo-link">
+          <img src="images/logo_dark.png" alt="Leo Digital" class="ftr__logo">
+        </a>
+        <p class="ftr__desc">Crafting digital experiences that drive growth and innovation.</p>
+        <div class="ftr__social">
+          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="ftr__social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="ftr__social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="ftr__social-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="ftr__nav-cols">
+        <div class="ftr__col">
+          <h4 class="ftr__col-head" data-i18n="ftr.company">Company</h4>
+          <ul class="ftr__list">
+            <li><a href="#" data-i18n="ftr.about">About</a></li>
+            <li><a href="careers.html" data-i18n="ftr.careers">Careers</a></li>
+            <li><a href="news.html" data-i18n="ftr.news">News &amp; Updates</a></li>
+            <li><a href="insights.html" data-i18n="ftr.insights">Insights</a></li>
+          </ul>
+        </div>
+        <div class="ftr__col">
+          <h4 class="ftr__col-head" data-i18n="ftr.services">Services</h4>
+          <ul class="ftr__list">
+            <li><a href="services.html">Digital Marketing</a></li>
+            <li><a href="services.html">Creative Services</a></li>
+            <li><a href="services.html">Technology Services</a></li>
+            <li><a href="our-work.html" data-i18n="ftr.websites">Our Work</a></li>
+          </ul>
+        </div>
+        <div class="ftr__col">
+          <h4 class="ftr__col-head" data-i18n="ftr.connect">Connect</h4>
+          <ul class="ftr__list">
+            <li><a href="#" data-i18n="ftr.linkedin">LinkedIn</a></li>
+            <li><a href="#" data-i18n="ftr.instagram">Instagram</a></li>
+            <li><a href="#" data-i18n="ftr.facebook">Facebook</a></li>
+            <li><a href="#" data-i18n="ftr.youtube">YouTube</a></li>
+            <li><a href="#" data-i18n="ftr.contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="ftr__legal">
+      <span data-i18n="ftr.legal">© 2026 Leo Digital Ltd. All rights reserved.</span>
+      <div class="ftr__legal-links">
+        <a href="#" data-i18n="ftr.privacy">Privacy Policy</a>
+        <a href="#" data-i18n="ftr.terms">Terms of Service</a>
+        <a href="#" data-i18n="ftr.cookies">Cookie Settings</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/i18n.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/observer.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/footer.js"></script>
+
+  <!-- Services tab logic -->
+  <script>
+    (function () {
+      var btns   = document.querySelectorAll('.svc-tab__btn');
+      var panels = document.querySelectorAll('.svc-tab__panel');
+
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var target = btn.dataset.tab;
+
+          btns.forEach(function (b) {
+            b.classList.remove('svc-tab__btn--active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          panels.forEach(function (p) {
+            p.classList.remove('svc-tab__panel--active');
+          });
+
+          btn.classList.add('svc-tab__btn--active');
+          btn.setAttribute('aria-selected', 'true');
+          var panel = document.getElementById('tab-' + target);
+          if (panel) panel.classList.add('svc-tab__panel--active');
+        });
+      });
+
+      /* CTA button opens login modal */
+      var ctaBtn = document.getElementById('svcCtaBtn');
+      if (ctaBtn) {
+        ctaBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          var overlay = document.getElementById('modalOverlay');
+          if (overlay) {
+            overlay.removeAttribute('hidden');
+            document.body.style.overflow = 'hidden';
+          }
+        });
+      }
+    })();
+  </script>
+
+  <script src="js/loader.js"></script>
+
+</body>
+</html>

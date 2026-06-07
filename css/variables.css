@@ -1,8 +1,16 @@
 :root {
-  /* ── Colour Palette — Cream + Soft Purple ── */
+  /* ── Colour Palette — 60/30/10 ──
+     60%  Warm cream  #F6F1E8  body / light sections
+     30%  Navy        #384959  hero / all dark sections
+     10%  Steel blue  #6A89A7  accents / eyebrows / CTAs
+     +    #88BDF2  highlights / buttons
+     +    #BDDDFC  subtle fills / light surfaces
+  ── */
   --clr-bg:            #F6F1E8;
   --clr-bg-2:          #EDE8DC;
   --clr-bg-3:          #E5DFD1;
+  --clr-dark:          #384959;
+  --clr-dark-2:        #2A3C4D;
   --clr-surface:       rgba(255, 255, 255, 0.55);
   --clr-surface-hover: rgba(255, 255, 255, 0.80);
   --clr-border:        rgba(17, 17, 17, 0.08);
@@ -16,10 +24,11 @@
   --clr-white-20: rgba(17, 17, 17, 0.20);
   --clr-white-10: rgba(17, 17, 17, 0.08);
 
-  /* Brand accent — soft purple */
-  --clr-accent:   #D9B8FF;
-  --clr-accent-2: #C89CFF;
-  --clr-glow:     rgba(217, 184, 255, 0.35);
+  /* Brand accent — blue-gray */
+  --clr-accent:   #6A89A7;
+  --clr-accent-2: #88BDF2;
+  --clr-accent-3: #BDDDFC;
+  --clr-glow:     rgba(136, 189, 242, 0.20);
 
   /* Legacy aliases kept for components */
   --clr-grey-1: #111111;

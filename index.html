@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/animations.css" />
   <link rel="stylesheet" href="css/navbar.css" />
-  <link rel="stylesheet" href="css/hero-ai.css" />
+  <link rel="stylesheet" href="css/hero-slider.css" />
   <link rel="stylesheet" href="css/modal.css" />
   <link rel="stylesheet" href="css/timebox.css" />
   <link rel="stylesheet" href="css/stack-cards.css" />
@@ -26,7 +26,6 @@
   <link rel="stylesheet" href="css/testimonials.css" />
   <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/responsive.css" />
-  <link rel="stylesheet" href="css/scroll-expansion-hero.css" />
   <link rel="stylesheet" href="css/partners.css" />
   <link rel="stylesheet" href="css/lang.css" />
 </head>
@@ -50,7 +49,26 @@
 
         <ul class="navbar__links" id="navLinks" role="list">
           <li class="nav-item"><a href="index.html" class="nav-link nav-link--active" data-i18n="nav.home">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link" data-i18n="nav.services">Services</a></li>
+                    <li class="nav-item nav-item--dropdown">
+            <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+              <span data-i18n="nav.services">Services</span>
+              <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="dropdown" role="menu">
+              <a href="services-digital.html" class="dropdown__item" role="menuitem">
+                <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label">Digital Marketing</span><span class="dropdown__item-desc">9 integrated disciplines</span></span>
+              </a>
+              <a href="services-creative.html" class="dropdown__item" role="menuitem">
+                <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m22 8-6 4 6 4V8z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label">Creative Services</span><span class="dropdown__item-desc">Film, UI/UX &amp; events</span></span>
+              </a>
+              <a href="services-technology.html" class="dropdown__item" role="menuitem">
+                <span class="dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+                <span class="dropdown__item-text"><span class="dropdown__item-label">Technology Services</span><span class="dropdown__item-desc">Dev, DevOps &amp; AI/ML</span></span>
+              </a>
+            </div>
+          </li>
           <li class="nav-item"><a href="our-work.html" class="nav-link" data-i18n="nav.ourwork">Our Work</a></li>
 
           <li class="nav-item nav-item--dropdown">
@@ -89,7 +107,7 @@
 
           <!-- Mobile-only links -->
           <li class="nav-item nav-item--mobile-only mobile-contact-item">
-            <a href="#" class="nav-link" data-i18n="nav.contact">Contact</a>
+            <a href="contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
           </li>
           <li class="nav-item nav-item--mobile-only">
             <button class="btn-login" aria-haspopup="dialog" aria-controls="modalOverlay">
@@ -108,7 +126,7 @@
             </span>
             <span data-i18n="nav.login">Log in</span>
           </button>
-          <a href="#" class="btn-cta" data-i18n="nav.contact">Contact</a>
+          <a href="contact.html" class="btn-cta" data-i18n="nav.contact">Contact</a>
           <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
             <span class="hamburger__bar"></span>
             <span class="hamburger__bar"></span>
@@ -226,139 +244,136 @@
   <!-- ── Main Content ── -->
   <main id="main-content">
 
-    <!-- ══ HERO SECTION — Particle Dark Theme ══ -->
-    <section class="hero-ai" id="hero-ai">
+    <!-- ══ HERO BANNER SLIDER ══ -->
+    <div class="hslider" id="heroSlider" role="region" aria-label="Hero banner">
 
-      <!-- Particle canvas -->
-      <canvas class="hero-canvas" id="particleCanvas" aria-hidden="true"></canvas>
-
-      <!-- Spotlight beams -->
-      <div class="hero-spotlight" aria-hidden="true">
-        <div class="hero-spotlight__beam hero-spotlight__beam--1"></div>
-        <div class="hero-spotlight__beam hero-spotlight__beam--2"></div>
-        <div class="hero-spotlight__beam hero-spotlight__beam--3"></div>
-      </div>
-
-      <!-- Accent grid lines -->
-      <div class="hero-accent" aria-hidden="true">
-        <div class="hero-accent__h" style="top: 6em"></div>
-        <div class="hero-accent__h" style="top: 11em"></div>
-        <div class="hero-accent__h" style="top: 16em"></div>
-        <div class="hero-accent__h" style="top: 24em"></div>
-        <div class="hero-accent__h" style="top: 29em"></div>
-        <div class="hero-accent__v" style="left: 24em"></div>
-        <div class="hero-accent__v" style="left: 34em"></div>
-        <div class="hero-accent__v" style="right: 24em; left: auto"></div>
-        <div class="hero-accent__v" style="right: 34em; left: auto"></div>
-      </div>
-
-      <!-- Mid-spot glow toggle -->
-      <div class="hero-midspot" id="heroMidspot" role="button" tabindex="0" aria-label="Toggle gold mode"></div>
-
-      <!-- Hero content -->
-      <div class="hero-content">
-
-        <div class="hero-eyebrow">
-          <span class="hero-eyebrow__dot" aria-hidden="true"></span>
-          <span data-i18n="home.eyebrow">AI-Powered Growth Agency</span>
-        </div>
-
-        <!-- Big animated title -->
-        <div class="hero-title-wrap">
-          <h1 class="hero-title" id="heroTitle">Leo Digital</h1>
-          <h1 class="hero-title hero-title--blur" aria-hidden="true">Leo Digital</h1>
-        </div>
-
-        <!-- Word-flip subtitle -->
-        <p class="hero-sub">
-          <span data-i18n="home.hero.sub">Scale your brand faster —</span>
-          <em id="heroFlipWord">data-driven strategies</em>
-        </p>
-
-        <div class="hero-ctas">
-          <button class="hero-btn-primary" id="heroMicBtn">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
-              <polyline points="16 7 22 7 22 13"/>
-            </svg>
-            <span data-i18n="home.cta.primary">Start Growing</span>
-          </button>
-          <a href="our-work.html" class="hero-btn-ghost">
-            <span data-i18n="home.cta.ghost">View Our Work</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-        </div>
-
-        <div class="hero-trust">
-          <span class="hero-trust__dot" aria-hidden="true"></span>
-          <span data-i18n="home.trust">Trusted by 400+ brands worldwide</span>
-        </div>
-
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <span class="hero-stat__n">400+</span>
-            <span class="hero-stat__l" data-i18n="home.stat1">Brands</span>
+      <!-- Slide 1 — Brand intro -->
+      <div class="hslide hslide--1 hslide--active" role="group" aria-label="Slide 1 of 3">
+        <div class="hslide__inner">
+          <span class="hslide__eyebrow">AI-Powered Growth Agency</span>
+          <h1 class="hslide__title">Leo Digital</h1>
+          <p class="hslide__sub">Scale your brand faster with data-driven strategies built for the modern market.</p>
+          <div class="hslide__ctas">
+            <button class="hslide__btn-primary" onclick="document.getElementById('servicesGrid').scrollIntoView({behavior:'smooth'})">
+              Start Growing
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            </button>
+            <a href="our-work.html" class="hslide__btn-ghost">
+              View Our Work
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
           </div>
-          <div class="hero-stat-sep"></div>
-          <div class="hero-stat">
-            <span class="hero-stat__n">2.4M+</span>
-            <span class="hero-stat__l" data-i18n="home.stat2">Reach / mo</span>
-          </div>
-          <div class="hero-stat-sep"></div>
-          <div class="hero-stat">
-            <span class="hero-stat__n">98%</span>
-            <span class="hero-stat__l" data-i18n="home.stat3">Retention</span>
-          </div>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- ══ SCROLL EXPANSION HERO ══ -->
-    <section class="seh" id="sehSection">
-      <div class="seh__sticky">
-        <div class="seh__wrap" id="sehWrap">
-          <video class="seh__video" autoplay muted loop playsinline
-                 poster="https://images.pexels.com/videos/5752729/space-earth-universe-cosmos-5752729.jpeg">
-            <source src="https://me7aitdbxq.ufs.sh/f/2wsMIGDMQRdYuZ5R8ahEEZ4aQK56LizRdfBSqeDMsmUIrJN1" type="video/mp4">
-          </video>
-          <div class="seh__overlay" id="sehOverlay">
-            <span class="seh__label" data-i18n="home.seh.label">Leo Digital</span>
-            <h2 class="seh__title" data-i18n="home.seh.title">Campaigns That<br>Move People</h2>
-            <div class="seh__hint">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-              <span data-i18n="home.seh.hint">Scroll to expand</span>
+          <div class="hslide__stats">
+            <div class="hslide__stat">
+              <span class="hslide__stat-n">400+</span>
+              <span class="hslide__stat-l">Brands</span>
+            </div>
+            <div class="hslide__stat-sep"></div>
+            <div class="hslide__stat">
+              <span class="hslide__stat-n">2.4M+</span>
+              <span class="hslide__stat-l">Reach / mo</span>
+            </div>
+            <div class="hslide__stat-sep"></div>
+            <div class="hslide__stat">
+              <span class="hslide__stat-n">98%</span>
+              <span class="hslide__stat-l">Retention</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- ══ APPROACH — follows the expansion ══ -->
-    <section class="seh-about">
-      <div class="seh-about__inner">
-        <span class="seh-about__eyebrow" data-i18n="home.app.eyebrow">Our Approach</span>
-        <h2 class="seh-about__title" data-i18n="home.app.title">Strategy meets<br>creativity</h2>
-        <p class="seh-about__text" data-i18n="home.app.text">At Leo Digital, every campaign begins with a deep understanding of your brand, your audience, and the goals you're chasing. We combine data science with bold creative to build experiences that convert and endure.</p>
-        <div class="seh-about__cols">
-          <div class="seh-about__col">
-            <h3 data-i18n="home.app.col1.h">Data-Driven</h3>
-            <p data-i18n="home.app.col1.p">Every decision is backed by real insights and measurable outcomes — no guesswork, just results.</p>
+      <!-- Slide 2 — Services -->
+      <div class="hslide hslide--2" role="group" aria-label="Slide 2 of 3">
+        <div class="hslide__inner">
+          <span class="hslide__eyebrow">Eight Integrated Disciplines</span>
+          <h1 class="hslide__title">Campaigns That Convert</h1>
+          <p class="hslide__sub">From social media to SEO — one integrated team across every channel, every platform.</p>
+          <div class="hslide__ctas">
+            <button class="hslide__btn-primary" onclick="document.getElementById('servicesGrid').scrollIntoView({behavior:'smooth'})">
+              Our Services
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <a href="our-work.html" class="hslide__btn-ghost">
+              See Results
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
           </div>
-          <div class="seh-about__col">
-            <h3 data-i18n="home.app.col2.h">Creative First</h3>
-            <p data-i18n="home.app.col2.p">Bold ideas that capture attention and tell your brand story in ways your audience won't forget.</p>
-          </div>
-          <div class="seh-about__col">
-            <h3 data-i18n="home.app.col3.h">Always-On</h3>
-            <p data-i18n="home.app.col3.p">Continuous optimisation across every channel, every hour. Your brand never sleeps and neither do we.</p>
+          <div class="hslide__stats">
+            <div class="hslide__stat">
+              <span class="hslide__stat-n">Social</span>
+              <span class="hslide__stat-l">Media</span>
+            </div>
+            <div class="hslide__stat-sep"></div>
+            <div class="hslide__stat">
+              <span class="hslide__stat-n">SEO</span>
+              <span class="hslide__stat-l">Search</span>
+            </div>
+            <div class="hslide__stat-sep"></div>
+            <div class="hslide__stat">
+              <span class="hslide__stat-n">PPC</span>
+              <span class="hslide__stat-l">Paid Ads</span>
+            </div>
+            <div class="hslide__stat-sep"></div>
+            <div class="hslide__stat">
+              <span class="hslide__stat-n">Creative</span>
+              <span class="hslide__stat-l">Design</span>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+
+      <!-- Slide 3 — Results / CTA -->
+      <div class="hslide hslide--3" role="group" aria-label="Slide 3 of 3">
+        <div class="hslide__inner">
+          <span class="hslide__eyebrow">Trusted by 400+ Brands Worldwide</span>
+          <h1 class="hslide__title">Grow With Confidence</h1>
+          <p class="hslide__sub">Strategy meets creativity — built to deliver experiences that convert and endure.</p>
+          <div class="hslide__ctas">
+            <button class="hslide__btn-primary" id="heroLoginBtn" aria-haspopup="dialog" aria-controls="modalOverlay">
+              Get Started
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            </button>
+            <a href="our-work.html" class="hslide__btn-ghost">
+              Our Work
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+          <div class="hslide__stats">
+            <div class="hslide__stat">
+              <span class="hslide__stat-n">2×</span>
+              <span class="hslide__stat-l">Avg Growth</span>
+            </div>
+            <div class="hslide__stat-sep"></div>
+            <div class="hslide__stat">
+              <span class="hslide__stat-n">98%</span>
+              <span class="hslide__stat-l">Retention</span>
+            </div>
+            <div class="hslide__stat-sep"></div>
+            <div class="hslide__stat">
+              <span class="hslide__stat-n">5★</span>
+              <span class="hslide__stat-l">Rated</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Prev / Next arrows -->
+      <button class="hslider__arrow hslider__arrow--prev" id="hsliderPrev" aria-label="Previous slide">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="hslider__arrow hslider__arrow--next" id="hsliderNext" aria-label="Next slide">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+
+      <!-- Dot indicators -->
+      <div class="hslider__dots" role="tablist" aria-label="Slide indicators">
+        <button class="hslider__dot hslider__dot--active" data-slide="0" aria-label="Go to slide 1" role="tab" aria-selected="true"></button>
+        <button class="hslider__dot" data-slide="1" aria-label="Go to slide 2" role="tab" aria-selected="false"></button>
+        <button class="hslider__dot" data-slide="2" aria-label="Go to slide 3" role="tab" aria-selected="false"></button>
+      </div>
+
+    </div>
+    <!-- ══ END HERO BANNER SLIDER ══ -->
 
     <!-- ── Services Grid ── -->
     <section class="srv-grid" id="servicesGrid" aria-label="Our services">
@@ -613,10 +628,10 @@
     </section>
 
     <!-- ══ SECTION 1 — Scrolling Testimonials ══ -->
-    <section class="tm-section" aria-label="Client love letters">
+    <section class="tm-section" aria-label="Client testimonials">
 
       <div class="tm-heading">
-        <h2>Love letters to<br>Leo Digital</h2>
+        <h2>What our<br>clients say</h2>
       </div>
 
       <div class="tm-scroll-wrap" aria-label="Testimonial cards">
@@ -632,7 +647,7 @@
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-            <p class="tm-quote">"Leo Digital's strategy elevated our digital presence dramatically. We saw a 340% increase in engagement within the first six months — results that exceeded every benchmark."</p>
+            <p class="tm-quote">"We briefed Leo Digital on a tight timeline and they delivered without cutting corners. They understood our audience better than agencies we'd worked with for years."</p>
             <span class="tm-name">Sanjay Gupta</span>
             <span class="tm-role">VP Digital Growth · The Times of India</span>
           </article>
@@ -646,7 +661,7 @@
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-            <p class="tm-quote">"The Instax product launch exceeded all KPIs. Leo Digital's creative storytelling combined with precise targeting drove a 3x increase in product enquiries nationwide."</p>
+            <p class="tm-quote">"The Instax campaign needed to speak to a very specific crowd — young, creative, social-first. Leo Digital nailed it. The content didn't just perform, it actually felt like it belonged on the platform."</p>
             <span class="tm-name">Rajesh Kumar</span>
             <span class="tm-role">Marketing Director · Fujifilm India</span>
           </article>
@@ -660,7 +675,7 @@
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-            <p class="tm-quote">"Leo Digital reached an entirely new audience for us. Our social following grew by 280% and viewer engagement hit an all-time high within the first quarter of the campaign."</p>
+            <p class="tm-quote">"Our brief was simple: find us viewers under 35. What Leo Digital came back with was a content strategy we hadn't considered. The engagement on those campaigns still surprises me when I look back."</p>
             <span class="tm-name">Priya Bhatia</span>
             <span class="tm-role">Head of Marketing · CNBC TV18</span>
           </article>
@@ -674,7 +689,7 @@
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-            <p class="tm-quote">"In a competitive EV market, brand positioning is everything. Leo Digital's data-driven campaigns helped us achieve 4x growth in qualified enquiries within just 90 days."</p>
+            <p class="tm-quote">"EV is a cluttered space right now. Getting qualified buyers to pay attention is genuinely hard. Leo Digital helped us cut through with campaigns that were actually interesting — not just promotional."</p>
             <span class="tm-name">Deepak Kumar</span>
             <span class="tm-role">Chief Marketing Officer · Olectra</span>
           </article>
@@ -688,7 +703,7 @@
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-            <p class="tm-quote">"Leo Digital's B2B campaigns were laser-focused. Our lead quality improved dramatically and the sales cycle shortened by nearly 40%. Exceptional ROI and outstanding execution."</p>
+            <p class="tm-quote">"B2B marketing can feel dry if you let it. Leo Digital brought a level of creative thinking to our industrial campaigns that we genuinely didn't expect. Our sales team started getting better conversations at every stage."</p>
             <span class="tm-name">Anita Mehta</span>
             <span class="tm-role">Head of Brand &amp; Communications · ABB India</span>
           </article>
@@ -702,7 +717,7 @@
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-            <p class="tm-quote">"Leo Digital built a digital presence that genuinely resonates with our corporate clients. Every campaign is precisely targeted, consistently on-brand, and delivers measurable impact."</p>
+            <p class="tm-quote">"We needed a partner who could handle marketing a property brand to multiple audiences at once. Leo Digital managed that balance well — every piece of content felt right for its audience without losing consistency."</p>
             <span class="tm-name">Vikram Nair</span>
             <span class="tm-role">Head of Marketing · JLL India</span>
           </article>
@@ -717,7 +732,7 @@
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-            <p class="tm-quote">"Leo Digital's strategy elevated our digital presence dramatically. We saw a 340% increase in engagement within the first six months — results that exceeded every benchmark."</p>
+            <p class="tm-quote">"We briefed Leo Digital on a tight timeline and they delivered without cutting corners. They understood our audience better than agencies we'd worked with for years."</p>
             <span class="tm-name">Sanjay Gupta</span>
             <span class="tm-role">VP Digital Growth · The Times of India</span>
           </article>
@@ -731,7 +746,7 @@
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-            <p class="tm-quote">"The Instax product launch exceeded all KPIs. Leo Digital's creative storytelling combined with precise targeting drove a 3x increase in product enquiries nationwide."</p>
+            <p class="tm-quote">"The Instax campaign needed to speak to a very specific crowd — young, creative, social-first. Leo Digital nailed it. The content didn't just perform, it actually felt like it belonged on the platform."</p>
             <span class="tm-name">Rajesh Kumar</span>
             <span class="tm-role">Marketing Director · Fujifilm India</span>
           </article>
@@ -745,7 +760,7 @@
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-            <p class="tm-quote">"Leo Digital reached an entirely new audience for us. Our social following grew by 280% and viewer engagement hit an all-time high within the first quarter of the campaign."</p>
+            <p class="tm-quote">"Our brief was simple: find us viewers under 35. What Leo Digital came back with was a content strategy we hadn't considered. The engagement on those campaigns still surprises me when I look back."</p>
             <span class="tm-name">Priya Bhatia</span>
             <span class="tm-role">Head of Marketing · CNBC TV18</span>
           </article>
@@ -759,7 +774,7 @@
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-            <p class="tm-quote">"In a competitive EV market, brand positioning is everything. Leo Digital's data-driven campaigns helped us achieve 4x growth in qualified enquiries within just 90 days."</p>
+            <p class="tm-quote">"EV is a cluttered space right now. Getting qualified buyers to pay attention is genuinely hard. Leo Digital helped us cut through with campaigns that were actually interesting — not just promotional."</p>
             <span class="tm-name">Deepak Kumar</span>
             <span class="tm-role">Chief Marketing Officer · Olectra</span>
           </article>
@@ -773,7 +788,7 @@
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-            <p class="tm-quote">"Leo Digital's B2B campaigns were laser-focused. Our lead quality improved dramatically and the sales cycle shortened by nearly 40%. Exceptional ROI and outstanding execution."</p>
+            <p class="tm-quote">"B2B marketing can feel dry if you let it. Leo Digital brought a level of creative thinking to our industrial campaigns that we genuinely didn't expect. Our sales team started getting better conversations at every stage."</p>
             <span class="tm-name">Anita Mehta</span>
             <span class="tm-role">Head of Brand &amp; Communications · ABB India</span>
           </article>
@@ -787,7 +802,7 @@
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-            <p class="tm-quote">"Leo Digital built a digital presence that genuinely resonates with our corporate clients. Every campaign is precisely targeted, consistently on-brand, and delivers measurable impact."</p>
+            <p class="tm-quote">"We needed a partner who could handle marketing a property brand to multiple audiences at once. Leo Digital managed that balance well — every piece of content felt right for its audience without losing consistency."</p>
             <span class="tm-name">Vikram Nair</span>
             <span class="tm-role">Head of Marketing · JLL India</span>
           </article>
@@ -1008,7 +1023,6 @@
   <!-- JavaScript -->
   <script src="js/i18n.js"></script>
   <script src="js/navbar.js"></script>
-  <script src="js/hero-ai.js"></script>
   <script src="js/timebox.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/supabase.js"></script>
@@ -1022,7 +1036,6 @@
   <script src="js/observer.js"></script>
   <script src="js/counter.js"></script>
   <script src="js/footer.js"></script>
-  <script src="js/scroll-expansion-hero.js"></script>
   <script>
     (function () {
       var cells = document.querySelectorAll('.srv-cell');
@@ -1039,6 +1052,81 @@
     })();
   </script>
   <script src="js/loader.js"></script>
+
+  <!-- Hero Slider -->
+  <script>
+    (function () {
+      var slides = document.querySelectorAll('.hslide');
+      var dots   = document.querySelectorAll('.hslider__dot');
+      if (!slides.length) return;
+
+      var current = 0;
+      var total   = slides.length;
+      var timer;
+
+      function goTo(n) {
+        slides[current].classList.remove('hslide--active');
+        dots[current].classList.remove('hslider__dot--active');
+        dots[current].setAttribute('aria-selected', 'false');
+        current = ((n % total) + total) % total;
+        slides[current].classList.add('hslide--active');
+        dots[current].classList.add('hslider__dot--active');
+        dots[current].setAttribute('aria-selected', 'true');
+      }
+
+      function startTimer() {
+        clearInterval(timer);
+        timer = setInterval(function () { goTo(current + 1); }, 5500);
+      }
+
+      /* Dot clicks */
+      dots.forEach(function (dot) {
+        dot.addEventListener('click', function () {
+          goTo(parseInt(dot.dataset.slide, 10));
+          startTimer();
+        });
+      });
+
+      /* Arrow buttons */
+      var prev = document.getElementById('hsliderPrev');
+      var next = document.getElementById('hsliderNext');
+      if (prev) prev.addEventListener('click', function () { goTo(current - 1); startTimer(); });
+      if (next) next.addEventListener('click', function () { goTo(current + 1); startTimer(); });
+
+      /* Slide 3 "Get Started" opens the login modal */
+      var heroLoginBtn = document.getElementById('heroLoginBtn');
+      if (heroLoginBtn) {
+        heroLoginBtn.addEventListener('click', function () {
+          var overlay = document.getElementById('modalOverlay');
+          if (overlay) {
+            overlay.removeAttribute('hidden');
+            document.body.style.overflow = 'hidden';
+          }
+        });
+      }
+
+      /* Pause on hover */
+      var slider = document.getElementById('heroSlider');
+      if (slider) {
+        slider.addEventListener('mouseenter', function () { clearInterval(timer); });
+        slider.addEventListener('mouseleave', startTimer);
+      }
+
+      /* Swipe support on mobile */
+      var touchStartX = 0;
+      if (slider) {
+        slider.addEventListener('touchstart', function (e) {
+          touchStartX = e.changedTouches[0].clientX;
+        }, { passive: true });
+        slider.addEventListener('touchend', function (e) {
+          var diff = touchStartX - e.changedTouches[0].clientX;
+          if (Math.abs(diff) > 50) { goTo(diff > 0 ? current + 1 : current - 1); startTimer(); }
+        }, { passive: true });
+      }
+
+      startTimer();
+    })();
+  </script>
 
 </body>
 </html>

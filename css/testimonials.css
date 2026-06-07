@@ -21,7 +21,7 @@
    SECTION 1 — Scrolling Testimonials
 ═══════════════════════════════════════ */
 .tm-section {
-  background: #080808;
+  background: #1C2B38;
   padding: 6rem 0 5rem;
   overflow: hidden;
   border-radius: 72px;
@@ -154,7 +154,7 @@
    SECTION 2 — Stats 2×2 Grid
 ═══════════════════════════════════════ */
 .tm-stats-section {
-  background: #1a5c4a;
+  background: #2A3C4D;
   padding: 5rem 2rem;
   border-radius: 72px;
   margin: 1.5rem 0;
@@ -286,7 +286,7 @@
 ═══════════════════════════════════════ */
 .tm-growth-section {
   position: relative;
-  background: #060a06;
+  background: #1C2B38;
   min-height: 540px;
   display: flex;
   align-items: center;
@@ -303,8 +303,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 60% at 30% 50%, rgba(26,92,74,0.45) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 50% at 75% 50%, rgba(8,16,8,0.8) 0%, transparent 100%);
+    radial-gradient(ellipse 70% 60% at 30% 50%, rgba(106, 137, 167, 0.20) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 75% 50%, rgba(28, 43, 56, 0.80) 0%, transparent 100%);
   z-index: 0;
 }
 
@@ -313,7 +313,7 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(120deg, #0c1f0e 0%, #141a14 40%, #0d1810 100%);
+    linear-gradient(120deg, #1C2B38 0%, #2A3C4D 40%, #384959 100%);
   z-index: 0;
 }
 

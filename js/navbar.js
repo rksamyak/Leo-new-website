@@ -1,6 +1,6 @@
 function initNavbar() {
   const navbar = document.getElementById('navbar');
-  const hero   = document.getElementById('hero-ai');
+  const hero   = document.getElementById('heroSlider') || document.getElementById('hero-ai');
 
   function onScroll() {
     const y = window.scrollY;

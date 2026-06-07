@@ -48,16 +48,16 @@
 
 /* ── Dark mode — when floating over the purple hero ── */
 .navbar--over-dark .navbar__wrap {
-  background: rgba(60, 10, 140, 0.35);
-  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(28, 43, 56, 0.70);
+  border-color: rgba(136, 189, 242, 0.15);
   box-shadow:
-    0 4px 28px rgba(0, 0, 0, 0.25),
-    0 1px 4px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    0 4px 28px rgba(0, 0, 0, 0.30),
+    0 1px 4px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(136, 189, 242, 0.08);
 }
 
 .navbar--over-dark.scrolled .navbar__wrap {
-  background: rgba(60, 10, 140, 0.55);
+  background: rgba(28, 43, 56, 0.92);
 }
 
 .navbar--over-dark .nav-link {
